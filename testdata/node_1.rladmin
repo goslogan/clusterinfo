@@ -1,0 +1,896 @@
+Redis Enterprise Node Information
+2024-04-05 09:40:39.613949+00:00
+
+------------------------------------------------------------
+rladmin status extra all:
+CLUSTER:
+OK. Cluster master: 3 (10.10.21.11)
+Cluster health: OK, [0, 0.0, 0.0]
+failures/minute - avg1 0.00, avg15 0.00, avg60 0.00.
+
+CLUSTER NODES:
+NODE:ID ROLE   ADDRESS     EXTERNAL_ADDRESS HOSTNAME MASTERS SLAVES OVERBOOKING_DEPTH SHARDS CORES FREE_RAM          PROVISIONAL_RAM  VERSION   SHA    RACK-ID     STATUS
+*node:1 slave  10.10.21.4  55.136.114.84    node1    94      0      -91.29GB          94/300 16    53.24GB/125.82GB  28.07GB/100.65GB 6.2.18-49 b799d6 us-central-1 OK    
+node:2  slave  10.10.21.5  51.142.224.230   node2    7       45     -125.01GB         52/300 16    63.85GB/125.82GB  38.69GB/100.65GB 6.2.18-49 b799d6 us-central-1 OK    
+node:3  master 10.10.21.11 19.11.38.61      node3    27      6      -131.58GB         33/300 32    110.67GB/251.71GB 60.33GB/201.37GB 6.2.18-49 b799d6 us-central-1 OK    
+node:4  slave  10.10.21.6  19.60.3.13       node4    50      3      -24.51GB          53/300 16    69.53GB/125.81GB  44.37GB/100.65GB 6.2.18-49 b799d6 us-central-1 OK    
+node:5  slave  10.10.21.8  20.17.14.109     node5    15      19     -102.79GB         34/300 16    47.91GB/125.81GB  22.74GB/100.65GB 6.2.18-49 b799d6 us-central-1 OK    
+node:7  slave  10.10.21.7  20.253.48.102    node7    28      9      -167.83GB         37/300 32    106.77GB/251.71GB 56.43GB/201.37GB 6.2.18-49 b799d6 us-central-1 OK    
+node:8  slave  10.10.21.10 20.245.3.17      node8    6       62     -194.4GB          68/300 32    90.04GB/251.71GB  39.69GB/201.37GB 6.2.18-49 b799d6 us-central-2 OK    
+node:9  slave  10.10.21.12 74.34.64.23      node9    3       42     -41.02GB          45/300 32    123.66GB/251.71GB 73.32GB/201.37GB 6.2.18-49 b799d6 us-central-2 OK    
+node:10 slave  10.10.21.13 4.31.41.16       node10   15      20     -42.01GB          35/300 32    123.15GB/251.71GB 72.8GB/201.37GB  6.2.18-49 b799d6 us-central-1 OK    
+node:11 slave  10.10.21.14 188.71.21.23     node11   14      32     -105.05GB         46/300 32    62.04GB/251.71GB  11.7GB/201.37GB  6.2.18-49 b799d6 us-central-2 OK    
+node:12 slave  10.10.21.15 45.18.21.173     node12   2       33     -154.33GB         35/300 32    70.66GB/251.71GB  20.31GB/201.37GB 6.2.18-49 b799d6 us-central-1 OK    
+node:13 slave  10.10.21.16 21.17.48.175     node13   26      16     -62.31GB          42/300 32    126.89GB/251.71GB 76.55GB/201.37GB 6.2.18-49 b799d6 us-central-2 OK    
+node:14 slave  10.10.21.17 12.20.227.118    node14   0       0      0KB               0/0    2     5.47GB/7.77GB     0KB/0KB          6.2.18-49 b799d6 us-central-3 OK    
+
+DATABASES:
+DB:ID       NAME                      TYPE  STATUS SHARDS PLACEMENT REPLICATION PERSISTENCE ENDPOINT                                                                                                                                                                                       EXEC_STATE EXEC_STATE_MACHINE BACKUP_PROGRESS MISSING_BACKUP_TIME REDIS_VERSION
+db:10567021 sudan-02                  redis active 1      dense     enabled     aof         redis-17798.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17798/redis-17798.c99999.us-central1-mz.gcp.redns.redis-cloud.com:17798/redis-17798.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17798 N/A        N/A                N/A             N/A                 6.2.6        
+db:10567048 cambodia-00               redis active 2      dense     enabled     aof         redis-13352.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13352/redis-13352.c99999.us-central1-mz.gcp.redns.redis-cloud.com:13352/redis-13352.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13352 N/A        N/A                N/A             N/A                 6.2.6        
+db:10567057 ethiopia-05               redis active 2      dense     enabled     aof         redis-16671.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16671/redis-16671.c99999.us-central1-mz.gcp.redns.redis-cloud.com:16671/redis-16671.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16671 N/A        N/A                N/A             N/A                 6.2.6        
+db:10567069 tanzania-06               redis active 2      dense     enabled     aof         redis-15167.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15167/redis-15167.c99999.us-central1-mz.gcp.redns.redis-cloud.com:15167/redis-15167.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15167 N/A        N/A                N/A             N/A                 6.2.6        
+db:10568177 namibia-01                redis active 2      dense     enabled     aof         redis-14105.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14105/redis-14105.c99999.us-central1-mz.gcp.redns.redis-cloud.com:14105/redis-14105.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14105 N/A        N/A                N/A             N/A                 6.2.6        
+db:10570439 australia-09              redis active 2      dense     enabled     aof         redis-16381.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16381/redis-16381.c99999.us-central1-mz.gcp.redns.redis-cloud.com:16381/redis-16381.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16381 N/A        N/A                N/A             N/A                 6.2.6        
+db:10570451 uruguay-06                redis active 2      dense     enabled     aof         redis-19280.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19280/redis-19280.c99999.us-central1-mz.gcp.redns.redis-cloud.com:19280/redis-19280.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19280 N/A        N/A                N/A             N/A                 6.2.6        
+db:10570461 romania-06                redis active 2      dense     enabled     aof         redis-13633.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13633/redis-13633.c99999.us-central1-mz.gcp.redns.redis-cloud.com:13633/redis-13633.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13633 N/A        N/A                N/A             N/A                 6.2.6        
+db:10570463 vietnam-00                redis active 1      dense     enabled     aof         redis-14766.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14766/redis-14766.c99999.us-central1-mz.gcp.redns.redis-cloud.com:14766/redis-14766.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14766 N/A        N/A                N/A             N/A                 6.2.6        
+db:10570481 guinea-06                 redis active 2      dense     enabled     aof         redis-10169.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10169/redis-10169.c99999.us-central1-mz.gcp.redns.redis-cloud.com:10169/redis-10169.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10169 N/A        N/A                N/A             N/A                 6.2.6        
+db:10570487 italy-07                  redis active 2      dense     enabled     aof         redis-13367.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13367/redis-13367.c99999.us-central1-mz.gcp.redns.redis-cloud.com:13367/redis-13367.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13367 N/A        N/A                N/A             N/A                 6.2.6        
+db:10570491 saint_lucia-04            redis active 2      dense     enabled     aof         redis-13543.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13543/redis-13543.c99999.us-central1-mz.gcp.redns.redis-cloud.com:13543/redis-13543.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13543 N/A        N/A                N/A             N/A                 6.2.6        
+db:10570497 samoa-01                  redis active 2      dense     enabled     aof         redis-11344.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11344/redis-11344.c99999.us-central1-mz.gcp.redns.redis-cloud.com:11344/redis-11344.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11344 N/A        N/A                N/A             N/A                 6.2.6        
+db:10570505 guyana-00                 redis active 1      dense     enabled     aof         redis-13989.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13989/redis-13989.c99999.us-central1-mz.gcp.redns.redis-cloud.com:13989/redis-13989.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13989 N/A        N/A                N/A             N/A                 6.2.6        
+db:10570881 oman-09                   redis active 2      dense     enabled     aof         redis-12714.c99999.us-central1-mz.gcp.cloud.rlrcp.com:12714/redis-12714.c99999.us-central1-mz.gcp.redns.redis-cloud.com:12714/redis-12714.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:12714 N/A        N/A                N/A             N/A                 6.2.6        
+db:10571129 angola-05                 redis active 2      dense     enabled     aof         redis-19302.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19302/redis-19302.c99999.us-central1-mz.gcp.redns.redis-cloud.com:19302/redis-19302.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19302 N/A        N/A                N/A             N/A                 6.2.6        
+db:10573412 afghanistan-08            redis active 2      dense     enabled     aof         redis-13619.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13619/redis-13619.c99999.us-central1-mz.gcp.redns.redis-cloud.com:13619/redis-13619.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13619 N/A        N/A                N/A             N/A                 6.2.6        
+db:10573485 papua_new_guinea-04       redis active 2      dense     enabled     aof         redis-18268.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18268/redis-18268.c99999.us-central1-mz.gcp.redns.redis-cloud.com:18268/redis-18268.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18268 N/A        N/A                N/A             N/A                 6.2.6        
+db:10573508 mauritania-07             redis active 2      dense     enabled     aof         redis-11976.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11976/redis-11976.c99999.us-central1-mz.gcp.redns.redis-cloud.com:11976/redis-11976.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11976 N/A        N/A                N/A             N/A                 6.2.6        
+db:10573553 antigua_and_barbuda-07    redis active 2      dense     enabled     aof         redis-18762.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18762/redis-18762.c99999.us-central1-mz.gcp.redns.redis-cloud.com:18762/redis-18762.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18762 N/A        N/A                N/A             N/A                 6.2.6        
+db:10573574 chad-06                   redis active 2      dense     enabled     aof         redis-18894.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18894/redis-18894.c99999.us-central1-mz.gcp.redns.redis-cloud.com:18894/redis-18894.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18894 N/A        N/A                N/A             N/A                 6.2.6        
+db:10573592 sri_lanka-04              redis active 2      dense     enabled     aof         redis-14736.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14736/redis-14736.c99999.us-central1-mz.gcp.redns.redis-cloud.com:14736/redis-14736.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14736 N/A        N/A                N/A             N/A                 6.2.6        
+db:10573604 egypt-08                  redis active 2      dense     enabled     aof         redis-17538.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17538/redis-17538.c99999.us-central1-mz.gcp.redns.redis-cloud.com:17538/redis-17538.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17538 N/A        N/A                N/A             N/A                 6.2.6        
+db:10573630 bangladesh-05             redis active 2      dense     enabled     aof         redis-18839.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18839/redis-18839.c99999.us-central1-mz.gcp.redns.redis-cloud.com:18839/redis-18839.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18839 N/A        N/A                N/A             N/A                 6.2.6        
+db:10573658 new_zealand-09            redis active 2      dense     enabled     aof         redis-18467.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18467/redis-18467.c99999.us-central1-mz.gcp.redns.redis-cloud.com:18467/redis-18467.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18467 N/A        N/A                N/A             N/A                 6.2.6        
+db:10573664 belarus-09                redis active 2      dense     enabled     aof         redis-14067.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14067/redis-14067.c99999.us-central1-mz.gcp.redns.redis-cloud.com:14067/redis-14067.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14067 N/A        N/A                N/A             N/A                 6.2.6        
+db:10578424 albania-00                redis active 2      dense     enabled     aof         redis-15625.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15625/redis-15625.c99999.us-central1-mz.gcp.redns.redis-cloud.com:15625/redis-15625.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15625 N/A        N/A                N/A             N/A                 6.2.6        
+db:10578426 kenya-01                  redis active 2      dense     enabled     aof         redis-10442.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10442/redis-10442.c99999.us-central1-mz.gcp.redns.redis-cloud.com:10442/redis-10442.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10442 N/A        N/A                N/A             N/A                 6.2.6        
+db:10581662 peru-09                   redis active 1      dense     enabled     aof         redis-17401.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17401/redis-17401.c99999.us-central1-mz.gcp.redns.redis-cloud.com:17401/redis-17401.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17401 N/A        N/A                N/A             N/A                 6.2.6        
+db:10635091 united_kingdom-01         redis active 2      dense     enabled     aof         redis-12585.c99999.us-central1-mz.gcp.cloud.rlrcp.com:12585/redis-12585.c99999.us-central1-mz.gcp.redns.redis-cloud.com:12585/redis-12585.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:12585 N/A        N/A                N/A             N/A                 6.2.6        
+db:10637826 brunei-07                 redis active 2      dense     enabled     aof         redis-13113.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13113/redis-13113.c99999.us-central1-mz.gcp.redns.redis-cloud.com:13113/redis-13113.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13113 N/A        N/A                N/A             N/A                 6.2.6        
+db:10637870 kosovo-04                 redis active 2      dense     enabled     aof         redis-11761.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11761/redis-11761.c99999.us-central1-mz.gcp.redns.redis-cloud.com:11761/redis-11761.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11761 N/A        N/A                N/A             N/A                 6.2.6        
+db:10664633 spain-05                  redis active 2      dense     enabled     aof         redis-10794.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10794/redis-10794.c99999.us-central1-mz.gcp.redns.redis-cloud.com:10794/redis-10794.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10794 N/A        N/A                N/A             N/A                 6.2.6        
+db:10673608 honduras-08               redis active 2      dense     enabled     aof         redis-16643.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16643/redis-16643.c99999.us-central1-mz.gcp.redns.redis-cloud.com:16643/redis-16643.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16643 N/A        N/A                N/A             N/A                 6.2.6        
+db:10744949 germany-00                redis active 2      dense     enabled     aof         redis-18601.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18601/redis-18601.c99999.us-central1-mz.gcp.redns.redis-cloud.com:18601/redis-18601.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18601 N/A        N/A                N/A             N/A                 6.2.6        
+db:10746269 uganda-09                 redis active 2      dense     enabled     aof         redis-10564.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10564/redis-10564.c99999.us-central1-mz.gcp.redns.redis-cloud.com:10564/redis-10564.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10564 N/A        N/A                N/A             N/A                 6.2.6        
+db:10791226 senegal-03                redis active 2      dense     enabled     aof         redis-10626.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10626/redis-10626.c99999.us-central1-mz.gcp.redns.redis-cloud.com:10626/redis-10626.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10626 N/A        N/A                N/A             N/A                 6.2.6        
+db:10792938 malawi-07                 redis active 2      dense     enabled     aof         redis-19246.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19246/redis-19246.c99999.us-central1-mz.gcp.redns.redis-cloud.com:19246/redis-19246.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19246 N/A        N/A                N/A             N/A                 6.2.6        
+db:10794586 bahrain-06                redis active 2      dense     enabled     aof         redis-18074.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18074/redis-18074.c99999.us-central1-mz.gcp.redns.redis-cloud.com:18074/redis-18074.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18074 N/A        N/A                N/A             N/A                 6.2.6        
+db:10826730 zambia-04                 redis active 1      dense     enabled     aof         redis-18654.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18654/redis-18654.c99999.us-central1-mz.gcp.redns.redis-cloud.com:18654/redis-18654.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18654 N/A        N/A                N/A             N/A                 6.2.6        
+db:10826752 azerbaijan-03             redis active 1      dense     enabled     aof         redis-15481.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15481/redis-15481.c99999.us-central1-mz.gcp.redns.redis-cloud.com:15481/redis-15481.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15481 N/A        N/A                N/A             N/A                 6.2.6        
+db:10827149 burkina_faso-07           redis active 1      dense     enabled     aof         redis-13969.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13969/redis-13969.c99999.us-central1-mz.gcp.redns.redis-cloud.com:13969/redis-13969.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13969 N/A        N/A                N/A             N/A                 6.2.6        
+db:10836133 turkey-02                 redis active 1      dense     enabled     aof         redis-16622.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16622/redis-16622.c99999.us-central1-mz.gcp.redns.redis-cloud.com:16622/redis-16622.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16622 N/A        N/A                N/A             N/A                 6.2.6        
+db:10902855 benin-04                  redis active 1      dense     enabled     aof         redis-19461.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19461/redis-19461.c99999.us-central1-mz.gcp.redns.redis-cloud.com:19461/redis-19461.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19461 N/A        N/A                N/A             N/A                 6.2.6        
+db:10904612 philippines-06            redis active 1      dense     enabled     aof         redis-10332.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10332/redis-10332.c99999.us-central1-mz.gcp.redns.redis-cloud.com:10332/redis-10332.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10332 N/A        N/A                N/A             N/A                 6.2.6        
+db:10904823 cote_d'ivoire-04          redis active 1      dense     enabled     aof         redis-18592.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18592/redis-18592.c99999.us-central1-mz.gcp.redns.redis-cloud.com:18592/redis-18592.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18592 N/A        N/A                N/A             N/A                 6.2.6        
+db:10904833 korea_south-03            redis active 1      dense     enabled     aof         redis-18531.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18531/redis-18531.c99999.us-central1-mz.gcp.redns.redis-cloud.com:18531/redis-18531.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18531 N/A        N/A                N/A             N/A                 6.2.6        
+db:10950418 laos-01                   redis active 2      dense     enabled     aof         redis-15372.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15372/redis-15372.c99999.us-central1-mz.gcp.redns.redis-cloud.com:15372/redis-15372.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15372 N/A        N/A                N/A             N/A                 6.2.6        
+db:10970733 ecuador-07                redis active 2      dense     enabled     aof         redis-19821.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19821/redis-19821.c99999.us-central1-mz.gcp.redns.redis-cloud.com:19821/redis-19821.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19821 N/A        N/A                N/A             N/A                 6.2.6        
+db:10976142 japan-01                  redis active 2      dense     enabled     aof         redis-15617.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15617/redis-15617.c99999.us-central1-mz.gcp.redns.redis-cloud.com:15617/redis-15617.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15617 N/A        N/A                N/A             N/A                 6.2.6        
+db:10976411 south_africa-09           redis active 2      dense     enabled     aof         redis-10147.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10147/redis-10147.c99999.us-central1-mz.gcp.redns.redis-cloud.com:10147/redis-10147.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10147 N/A        N/A                N/A             N/A                 6.2.6        
+db:10976667 canada-04                 redis active 2      dense     enabled     aof         redis-14802.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14802/redis-14802.c99999.us-central1-mz.gcp.redns.redis-cloud.com:14802/redis-14802.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14802 N/A        N/A                N/A             N/A                 6.2.6        
+db:11000324 vanuatu-09                redis active 2      dense     enabled     aof         redis-15951.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15951/redis-15951.c99999.us-central1-mz.gcp.redns.redis-cloud.com:15951/redis-15951.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15951 N/A        N/A                N/A             N/A                 6.2.6        
+db:11000446 switzerland-01            redis active 2      dense     enabled     aof         redis-10123.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10123/redis-10123.c99999.us-central1-mz.gcp.redns.redis-cloud.com:10123/redis-10123.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10123 N/A        N/A                N/A             N/A                 6.2.6        
+db:11057314 nicaragua-03              redis active 2      dense     enabled     aof         redis-13500.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13500/redis-13500.c99999.us-central1-mz.gcp.redns.redis-cloud.com:13500/redis-13500.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13500 N/A        N/A                N/A             N/A                 6.2.6        
+db:11059254 lithuania-09              redis active 2      dense     enabled     aof         redis-14737.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14737/redis-14737.c99999.us-central1-mz.gcp.redns.redis-cloud.com:14737/redis-14737.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14737 N/A        N/A                N/A             N/A                 6.2.6        
+db:11064913 chile-01                  redis active 2      dense     enabled     aof         redis-13967.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13967/redis-13967.c99999.us-central1-mz.gcp.redns.redis-cloud.com:13967/redis-13967.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13967 N/A        N/A                N/A             N/A                 6.2.6        
+db:11064929 qatar-01                  redis active 2      dense     enabled     aof         redis-10665.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10665/redis-10665.c99999.us-central1-mz.gcp.redns.redis-cloud.com:10665/redis-10665.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10665 N/A        N/A                N/A             N/A                 6.2.6        
+db:11074360 mali-09                   redis active 2      dense     enabled     aof         redis-19882.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19882/redis-19882.c99999.us-central1-mz.gcp.redns.redis-cloud.com:19882/redis-19882.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19882 N/A        N/A                N/A             N/A                 6.2.6        
+db:11094354 ghana-01                  redis active 3      dense     enabled     aof         redis-11144.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11144/redis-11144.c99999.us-central1-mz.gcp.redns.redis-cloud.com:11144/redis-11144.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11144 N/A        N/A                N/A             N/A                 6.2.6        
+db:11099527 cape_verde-02             redis active 2      dense     enabled     aof         redis-11866.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11866/redis-11866.c99999.us-central1-mz.gcp.redns.redis-cloud.com:11866/redis-11866.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11866 N/A        N/A                N/A             N/A                 6.2.6        
+db:11100223 jordan-02                 redis active 2      dense     enabled     aof         redis-17345.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17345/redis-17345.c99999.us-central1-mz.gcp.redns.redis-cloud.com:17345/redis-17345.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17345 N/A        N/A                N/A             N/A                 6.2.6        
+db:11100249 barbados-01               redis active 2      dense     enabled     aof         redis-15639.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15639/redis-15639.c99999.us-central1-mz.gcp.redns.redis-cloud.com:15639/redis-15639.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15639 N/A        N/A                N/A             N/A                 6.2.6        
+db:11100271 slovenia-03               redis active 3      dense     enabled     aof         redis-14904.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14904/redis-14904.c99999.us-central1-mz.gcp.redns.redis-cloud.com:14904/redis-14904.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14904 N/A        N/A                N/A             N/A                 6.2.6        
+db:11100361 yemen-03                  redis active 2      dense     enabled     aof         redis-14406.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14406/redis-14406.c99999.us-central1-mz.gcp.redns.redis-cloud.com:14406/redis-14406.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14406 N/A        N/A                N/A             N/A                 6.2.6        
+db:11100397 mauritius-01              redis active 2      dense     enabled     aof         redis-12514.c99999.us-central1-mz.gcp.cloud.rlrcp.com:12514/redis-12514.c99999.us-central1-mz.gcp.redns.redis-cloud.com:12514/redis-12514.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:12514 N/A        N/A                N/A             N/A                 6.2.6        
+db:11100427 indonesia-07              redis active 3      dense     enabled     aof         redis-10155.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10155/redis-10155.c99999.us-central1-mz.gcp.redns.redis-cloud.com:10155/redis-10155.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10155 N/A        N/A                N/A             N/A                 6.2.6        
+db:11101622 togo-04                   redis active 2      dense     enabled     aof         redis-15505.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15505/redis-15505.c99999.us-central1-mz.gcp.redns.redis-cloud.com:15505/redis-15505.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15505 N/A        N/A                N/A             N/A                 6.2.6        
+db:11104743 nepal-06                  redis active 3      dense     enabled     aof         redis-19372.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19372/redis-19372.c99999.us-central1-mz.gcp.redns.redis-cloud.com:19372/redis-19372.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19372 N/A        N/A                N/A             N/A                 6.2.6        
+db:11111519 mongolia-05               redis active 2      dense     enabled     aof         redis-19300.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19300/redis-19300.c99999.us-central1-mz.gcp.redns.redis-cloud.com:19300/redis-19300.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19300 N/A        N/A                N/A             N/A                 6.2.6        
+db:11149753 botswana-07               redis active 2      dense     enabled     aof         redis-12032.c99999.us-central1-mz.gcp.cloud.rlrcp.com:12032/redis-12032.c99999.us-central1-mz.gcp.redns.redis-cloud.com:12032/redis-12032.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:12032 N/A        N/A                N/A             N/A                 6.2.6        
+db:11205254 sierra_leone-07           redis active 2      dense     enabled     aof         redis-11184.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11184/redis-11184.c99999.us-central1-mz.gcp.redns.redis-cloud.com:11184/redis-11184.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11184 N/A        N/A                N/A             N/A                 6.2.6        
+db:11205308 guatemala-09              redis active 2      dense     enabled     aof         redis-13846.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13846/redis-13846.c99999.us-central1-mz.gcp.redns.redis-cloud.com:13846/redis-13846.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13846 N/A        N/A                N/A             N/A                 6.2.6        
+db:11205360 lebanon-04                redis active 2      dense     enabled     aof         redis-13893.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13893/redis-13893.c99999.us-central1-mz.gcp.redns.redis-cloud.com:13893/redis-13893.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13893 N/A        N/A                N/A             N/A                 6.2.6        
+db:11228850 cuba-05                   redis active 2      dense     enabled     aof         redis-10407.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10407/redis-10407.c99999.us-central1-mz.gcp.redns.redis-cloud.com:10407/redis-10407.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10407 N/A        N/A                N/A             N/A                 6.2.6        
+db:11270101 vatican_city-00           redis active 2      dense     enabled     aof         redis-11099.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11099/redis-11099.c99999.us-central1-mz.gcp.redns.redis-cloud.com:11099/redis-11099.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11099 N/A        N/A                N/A             N/A                 6.2.6        
+db:11348592 bhutan-00                 redis active 2      dense     enabled     aof         redis-15710.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15710/redis-15710.c99999.us-central1-mz.gcp.redns.redis-cloud.com:15710/redis-15710.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15710 N/A        N/A                N/A             N/A                 6.2.6        
+db:11348659 poland-04                 redis active 2      dense     enabled     aof         redis-13243.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13243/redis-13243.c99999.us-central1-mz.gcp.redns.redis-cloud.com:13243/redis-13243.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13243 N/A        N/A                N/A             N/A                 6.2.6        
+db:11360360 uzbekistan-08             redis active 2      dense     enabled     aof         redis-16678.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16678/redis-16678.c99999.us-central1-mz.gcp.redns.redis-cloud.com:16678/redis-16678.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16678 N/A        N/A                N/A             N/A                 6.2.6        
+db:11370003 the_gambia-04             redis active 2      dense     enabled     aof         redis-18932.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18932/redis-18932.c99999.us-central1-mz.gcp.redns.redis-cloud.com:18932/redis-18932.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18932 N/A        N/A                N/A             N/A                 6.2.6        
+db:11370097 kuwait-09                 redis active 2      dense     enabled     aof         redis-13921.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13921/redis-13921.c99999.us-central1-mz.gcp.redns.redis-cloud.com:13921/redis-13921.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13921 N/A        N/A                N/A             N/A                 6.2.6        
+db:11382569 suriname-05               redis active 2      dense     enabled     aof         redis-10262.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10262/redis-10262.c99999.us-central1-mz.gcp.redns.redis-cloud.com:10262/redis-10262.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10262 N/A        N/A                N/A             N/A                 6.2.6        
+db:11382573 myanmar_burma-03          redis active 2      dense     enabled     aof         redis-14417.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14417/redis-14417.c99999.us-central1-mz.gcp.redns.redis-cloud.com:14417/redis-14417.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14417 N/A        N/A                N/A             N/A                 6.2.6        
+db:11386914 luxembourg-05             redis active 2      dense     enabled     aof         redis-10684.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10684/redis-10684.c99999.us-central1-mz.gcp.redns.redis-cloud.com:10684/redis-10684.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10684 N/A        N/A                N/A             N/A                 6.2.6        
+db:11386994 armenia-06                redis active 2      dense     enabled     aof         redis-16202.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16202/redis-16202.c99999.us-central1-mz.gcp.redns.redis-cloud.com:16202/redis-16202.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16202 N/A        N/A                N/A             N/A                 6.2.6        
+db:11392720 estonia-01                redis active 2      dense     enabled     aof         redis-10247.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10247/redis-10247.c99999.us-central1-mz.gcp.redns.redis-cloud.com:10247/redis-10247.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10247 N/A        N/A                N/A             N/A                 6.2.6        
+db:11395562 finland-01                redis active 2      dense     enabled     aof         redis-17894.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17894/redis-17894.c99999.us-central1-mz.gcp.redns.redis-cloud.com:17894/redis-17894.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17894 N/A        N/A                N/A             N/A                 6.2.6        
+db:11404149 trinidad_and_tobago-04    redis active 2      dense     enabled     aof         redis-18913.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18913/redis-18913.c99999.us-central1-mz.gcp.redns.redis-cloud.com:18913/redis-18913.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18913 N/A        N/A                N/A             N/A                 6.2.6        
+db:11404210 colombia-05               redis active 2      dense     enabled     aof         redis-19642.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19642/redis-19642.c99999.us-central1-mz.gcp.redns.redis-cloud.com:19642/redis-19642.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19642 N/A        N/A                N/A             N/A                 6.2.6        
+db:11449503 congo-07                  redis active 2      dense     enabled     aof         redis-15649.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15649/redis-15649.c99999.us-central1-mz.gcp.redns.redis-cloud.com:15649/redis-15649.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15649 N/A        N/A                N/A             N/A                 6.2.6        
+db:11480858 america-01                redis active 2      dense     enabled     aof         redis-15876.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15876/redis-15876.c99999.us-central1-mz.gcp.redns.redis-cloud.com:15876/redis-15876.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15876 N/A        N/A                N/A             N/A                 6.2.6        
+db:11480860 djibouti-07               redis active 2      dense     enabled     aof         redis-10857.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10857/redis-10857.c99999.us-central1-mz.gcp.redns.redis-cloud.com:10857/redis-10857.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10857 N/A        N/A                N/A             N/A                 6.2.6        
+db:11480956 cyprus-05                 redis active 2      dense     enabled     aof         redis-10308.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10308/redis-10308.c99999.us-central1-mz.gcp.redns.redis-cloud.com:10308/redis-10308.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10308 N/A        N/A                N/A             N/A                 6.2.6        
+db:11505944 burundi-03                redis active 2      dense     enabled     aof         redis-15748.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15748/redis-15748.c99999.us-central1-mz.gcp.redns.redis-cloud.com:15748/redis-15748.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15748 N/A        N/A                N/A             N/A                 6.2.6        
+db:11505986 guinea-bissau-09          redis active 2      dense     enabled     aof         redis-16220.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16220/redis-16220.c99999.us-central1-mz.gcp.redns.redis-cloud.com:16220/redis-16220.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16220 N/A        N/A                N/A             N/A                 6.2.6        
+db:11506064 belize-07                 redis active 2      dense     enabled     aof         redis-16155.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16155/redis-16155.c99999.us-central1-mz.gcp.redns.redis-cloud.com:16155/redis-16155.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16155 N/A        N/A                N/A             N/A                 6.2.6        
+db:11506068 bolivia-02                redis active 2      dense     enabled     aof         redis-18730.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18730/redis-18730.c99999.us-central1-mz.gcp.redns.redis-cloud.com:18730/redis-18730.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18730 N/A        N/A                N/A             N/A                 6.2.6        
+db:11526090 el_salvador-01            redis active 2      dense     enabled     aof         redis-19388.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19388/redis-19388.c99999.us-central1-mz.gcp.redns.redis-cloud.com:19388/redis-19388.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19388 N/A        N/A                N/A             N/A                 6.2.6        
+db:11526276 greece-00                 redis active 2      dense     enabled     aof         redis-19683.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19683/redis-19683.c99999.us-central1-mz.gcp.redns.redis-cloud.com:19683/redis-19683.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19683 N/A        N/A                N/A             N/A                 6.2.6        
+db:11546928 malta-08                  redis active 1      dense     enabled     aof         redis-11914.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11914/redis-11914.c99999.us-central1-mz.gcp.redns.redis-cloud.com:11914/redis-11914.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11914 N/A        N/A                N/A             N/A                 6.2.6        
+db:11579096 tonga-00                  redis active 2      dense     enabled     aof         redis-15485.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15485/redis-15485.c99999.us-central1-mz.gcp.redns.redis-cloud.com:15485/redis-15485.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15485 N/A        N/A                N/A             N/A                 6.2.6        
+db:11579174 montenegro-02             redis active 2      dense     enabled     aof         redis-19496.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19496/redis-19496.c99999.us-central1-mz.gcp.redns.redis-cloud.com:19496/redis-19496.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19496 N/A        N/A                N/A             N/A                 6.2.6        
+db:11592128 lesotho-05                redis active 2      dense     enabled     aof         redis-18927.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18927/redis-18927.c99999.us-central1-mz.gcp.redns.redis-cloud.com:18927/redis-18927.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18927 N/A        N/A                N/A             N/A                 6.2.6        
+db:11623190 taiwan-08                 redis active 2      dense     enabled     aof         redis-14151.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14151/redis-14151.c99999.us-central1-mz.gcp.redns.redis-cloud.com:14151/redis-14151.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14151 N/A        N/A                N/A             N/A                 6.2.6        
+db:11623207 comoros-05                redis active 2      dense     enabled     aof         redis-15355.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15355/redis-15355.c99999.us-central1-mz.gcp.redns.redis-cloud.com:15355/redis-15355.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15355 N/A        N/A                N/A             N/A                 6.2.6        
+db:11644326 serbia-09                 redis active 2      dense     enabled     aof         redis-15302.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15302/redis-15302.c99999.us-central1-mz.gcp.redns.redis-cloud.com:15302/redis-15302.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15302 N/A        N/A                N/A             N/A                 6.2.6        
+db:11660545 georgia-00                redis active 2      dense     enabled     aof         redis-16660.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16660/redis-16660.c99999.us-central1-mz.gcp.redns.redis-cloud.com:16660/redis-16660.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16660 N/A        N/A                N/A             N/A                 6.2.6        
+db:11669400 austria-05                redis active 5      dense     enabled     aof         redis-15469.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15469/redis-15469.c99999.us-central1-mz.gcp.redns.redis-cloud.com:15469/redis-15469.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15469 N/A        N/A                N/A             N/A                 6.2.6        
+db:11674049 slovakia-09               redis active 5      dense     enabled     aof         redis-18673.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18673/redis-18673.c99999.us-central1-mz.gcp.redns.redis-cloud.com:18673/redis-18673.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18673 N/A        N/A                N/A             N/A                 6.2.6        
+db:11683594 belgium-04                redis active 2      dense     enabled     aof         redis-11567.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11567/redis-11567.c99999.us-central1-mz.gcp.redns.redis-cloud.com:11567/redis-11567.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11567 N/A        N/A                N/A             N/A                 6.2.6        
+db:11688867 denmark-04                redis active 2      dense     enabled     aof         redis-14917.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14917/redis-14917.c99999.us-central1-mz.gcp.redns.redis-cloud.com:14917/redis-14917.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14917 N/A        N/A                N/A             N/A                 6.2.6        
+db:11691237 zimbabwe-08               redis active 2      dense     enabled     aof         redis-11135.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11135/redis-11135.c99999.us-central1-mz.gcp.redns.redis-cloud.com:11135/redis-11135.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11135 N/A        N/A                N/A             N/A                 6.2.6        
+db:11698888 norway-01                 redis active 3      dense     enabled     aof         redis-15465.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15465/redis-15465.c99999.us-central1-mz.gcp.redns.redis-cloud.com:15465/redis-15465.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:15465 N/A        N/A                N/A             N/A                 6.2.6        
+db:11704829 liechtenstein-00          redis active 5      dense     enabled     aof         redis-10459.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10459/redis-10459.c99999.us-central1-mz.gcp.redns.redis-cloud.com:10459/redis-10459.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10459 N/A        N/A                N/A             N/A                 6.2.6        
+db:11723681 korea_north-08            redis active 5      dense     enabled     aof         redis-13592.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13592/redis-13592.c99999.us-central1-mz.gcp.redns.redis-cloud.com:13592/redis-13592.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13592 N/A        N/A                N/A             N/A                 6.2.6        
+db:11723931 algeria-04                redis active 5      dense     enabled     aof         redis-18476.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18476/redis-18476.c99999.us-central1-mz.gcp.redns.redis-cloud.com:18476/redis-18476.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18476 N/A        N/A                N/A             N/A                 6.2.6        
+db:11731532 tajikistan-00             redis active 2      dense     enabled     aof         redis-17333.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17333/redis-17333.c99999.us-central1-mz.gcp.redns.redis-cloud.com:17333/redis-17333.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17333 N/A        N/A                N/A             N/A                 6.2.6        
+db:11731533 niger-01                  redis active 2      dense     enabled     aof         redis-12260.c99999.us-central1-mz.gcp.cloud.rlrcp.com:12260/redis-12260.c99999.us-central1-mz.gcp.redns.redis-cloud.com:12260/redis-12260.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:12260 N/A        N/A                N/A             N/A                 6.2.6        
+db:11745396 kyrgyzstan-07             redis active 2      dense     enabled     aof         redis-12966.c99999.us-central1-mz.gcp.cloud.rlrcp.com:12966/redis-12966.c99999.us-central1-mz.gcp.redns.redis-cloud.com:12966/redis-12966.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:12966 N/A        N/A                N/A             N/A                 6.2.6        
+db:11750694 china-06                  redis active 2      dense     enabled     aof         redis-19960.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19960/redis-19960.c99999.us-central1-mz.gcp.redns.redis-cloud.com:19960/redis-19960.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19960 N/A        N/A                N/A             N/A                 6.2.6        
+db:11750695 saint_vincent-09          redis active 2      dense     enabled     aof         redis-18427.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18427/redis-18427.c99999.us-central1-mz.gcp.redns.redis-cloud.com:18427/redis-18427.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18427 N/A        N/A                N/A             N/A                 6.2.6        
+db:11752495 united_arab_emirates-07   redis active 2      dense     enabled     aof         redis-11648.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11648/redis-11648.c99999.us-central1-mz.gcp.redns.redis-cloud.com:11648/redis-11648.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11648 N/A        N/A                N/A             N/A                 6.2.6        
+db:11752710 costa_rica-00             redis active 2      dense     enabled     aof         redis-11410.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11410/redis-11410.c99999.us-central1-mz.gcp.redns.redis-cloud.com:11410/redis-11410.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11410 N/A        N/A                N/A             N/A                 6.2.6        
+db:11754134 gabon-01                  redis active 2      dense     enabled     aof         redis-10070.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10070/redis-10070.c99999.us-central1-mz.gcp.redns.redis-cloud.com:10070/redis-10070.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:10070 N/A        N/A                N/A             N/A                 6.2.6        
+db:11781476 libya-05                  redis active 2      dense     enabled     aof         redis-13430.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13430/redis-13430.c99999.us-central1-mz.gcp.redns.redis-cloud.com:13430/redis-13430.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13430 N/A        N/A                N/A             N/A                 6.2.6        
+db:11791108 bulgaria-06               redis active 1      dense     enabled     aof         redis-14676.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14676/redis-14676.c99999.us-central1-mz.gcp.redns.redis-cloud.com:14676/redis-14676.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14676 N/A        N/A                N/A             N/A                 6.2.6        
+db:11817625 san_marino-05             redis active 1      dense     enabled     aof         redis-13135.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13135/redis-13135.c99999.us-central1-mz.gcp.redns.redis-cloud.com:13135/redis-13135.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13135 N/A        N/A                N/A             N/A                 6.2.6        
+db:11817643 ireland-06                redis active 1      dense     enabled     aof         redis-13982.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13982/redis-13982.c99999.us-central1-mz.gcp.redns.redis-cloud.com:13982/redis-13982.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13982 N/A        N/A                N/A             N/A                 6.2.6        
+db:11901746 iraq-01                   redis active 2      dense     enabled     aof         redis-12352.c99999.us-central1-mz.gcp.cloud.rlrcp.com:12352/redis-12352.c99999.us-central1-mz.gcp.redns.redis-cloud.com:12352/redis-12352.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:12352 N/A        N/A                N/A             N/A                 6.2.6        
+db:11928255 iceland-05                redis active 2      dense     enabled     aof         redis-11541.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11541/redis-11541.c99999.us-central1-mz.gcp.redns.redis-cloud.com:11541/redis-11541.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:11541 N/A        N/A                N/A             N/A                 6.2.6        
+db:11932976 kazakhstan-06             redis active 2      dense     enabled     aof         redis-17553.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17553/redis-17553.c99999.us-central1-mz.gcp.redns.redis-cloud.com:17553/redis-17553.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17553 N/A        N/A                N/A             N/A                 6.2.6        
+db:11936302 saudi_arabia-06           redis active 2      dense     enabled     aof         redis-14388.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14388/redis-14388.c99999.us-central1-mz.gcp.redns.redis-cloud.com:14388/redis-14388.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:14388 N/A        N/A                N/A             N/A                 6.2.6        
+db:11936304 israel-05                 redis active 2      dense     enabled     aof         redis-18094.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18094/redis-18094.c99999.us-central1-mz.gcp.redns.redis-cloud.com:18094/redis-18094.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:18094 N/A        N/A                N/A             N/A                 6.2.6        
+db:11938340 rwanda-08                 redis active 2      dense     enabled     aof         redis-13814.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13814/redis-13814.c99999.us-central1-mz.gcp.redns.redis-cloud.com:13814/redis-13814.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13814 N/A        N/A                N/A             N/A                 6.2.6        
+db:11940842 ukraine-03                redis active 2      dense     enabled     aof         redis-19130.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19130/redis-19130.c99999.us-central1-mz.gcp.redns.redis-cloud.com:19130/redis-19130.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19130 N/A        N/A                N/A             N/A                 6.2.6        
+db:11946090 netherlands-01            redis active 2      dense     enabled     aof         redis-12247.c99999.us-central1-mz.gcp.cloud.rlrcp.com:12247/redis-12247.c99999.us-central1-mz.gcp.redns.redis-cloud.com:12247/redis-12247.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:12247 N/A        N/A                N/A             N/A                 6.2.6        
+db:11960040 south_sudan-01            redis active 2      dense     enabled     aof         redis-13305.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13305/redis-13305.c99999.us-central1-mz.gcp.redns.redis-cloud.com:13305/redis-13305.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13305 N/A        N/A                N/A             N/A                 6.2.6        
+db:11987868 portugal-05               redis active 2      dense     enabled     aof         redis-19714.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19714/redis-19714.c99999.us-central1-mz.gcp.redns.redis-cloud.com:19714/redis-19714.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19714 N/A        N/A                N/A             N/A                 6.2.6        
+db:11990828 east_timor-03             redis active 2      dense     enabled     aof         redis-16757.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16757/redis-16757.c99999.us-central1-mz.gcp.redns.redis-cloud.com:16757/redis-16757.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16757 N/A        N/A                N/A             N/A                 6.2.6        
+db:11990855 kiribati-05               redis active 2      dense     enabled     aof         redis-17405.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17405/redis-17405.c99999.us-central1-mz.gcp.redns.redis-cloud.com:17405/redis-17405.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17405 N/A        N/A                N/A             N/A                 6.2.6        
+db:12063896 liberia-08                redis active 1      dense     enabled     aof         redis-19278.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19278/redis-19278.c99999.us-central1-mz.gcp.redns.redis-cloud.com:19278/redis-19278.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:19278 N/A        N/A                N/A             N/A                 6.2.6        
+db:12131670 hungary-04                redis active 1      dense     enabled     aof         redis-17487.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17487/redis-17487.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17487/redis-17487.c99999.us-central1-mz.gcp.redns.redis-cloud.com:17487 N/A        N/A                N/A             N/A                 6.2.6        
+db:12195007 moldova-06                redis active 1      dense     enabled     aof         redis-17834.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17834/redis-17834.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17834/redis-17834.c99999.us-central1-mz.gcp.redns.redis-cloud.com:17834 N/A        N/A                N/A             N/A                 6.2.6        
+
+ENDPOINTS:
+DB:ID       NAME                      ID                  NODE    ROLE      SSL WATCHDOG_STATUS
+db:10567021 sudan-02                  endpoint:10567021:1 node:1  single    No  OK             
+db:10567048 cambodia-00               endpoint:10567048:1 node:1  single    No  OK             
+db:10567057 ethiopia-05               endpoint:10567057:1 node:1  single    No  OK             
+db:10567069 tanzania-06               endpoint:10567069:1 node:1  single    No  OK             
+db:10568177 namibia-01                endpoint:10568177:1 node:1  single    No  OK             
+db:10570439 australia-09              endpoint:10570439:1 node:1  single    No  OK             
+db:10570451 uruguay-06                endpoint:10570451:1 node:1  single    No  OK             
+db:10570461 romania-06                endpoint:10570461:1 node:1  single    No  OK             
+db:10570463 vietnam-00                endpoint:10570463:1 node:7  single    No  OK             
+db:10570481 guinea-06                 endpoint:10570481:1 node:1  single    No  OK             
+db:10570487 italy-07                  endpoint:10570487:1 node:2  single    No  OK             
+db:10570491 saint_lucia-04            endpoint:10570491:1 node:1  single    No  OK             
+db:10570497 samoa-01                  endpoint:10570497:1 node:1  single    No  OK             
+db:10570505 guyana-00                 endpoint:10570505:1 node:7  single    No  OK             
+db:10570881 oman-09                   endpoint:10570881:1 node:1  single    No  OK             
+db:10571129 angola-05                 endpoint:10571129:1 node:1  single    No  OK             
+db:10573412 afghanistan-08            endpoint:10573412:1 node:1  single    No  OK             
+db:10573485 papua_new_guinea-04       endpoint:10573485:1 node:1  single    No  OK             
+db:10573508 mauritania-07             endpoint:10573508:1 node:1  single    No  OK             
+db:10573553 antigua_and_barbuda-07    endpoint:10573553:1 node:1  single    No  OK             
+db:10573574 chad-06                   endpoint:10573574:1 node:1  single    No  OK             
+db:10573592 sri_lanka-04              endpoint:10573592:1 node:1  single    No  OK             
+db:10573604 egypt-08                  endpoint:10573604:1 node:1  single    No  OK             
+db:10573630 bangladesh-05             endpoint:10573630:1 node:1  single    No  OK             
+db:10573658 new_zealand-09            endpoint:10573658:1 node:7  single    No  OK             
+db:10573664 belarus-09                endpoint:10573664:1 node:1  single    No  OK             
+db:10578424 albania-00                endpoint:10578424:1 node:1  single    No  OK             
+db:10578426 kenya-01                  endpoint:10578426:1 node:1  single    No  OK             
+db:10581662 peru-09                   endpoint:10581662:1 node:1  single    No  OK             
+db:10635091 united_kingdom-01         endpoint:10635091:1 node:1  single    No  OK             
+db:10637826 brunei-07                 endpoint:10637826:1 node:1  single    No  OK             
+db:10637870 kosovo-04                 endpoint:10637870:1 node:1  single    No  OK             
+db:10664633 spain-05                  endpoint:10664633:1 node:1  single    No  OK             
+db:10673608 honduras-08               endpoint:10673608:1 node:1  single    No  OK             
+db:10744949 germany-00                endpoint:10744949:1 node:1  single    No  OK             
+db:10746269 uganda-09                 endpoint:10746269:1 node:1  single    No  OK             
+db:10791226 senegal-03                endpoint:10791226:1 node:1  single    No  OK             
+db:10792938 malawi-07                 endpoint:10792938:1 node:1  single    No  OK             
+db:10794586 bahrain-06                endpoint:10794586:1 node:1  single    No  OK             
+db:10826730 zambia-04                 endpoint:10826730:1 node:1  single    No  OK             
+db:10826752 azerbaijan-03             endpoint:10826752:1 node:1  single    No  OK             
+db:10827149 burkina_faso-07           endpoint:10827149:1 node:1  single    No  OK             
+db:10836133 turkey-02                 endpoint:10836133:1 node:1  single    No  OK             
+db:10902855 benin-04                  endpoint:10902855:1 node:1  single    No  OK             
+db:10904612 philippines-06            endpoint:10904612:1 node:1  single    No  OK             
+db:10904823 cote_d'ivoire-04          endpoint:10904823:1 node:4  single    No  OK             
+db:10904833 korea_south-03            endpoint:10904833:1 node:1  single    No  OK             
+db:10950418 laos-01                   endpoint:10950418:1 node:1  single    No  OK             
+db:10970733 ecuador-07                endpoint:10970733:1 node:1  single    No  OK             
+db:10976142 japan-01                  endpoint:10976142:1 node:7  single    No  OK             
+db:10976411 south_africa-09           endpoint:10976411:1 node:4  single    No  OK             
+db:10976667 canada-04                 endpoint:10976667:1 node:2  single    No  OK             
+db:11000324 vanuatu-09                endpoint:11000324:1 node:1  single    No  OK             
+db:11000446 switzerland-01            endpoint:11000446:1 node:4  single    No  OK             
+db:11057314 nicaragua-03              endpoint:11057314:1 node:8  single    No  OK             
+db:11059254 lithuania-09              endpoint:11059254:1 node:5  single    No  OK             
+db:11064913 chile-01                  endpoint:11064913:1 node:4  single    No  OK             
+db:11064929 qatar-01                  endpoint:11064929:1 node:1  single    No  OK             
+db:11074360 mali-09                   endpoint:11074360:1 node:1  single    No  OK             
+db:11094354 ghana-01                  endpoint:11094354:1 node:2  single    No  OK             
+db:11099527 cape_verde-02             endpoint:11099527:1 node:1  single    No  OK             
+db:11100223 jordan-02                 endpoint:11100223:1 node:1  single    No  OK             
+db:11100249 barbados-01               endpoint:11100249:1 node:4  single    No  OK             
+db:11100271 slovenia-03               endpoint:11100271:1 node:1  single    No  OK             
+db:11100361 yemen-03                  endpoint:11100361:1 node:4  single    No  OK             
+db:11100397 mauritius-01              endpoint:11100397:1 node:1  single    No  OK             
+db:11100427 indonesia-07              endpoint:11100427:1 node:7  single    No  OK             
+db:11101622 togo-04                   endpoint:11101622:1 node:8  single    No  OK             
+db:11104743 nepal-06                  endpoint:11104743:1 node:4  single    No  OK             
+db:11111519 mongolia-05               endpoint:11111519:1 node:1  single    No  OK             
+db:11149753 botswana-07               endpoint:11149753:1 node:5  single    No  OK             
+db:11205254 sierra_leone-07           endpoint:11205254:1 node:5  single    No  OK             
+db:11205308 guatemala-09              endpoint:11205308:1 node:5  single    No  OK             
+db:11205360 lebanon-04                endpoint:11205360:1 node:5  single    No  OK             
+db:11228850 cuba-05                   endpoint:11228850:1 node:5  single    No  OK             
+db:11270101 vatican_city-00           endpoint:11270101:1 node:5  single    No  OK             
+db:11348592 bhutan-00                 endpoint:11348592:1 node:4  single    No  OK             
+db:11348659 poland-04                 endpoint:11348659:1 node:4  single    No  OK             
+db:11360360 uzbekistan-08             endpoint:11360360:1 node:4  single    No  OK             
+db:11370003 the_gambia-04             endpoint:11370003:1 node:4  single    No  OK             
+db:11370097 kuwait-09                 endpoint:11370097:1 node:4  single    No  OK             
+db:11382569 suriname-05               endpoint:11382569:1 node:4  single    No  OK             
+db:11382573 myanmar_burma-03          endpoint:11382573:1 node:4  single    No  OK             
+db:11386914 luxembourg-05             endpoint:11386914:1 node:4  single    No  OK             
+db:11386994 armenia-06                endpoint:11386994:1 node:4  single    No  OK             
+db:11392720 estonia-01                endpoint:11392720:1 node:4  single    No  OK             
+db:11395562 finland-01                endpoint:11395562:1 node:4  single    No  OK             
+db:11404149 trinidad_and_tobago-04    endpoint:11404149:1 node:4  single    No  OK             
+db:11404210 colombia-05               endpoint:11404210:1 node:4  single    No  OK             
+db:11449503 congo-07                  endpoint:11449503:1 node:4  single    No  OK             
+db:11480858 america-01                endpoint:11480858:1 node:3  single +7 No  OK             
+db:11480858 america-01                endpoint:11480858:1 node:7  single +7 No  OK             
+db:11480860 djibouti-07               endpoint:11480860:1 node:4  single    No  OK             
+db:11480956 cyprus-05                 endpoint:11480956:1 node:8  single    No  OK             
+db:11505944 burundi-03                endpoint:11505944:1 node:4  single    No  OK             
+db:11505986 guinea-bissau-09          endpoint:11505986:1 node:4  single    No  OK             
+db:11506064 belize-07                 endpoint:11506064:1 node:4  single    No  OK             
+db:11506068 bolivia-02                endpoint:11506068:1 node:4  single    No  OK             
+db:11526090 el_salvador-01            endpoint:11526090:1 node:7  single    No  OK             
+db:11526276 greece-00                 endpoint:11526276:1 node:7  single    No  OK             
+db:11546928 malta-08                  endpoint:11546928:1 node:3  single    No  OK             
+db:11579096 tonga-00                  endpoint:11579096:1 node:7  single    No  OK             
+db:11579174 montenegro-02             endpoint:11579174:1 node:3  single    No  OK             
+db:11592128 lesotho-05                endpoint:11592128:1 node:3  single    No  OK             
+db:11623190 taiwan-08                 endpoint:11623190:1 node:3  single    No  OK             
+db:11623207 comoros-05                endpoint:11623207:1 node:7  single    No  OK             
+db:11644326 serbia-09                 endpoint:11644326:1 node:7  single    No  OK             
+db:11660545 georgia-00                endpoint:11660545:1 node:7  single    No  OK             
+db:11669400 austria-05                endpoint:11669400:1 node:13 single    No  OK             
+db:11674049 slovakia-09               endpoint:11674049:1 node:3  single    No  OK             
+db:11683594 belgium-04                endpoint:11683594:1 node:7  single    No  OK             
+db:11688867 denmark-04                endpoint:11688867:1 node:3  single    No  OK             
+db:11691237 zimbabwe-08               endpoint:11691237:1 node:3  single    No  OK             
+db:11698888 norway-01                 endpoint:11698888:1 node:7  single    No  OK             
+db:11704829 liechtenstein-00          endpoint:11704829:1 node:3  single    No  OK             
+db:11723681 korea_north-08            endpoint:11723681:1 node:11 single    No  OK             
+db:11723931 algeria-04                endpoint:11723931:1 node:11 single    No  OK             
+db:11731532 tajikistan-00             endpoint:11731532:1 node:11 single    No  OK             
+db:11731533 niger-01                  endpoint:11731533:1 node:11 single    No  OK             
+db:11745396 kyrgyzstan-07             endpoint:11745396:1 node:10 single    No  OK             
+db:11750694 china-06                  endpoint:11750694:1 node:10 single    No  OK             
+db:11750695 saint_vincent-09          endpoint:11750695:1 node:10 single    No  OK             
+db:11752495 united_arab_emirates-07   endpoint:11752495:1 node:10 single    No  OK             
+db:11752710 costa_rica-00             endpoint:11752710:1 node:10 single    No  OK             
+db:11754134 gabon-01                  endpoint:11754134:1 node:3  single    No  OK             
+db:11781476 libya-05                  endpoint:11781476:1 node:3  single    No  OK             
+db:11791108 bulgaria-06               endpoint:11791108:1 node:10 single    No  OK             
+db:11817625 san_marino-05             endpoint:11817625:1 node:10 single    No  OK             
+db:11817643 ireland-06                endpoint:11817643:1 node:10 single    No  OK             
+db:11901746 iraq-01                   endpoint:11901746:1 node:12 single    No  OK             
+db:11928255 iceland-05                endpoint:11928255:1 node:13 single    No  OK             
+db:11932976 kazakhstan-06             endpoint:11932976:1 node:13 single    No  OK             
+db:11936302 saudi_arabia-06           endpoint:11936302:1 node:13 single    No  OK             
+db:11936304 israel-05                 endpoint:11936304:1 node:13 single    No  OK             
+db:11938340 rwanda-08                 endpoint:11938340:1 node:13 single    No  OK             
+db:11940842 ukraine-03                endpoint:11940842:1 node:13 single    No  OK             
+db:11946090 netherlands-01            endpoint:11946090:1 node:13 single    No  OK             
+db:11960040 south_sudan-01            endpoint:11960040:1 node:13 single    No  OK             
+db:11987868 portugal-05               endpoint:11987868:1 node:13 single    No  OK             
+db:11990828 east_timor-03             endpoint:11990828:1 node:13 single    No  OK             
+db:11990855 kiribati-05               endpoint:11990855:1 node:5  single    No  OK             
+db:12063896 liberia-08                endpoint:12063896:1 node:3  single    No  OK             
+db:12131670 hungary-04                endpoint:12131670:1 node:3  single    No  OK             
+db:12195007 moldova-06                endpoint:12195007:1 node:3  single    No  OK             
+
+SHARDS:
+DB:ID       NAME                      ID        NODE    ROLE   SLOTS       USED_MEMORY BACKUP_PROGRESS RAM_FRAG  WATCHDOG_STATUS STATUS
+db:10567021 sudan-02                  redis:5   node:7  master 0-16383     10.33GB     N/A             513.38MB  OK              OK    
+db:10567021 sudan-02                  redis:6   node:13 slave  0-16383     10.34GB     N/A             956.89MB  OK              OK    
+db:10567048 cambodia-00               redis:7   node:8  slave  8192-16383  486.57MB    N/A             22.57MB   OK              OK    
+db:10567048 cambodia-00               redis:8   node:1  master 0-8191      1.03GB      N/A             41.48MB   OK              OK    
+db:10567048 cambodia-00               redis:635 node:8  slave  0-8191      1.03GB      N/A             38.49MB   OK              OK    
+db:10567048 cambodia-00               redis:636 node:1  master 8192-16383  486.13MB    N/A             30.93MB   OK              OK    
+db:10567057 ethiopia-05               redis:9   node:8  slave  8192-16383  1.16GB      N/A             55.52MB   OK              OK    
+db:10567057 ethiopia-05               redis:10  node:1  master 0-8191      2.32GB      N/A             127MB     OK              OK    
+db:10567057 ethiopia-05               redis:813 node:8  slave  0-8191      2.32GB      N/A             123.95MB  OK              OK    
+db:10567057 ethiopia-05               redis:814 node:1  master 8192-16383  1.16GB      N/A             61.33MB   OK              OK    
+db:10567069 tanzania-06               redis:11  node:1  master 0-8191      138.66MB    N/A             11.44MB   OK              OK    
+db:10567069 tanzania-06               redis:12  node:2  slave  8192-16383  119.48MB    N/A             7.52MB    OK              OK    
+db:10567069 tanzania-06               redis:631 node:11 slave  0-8191      137.89MB    N/A             11.31MB   OK              OK    
+db:10567069 tanzania-06               redis:632 node:1  master 8192-16383  119.57MB    N/A             8.58MB    OK              OK    
+db:10568177 namibia-01                redis:15  node:1  master 0-8191      916.97MB    N/A             3.57GB    OK              OK    
+db:10568177 namibia-01                redis:16  node:2  slave  8192-16383  323.61MB    N/A             1.77GB    OK              OK    
+db:10568177 namibia-01                redis:395 node:8  slave  0-8191      898.95MB    N/A             3.26GB    OK              OK    
+db:10568177 namibia-01                redis:396 node:1  master 8192-16383  323.08MB    N/A             1.79GB    OK              OK    
+db:10570439 australia-09              redis:19  node:1  master 0-8191      158.43MB    N/A             18.58MB   OK              OK    
+db:10570439 australia-09              redis:20  node:2  slave  8192-16383  118.62MB    N/A             14.84MB   OK              OK    
+db:10570439 australia-09              redis:443 node:9  slave  0-8191      157.25MB    N/A             17.82MB   OK              OK    
+db:10570439 australia-09              redis:444 node:1  master 8192-16383  116.13MB    N/A             17.07MB   OK              OK    
+db:10570451 uruguay-06                redis:21  node:2  slave  8192-16383  303.58MB    N/A             70.57MB   OK              OK    
+db:10570451 uruguay-06                redis:22  node:1  master 0-8191      345.75MB    N/A             65.85MB   OK              OK    
+db:10570451 uruguay-06                redis:751 node:8  slave  0-8191      347.2MB     N/A             64.92MB   OK              OK    
+db:10570451 uruguay-06                redis:752 node:1  master 8192-16383  302.46MB    N/A             74.35MB   OK              OK    
+db:10570461 romania-06                redis:25  node:2  slave  8192-16383  152.8MB     N/A             9.16MB    OK              OK    
+db:10570461 romania-06                redis:26  node:1  master 0-8191      219.25MB    N/A             23.82MB   OK              OK    
+db:10570461 romania-06                redis:633 node:11 slave  0-8191      218.44MB    N/A             23.63MB   OK              OK    
+db:10570461 romania-06                redis:634 node:1  master 8192-16383  153.95MB    N/A             11.14MB   OK              OK    
+db:10570463 vietnam-00                redis:27  node:7  master 0-16383     10.83GB     N/A             1.06GB    OK              OK    
+db:10570463 vietnam-00                redis:28  node:8  slave  0-16383     10.87GB     N/A             1GB       OK              OK    
+db:10570481 guinea-06                 redis:35  node:1  master 0-8191      1.9GB       N/A             1.35GB    OK              OK    
+db:10570481 guinea-06                 redis:36  node:8  slave  8192-16383  751.12MB    N/A             600MB     OK              OK    
+db:10570481 guinea-06                 redis:417 node:8  slave  0-8191      1.91GB      N/A             1.36GB    OK              OK    
+db:10570481 guinea-06                 redis:418 node:1  master 8192-16383  757.7MB     N/A             961.31MB  OK              OK    
+db:10570487 italy-07                  redis:37  node:2  master 0-8191      6.66GB      N/A             220.35MB  OK              OK    
+db:10570487 italy-07                  redis:38  node:10 slave  8192-16383  3.06GB      N/A             147.79MB  OK              OK    
+db:10570487 italy-07                  redis:935 node:10 slave  0-8191      6.63GB      N/A             205.15MB  OK              OK    
+db:10570487 italy-07                  redis:936 node:2  master 8192-16383  3.15GB      N/A             156.67MB  OK              OK    
+db:10570491 saint_lucia-04            redis:39  node:1  master 0-8191      534.97MB    N/A             183.41MB  OK              OK    
+db:10570491 saint_lucia-04            redis:40  node:2  slave  8192-16383  284.16MB    N/A             368.82MB  OK              OK    
+db:10570491 saint_lucia-04            redis:445 node:9  slave  0-8191      536.25MB    N/A             179.64MB  OK              OK    
+db:10570491 saint_lucia-04            redis:446 node:1  master 8192-16383  284.6MB     N/A             367.87MB  OK              OK    
+db:10570497 samoa-01                  redis:41  node:2  slave  8192-16383  2.04GB      N/A             656.18MB  OK              OK    
+db:10570497 samoa-01                  redis:42  node:1  master 0-8191      3.68GB      N/A             1.02GB    OK              OK    
+db:10570497 samoa-01                  redis:755 node:11 slave  0-8191      3.66GB      N/A             532.71MB  OK              OK    
+db:10570497 samoa-01                  redis:756 node:1  master 8192-16383  2.04GB      N/A             667.82MB  OK              OK    
+db:10570505 guyana-00                 redis:45  node:9  slave  0-16383     11.2GB      N/A             1.04GB    OK              OK    
+db:10570505 guyana-00                 redis:46  node:7  master 0-16383     11.21GB     N/A             1.06GB    OK              OK    
+db:10570881 oman-09                   redis:53  node:2  slave  8192-16383  333.87MB    N/A             171.15MB  OK              OK    
+db:10570881 oman-09                   redis:54  node:1  master 0-8191      441.16MB    N/A             265.69MB  OK              OK    
+db:10570881 oman-09                   redis:749 node:8  slave  0-8191      439.82MB    N/A             273.1MB   OK              OK    
+db:10570881 oman-09                   redis:750 node:1  master 8192-16383  332.68MB    N/A             173.37MB  OK              OK    
+db:10571129 angola-05                 redis:57  node:2  slave  8192-16383  118.08MB    N/A             18.63MB   OK              OK    
+db:10571129 angola-05                 redis:58  node:1  master 0-8191      154.07MB    N/A             22.42MB   OK              OK    
+db:10571129 angola-05                 redis:441 node:9  slave  0-8191      152.21MB    N/A             21.64MB   OK              OK    
+db:10571129 angola-05                 redis:442 node:1  master 8192-16383  116.51MB    N/A             20.86MB   OK              OK    
+db:10573412 afghanistan-08            redis:59  node:1  master 0-8191      1.25GB      N/A             104.2MB   OK              OK    
+db:10573412 afghanistan-08            redis:60  node:8  slave  8192-16383  840.03MB    N/A             38.45MB   OK              OK    
+db:10573412 afghanistan-08            redis:629 node:8  slave  0-8191      1.25GB      N/A             102.61MB  OK              OK    
+db:10573412 afghanistan-08            redis:630 node:1  master 8192-16383  839.44MB    N/A             43.01MB   OK              OK    
+db:10573485 papua_new_guinea-04       redis:65  node:8  slave  8192-16383  1.99GB      N/A             2.61GB    OK              OK    
+db:10573485 papua_new_guinea-04       redis:66  node:3  slave  0-8191      3.76GB      N/A             7.48GB    OK              OK    
+db:10573485 papua_new_guinea-04       redis:809 node:8  master 0-8191      3.87GB      N/A             2.4GB     OK              OK    
+db:10573485 papua_new_guinea-04       redis:810 node:1  master 8192-16383  1.95GB      N/A             2.64GB    OK              OK    
+db:10573508 mauritania-07             redis:67  node:1  master 0-8191      85.28MB     N/A             7.35MB    OK              OK    
+db:10573508 mauritania-07             redis:68  node:2  slave  8192-16383  76.07MB     N/A             5.94MB    OK              OK    
+db:10573508 mauritania-07             redis:697 node:11 slave  0-8191      84.43MB     N/A             7.15MB    OK              OK    
+db:10573508 mauritania-07             redis:698 node:1  master 8192-16383  76.28MB     N/A             7.87MB    OK              OK    
+db:10573553 antigua_and_barbuda-07    redis:71  node:1  master 0-8191      194.49MB    N/A             17.6MB    OK              OK    
+db:10573553 antigua_and_barbuda-07    redis:72  node:2  slave  8192-16383  146.89MB    N/A             15.31MB   OK              OK    
+db:10573553 antigua_and_barbuda-07    redis:643 node:11 slave  0-8191      194.13MB    N/A             17.02MB   OK              OK    
+db:10573553 antigua_and_barbuda-07    redis:644 node:1  master 8192-16383  147.5MB     N/A             16.64MB   OK              OK    
+db:10573574 chad-06                   redis:73  node:2  slave  8192-16383  170.88MB    N/A             10.13MB   OK              OK    
+db:10573574 chad-06                   redis:74  node:1  master 0-8191      227.7MB     N/A             24.74MB   OK              OK    
+db:10573574 chad-06                   redis:699 node:11 slave  0-8191      225.9MB     N/A             23.94MB   OK              OK    
+db:10573574 chad-06                   redis:700 node:1  master 8192-16383  171.09MB    N/A             11.93MB   OK              OK    
+db:10573592 sri_lanka-04              redis:75  node:1  master 0-8191      362.16MB    N/A             38.82MB   OK              OK    
+db:10573592 sri_lanka-04              redis:76  node:2  slave  8192-16383  222.61MB    N/A             41.95MB   OK              OK    
+db:10573592 sri_lanka-04              redis:497 node:8  slave  0-8191      361.68MB    N/A             37.39MB   OK              OK    
+db:10573592 sri_lanka-04              redis:498 node:1  master 8192-16383  222.67MB    N/A             43.38MB   OK              OK    
+db:10573604 egypt-08                  redis:77  node:2  slave  8192-16383  73.13MB     N/A             6.6MB     OK              OK    
+db:10573604 egypt-08                  redis:78  node:1  master 0-8191      81.25MB     N/A             7.12MB    OK              OK    
+db:10573604 egypt-08                  redis:701 node:9  slave  0-8191      80.59MB     N/A             7.04MB    OK              OK    
+db:10573604 egypt-08                  redis:702 node:1  master 8192-16383  73.78MB     N/A             7.97MB    OK              OK    
+db:10573630 bangladesh-05             redis:79  node:1  master 0-8191      804.89MB    N/A             37.11MB   OK              OK    
+db:10573630 bangladesh-05             redis:80  node:2  slave  8192-16383  407.59MB    N/A             75.07MB   OK              OK    
+db:10573630 bangladesh-05             redis:435 node:9  slave  0-8191      805.92MB    N/A             35.66MB   OK              OK    
+db:10573630 bangladesh-05             redis:436 node:1  master 8192-16383  408.15MB    N/A             76.52MB   OK              OK    
+db:10573658 new_zealand-09            redis:81  node:2  slave  8192-16383  329.48MB    N/A             302.45MB  OK              OK    
+db:10573658 new_zealand-09            redis:82  node:12 slave  0-8191      523.5MB     N/A             386.11MB  OK              OK    
+db:10573658 new_zealand-09            redis:449 node:9  master 0-8191      526.18MB    N/A             494.55MB  OK              OK    
+db:10573658 new_zealand-09            redis:450 node:7  master 8192-16383  330.1MB     N/A             305.85MB  OK              OK    
+db:10573664 belarus-09                redis:83  node:1  master 0-8191      585.73MB    N/A             271.18MB  OK              OK    
+db:10573664 belarus-09                redis:84  node:2  slave  8192-16383  359.27MB    N/A             182.83MB  OK              OK    
+db:10573664 belarus-09                redis:431 node:9  slave  0-8191      587.79MB    N/A             285.01MB  OK              OK    
+db:10573664 belarus-09                redis:432 node:1  master 8192-16383  358.84MB    N/A             178.79MB  OK              OK    
+db:10578424 albania-00                redis:89  node:9  slave  8192-16383  3.42GB      N/A             87.27MB   OK              OK    
+db:10578424 albania-00                redis:90  node:1  master 0-8191      3.51GB      N/A             133.76MB  OK              OK    
+db:10578424 albania-00                redis:439 node:13 slave  0-8191      3.5GB       N/A             110.71MB  OK              OK    
+db:10578424 albania-00                redis:440 node:1  master 8192-16383  3.43GB      N/A             129.01MB  OK              OK    
+db:10578426 kenya-01                  redis:91  node:1  master 0-8191      3.32GB      N/A             411.93MB  OK              OK    
+db:10578426 kenya-01                  redis:92  node:8  slave  8192-16383  1.9GB       N/A             79.23MB   OK              OK    
+db:10578426 kenya-01                  redis:385 node:8  slave  0-8191      3.33GB      N/A             276.53MB  OK              OK    
+db:10578426 kenya-01                  redis:386 node:1  master 8192-16383  1.91GB      N/A             201.22MB  OK              OK    
+db:10581662 peru-09                   redis:99  node:2  slave  0-16383     15.18MB     N/A             6.6MB     OK              OK    
+db:10581662 peru-09                   redis:100 node:1  master 0-16383     15.71MB     N/A             10.03MB   OK              OK    
+db:10635091 united_kingdom-01         redis:103 node:13 slave  8192-16383  145.69MB    N/A             10.89MB   OK              OK    
+db:10635091 united_kingdom-01         redis:104 node:1  master 0-8191      242.98MB    N/A             13.31MB   OK              OK    
+db:10635091 united_kingdom-01         redis:941 node:13 slave  0-8191      243.27MB    N/A             11.75MB   OK              OK    
+db:10635091 united_kingdom-01         redis:942 node:1  master 8192-16383  146.3MB     N/A             12.75MB   OK              OK    
+db:10637826 brunei-07                 redis:105 node:1  master 0-8191      70.54MB     N/A             6.54MB    OK              OK    
+db:10637826 brunei-07                 redis:106 node:13 slave  8192-16383  63.49MB     N/A             6.35MB    OK              OK    
+db:10637826 brunei-07                 redis:937 node:13 slave  0-8191      70.19MB     N/A             6.32MB    OK              OK    
+db:10637826 brunei-07                 redis:938 node:1  master 8192-16383  65.55MB     N/A             9.38MB    OK              OK    
+db:10637870 kosovo-04                 redis:107 node:13 slave  8192-16383  53.25MB     N/A             6.06MB    OK              OK    
+db:10637870 kosovo-04                 redis:108 node:1  master 0-8191      67.04MB     N/A             6.52MB    OK              OK    
+db:10637870 kosovo-04                 redis:939 node:13 slave  0-8191      66.3MB      N/A             6.39MB    OK              OK    
+db:10637870 kosovo-04                 redis:940 node:1  master 8192-16383  54.14MB     N/A             8.29MB    OK              OK    
+db:10664633 spain-05                  redis:109 node:1  master 0-8191      120.03MB    N/A             14.68MB   OK              OK    
+db:10664633 spain-05                  redis:110 node:2  slave  8192-16383  88.99MB     N/A             8.86MB    OK              OK    
+db:10664633 spain-05                  redis:673 node:11 slave  0-8191      118.69MB    N/A             14.33MB   OK              OK    
+db:10664633 spain-05                  redis:674 node:1  master 8192-16383  89.45MB     N/A             10.23MB   OK              OK    
+db:10673608 honduras-08               redis:113 node:1  master 0-8191      838.15MB    N/A             288.48MB  OK              OK    
+db:10673608 honduras-08               redis:114 node:2  slave  8192-16383  509.89MB    N/A             251.33MB  OK              OK    
+db:10673608 honduras-08               redis:803 node:8  slave  0-8191      835.25MB    N/A             285.95MB  OK              OK    
+db:10673608 honduras-08               redis:804 node:1  master 8192-16383  509.36MB    N/A             257.18MB  OK              OK    
+db:10744949 germany-00                redis:117 node:1  master 0-8191      178.32MB    N/A             25.78MB   OK              OK    
+db:10744949 germany-00                redis:118 node:2  slave  8192-16383  120.61MB    N/A             20.49MB   OK              OK    
+db:10744949 germany-00                redis:805 node:11 slave  0-8191      177.86MB    N/A             23.77MB   OK              OK    
+db:10744949 germany-00                redis:806 node:1  master 8192-16383  120.29MB    N/A             25.21MB   OK              OK    
+db:10746269 uganda-09                 redis:121 node:1  master 0-8191      382.95MB    N/A             70.3MB    OK              OK    
+db:10746269 uganda-09                 redis:122 node:2  slave  8192-16383  234.25MB    N/A             67.77MB   OK              OK    
+db:10746269 uganda-09                 redis:807 node:8  slave  0-8191      382.71MB    N/A             72.55MB   OK              OK    
+db:10746269 uganda-09                 redis:808 node:1  master 8192-16383  231.89MB    N/A             70.68MB   OK              OK    
+db:10791226 senegal-03                redis:131 node:2  slave  8192-16383  92.98MB     N/A             12.78MB   OK              OK    
+db:10791226 senegal-03                redis:132 node:1  master 0-8191      124.75MB    N/A             18.12MB   OK              OK    
+db:10791226 senegal-03                redis:649 node:11 slave  0-8191      124.23MB    N/A             17.65MB   OK              OK    
+db:10791226 senegal-03                redis:650 node:1  master 8192-16383  93.99MB     N/A             14.28MB   OK              OK    
+db:10792938 malawi-07                 redis:133 node:1  master 0-8191      77.6MB      N/A             6.51MB    OK              OK    
+db:10792938 malawi-07                 redis:134 node:2  slave  8192-16383  69.91MB     N/A             6.16MB    OK              OK    
+db:10792938 malawi-07                 redis:695 node:9  slave  0-8191      76.87MB     N/A             6.45MB    OK              OK    
+db:10792938 malawi-07                 redis:696 node:1  master 8192-16383  70.61MB     N/A             7.27MB    OK              OK    
+db:10794586 bahrain-06                redis:135 node:2  slave  8192-16383  188.87MB    N/A             23.85MB   OK              OK    
+db:10794586 bahrain-06                redis:136 node:1  master 0-8191      299.12MB    N/A             34.45MB   OK              OK    
+db:10794586 bahrain-06                redis:451 node:9  slave  0-8191      299.82MB    N/A             33.67MB   OK              OK    
+db:10794586 bahrain-06                redis:452 node:1  master 8192-16383  190.11MB    N/A             25.96MB   OK              OK    
+db:10826730 zambia-04                 redis:139 node:2  slave  0-16383     22.1MB      N/A             4.27MB    OK              OK    
+db:10826730 zambia-04                 redis:140 node:1  master 0-16383     22.23MB     N/A             5.14MB    OK              OK    
+db:10826752 azerbaijan-03             redis:141 node:1  master 0-16383     16.44MB     N/A             5.15MB    OK              OK    
+db:10826752 azerbaijan-03             redis:142 node:2  slave  0-16383     16.32MB     N/A             4.26MB    OK              OK    
+db:10827149 burkina_faso-07           redis:143 node:2  slave  0-16383     9.29MB      N/A             3.38MB    OK              OK    
+db:10827149 burkina_faso-07           redis:144 node:1  master 0-16383     9.39MB      N/A             3.78MB    OK              OK    
+db:10836133 turkey-02                 redis:145 node:1  master 0-16383     9.64MB      N/A             3.92MB    OK              OK    
+db:10836133 turkey-02                 redis:146 node:2  slave  0-16383     9.07MB      N/A             3.35MB    OK              OK    
+db:10902855 benin-04                  redis:157 node:5  slave  0-16383     9.05MB      N/A             3.19MB    OK              OK    
+db:10902855 benin-04                  redis:158 node:1  master 0-16383     9.29MB      N/A             3.85MB    OK              OK    
+db:10904612 philippines-06            redis:159 node:5  slave  0-16383     9.47MB      N/A             2.98MB    OK              OK    
+db:10904612 philippines-06            redis:160 node:1  master 0-16383     9.56MB      N/A             3.88MB    OK              OK    
+db:10904823 cote_d'ivoire-04          redis:163 node:4  master 0-16383     9.48MB      N/A             4.47MB    OK              OK    
+db:10904823 cote_d'ivoire-04          redis:164 node:2  slave  0-16383     9.26MB      N/A             4.58MB    OK              OK    
+db:10904833 korea_south-03            redis:165 node:5  slave  0-16383     10.8MB      N/A             3.15MB    OK              OK    
+db:10904833 korea_south-03            redis:166 node:1  master 0-16383     9.41MB      N/A             4.87MB    OK              OK    
+db:10950418 laos-01                   redis:169 node:8  slave  8192-16383  103.24MB    N/A             9.51MB    OK              OK    
+db:10950418 laos-01                   redis:170 node:1  master 0-8191      129.45MB    N/A             11.17MB   OK              OK    
+db:10950418 laos-01                   redis:657 node:11 slave  0-8191      128.5MB     N/A             10.85MB   OK              OK    
+db:10950418 laos-01                   redis:658 node:1  master 8192-16383  104.85MB    N/A             10.39MB   OK              OK    
+db:10970733 ecuador-07                redis:171 node:8  slave  8192-16383  64.26MB     N/A             5.34MB    OK              OK    
+db:10970733 ecuador-07                redis:172 node:1  master 0-8191      71.81MB     N/A             6.83MB    OK              OK    
+db:10970733 ecuador-07                redis:645 node:11 slave  0-8191      71.12MB     N/A             6.54MB    OK              OK    
+db:10970733 ecuador-07                redis:646 node:1  master 8192-16383  63.86MB     N/A             8.07MB    OK              OK    
+db:10976142 japan-01                  redis:173 node:7  master 8192-16383  3.04GB      N/A             3.26GB    OK              OK    
+db:10976142 japan-01                  redis:174 node:2  slave  0-8191      6.4GB       N/A             2.72GB    OK              OK    
+db:10976142 japan-01                  redis:931 node:7  master 0-8191      6.46GB      N/A             2.73GB    OK              OK    
+db:10976142 japan-01                  redis:932 node:9  slave  8192-16383  3.06GB      N/A             3.25GB    OK              OK    
+db:10976411 south_africa-09           redis:177 node:4  master 0-8191      142.02MB    N/A             162.88MB  OK              OK    
+db:10976411 south_africa-09           redis:178 node:2  slave  8192-16383  108.88MB    N/A             149.52MB  OK              OK    
+db:10976411 south_africa-09           redis:639 node:11 slave  0-8191      142.05MB    N/A             163.73MB  OK              OK    
+db:10976411 south_africa-09           redis:640 node:4  master 8192-16383  110.64MB    N/A             150.09MB  OK              OK    
+db:10976667 canada-04                 redis:179 node:3  slave  8192-16383  3.06GB      N/A             2.18GB    OK              OK    
+db:10976667 canada-04                 redis:180 node:2  master 0-8191      6.74GB      N/A             1.74GB    OK              OK    
+db:10976667 canada-04                 redis:933 node:10 slave  0-8191      6.66GB      N/A             1.76GB    OK              OK    
+db:10976667 canada-04                 redis:934 node:2  master 8192-16383  3.01GB      N/A             2.47GB    OK              OK    
+db:11000324 vanuatu-09                redis:183 node:8  slave  8192-16383  83.29MB     N/A             5.52MB    OK              OK    
+db:11000324 vanuatu-09                redis:184 node:1  master 0-8191      101.74MB    N/A             11MB      OK              OK    
+db:11000324 vanuatu-09                redis:675 node:11 slave  0-8191      101.83MB    N/A             10.99MB   OK              OK    
+db:11000324 vanuatu-09                redis:676 node:1  master 8192-16383  81.5MB      N/A             8.03MB    OK              OK    
+db:11000446 switzerland-01            redis:185 node:4  master 0-8191      110.29MB    N/A             11.96MB   OK              OK    
+db:11000446 switzerland-01            redis:186 node:2  slave  8192-16383  85.05MB     N/A             6.04MB    OK              OK    
+db:11000446 switzerland-01            redis:677 node:11 slave  0-8191      109.56MB    N/A             11.43MB   OK              OK    
+db:11000446 switzerland-01            redis:678 node:4  master 8192-16383  84.83MB     N/A             8.72MB    OK              OK    
+db:11057314 nicaragua-03              redis:209 node:10 slave  0-8191      625.64MB    N/A             59.89MB   OK              OK    
+db:11057314 nicaragua-03              redis:210 node:8  master 8192-16383  524.96MB    N/A             22.94MB   OK              OK    
+db:11057314 nicaragua-03              redis:391 node:8  master 0-8191      627.1MB     N/A             73.16MB   OK              OK    
+db:11057314 nicaragua-03              redis:392 node:10 slave  8192-16383  524.44MB    N/A             10.62MB   OK              OK    
+db:11059254 lithuania-09              redis:213 node:12 slave  0-8191      31.98GB     N/A             614.23MB  OK              OK    
+db:11059254 lithuania-09              redis:214 node:8  master 8192-16383  31.01GB     N/A             845MB     OK              OK    
+db:11059254 lithuania-09              redis:389 node:5  master 0-8191      31.99GB     N/A             1.05GB    OK              OK    
+db:11059254 lithuania-09              redis:390 node:7  slave  8192-16383  31.01GB     N/A             650.84MB  OK              OK    
+db:11064913 chile-01                  redis:215 node:4  master 0-8191      20.64MB     N/A             9.71MB    OK              OK    
+db:11064913 chile-01                  redis:216 node:2  slave  0-8191      19.98MB     N/A             7.97MB    OK              OK    
+db:11064913 chile-01                  redis:217 node:4  master 8192-16383  19.18MB     N/A             11.5MB    OK              OK    
+db:11064913 chile-01                  redis:218 node:2  slave  8192-16383  18.2MB      N/A             10.76MB   OK              OK    
+db:11064929 qatar-01                  redis:219 node:8  slave  0-8191      88.9MB      N/A             8.38MB    OK              OK    
+db:11064929 qatar-01                  redis:220 node:1  master 0-8191      96.68MB     N/A             9.8MB     OK              OK    
+db:11064929 qatar-01                  redis:221 node:8  slave  8192-16383  91.17MB     N/A             8.11MB    OK              OK    
+db:11064929 qatar-01                  redis:222 node:1  master 8192-16383  99.52MB     N/A             9.15MB    OK              OK    
+db:11074360 mali-09                   redis:227 node:8  slave  8192-16383  63.04MB     N/A             5.92MB    OK              OK    
+db:11074360 mali-09                   redis:228 node:1  master 0-8191      70.09MB     N/A             6.47MB    OK              OK    
+db:11074360 mali-09                   redis:739 node:9  slave  0-8191      70.14MB     N/A             6.07MB    OK              OK    
+db:11074360 mali-09                   redis:740 node:1  master 8192-16383  63.76MB     N/A             7.42MB    OK              OK    
+db:11094354 ghana-01                  redis:229 node:10 slave  0-5460      1.07GB      N/A             963.03MB  OK              OK    
+db:11094354 ghana-01                  redis:230 node:2  master 0-5460      1.1GB       N/A             1.01GB    OK              OK    
+db:11094354 ghana-01                  redis:231 node:10 slave  5461-10922  500.98MB    N/A             734.73MB  OK              OK    
+db:11094354 ghana-01                  redis:232 node:2  master 5461-10922  524.58MB    N/A             805.19MB  OK              OK    
+db:11094354 ghana-01                  redis:233 node:10 slave  10923-16383 505.87MB    N/A             1.38GB    OK              OK    
+db:11094354 ghana-01                  redis:234 node:2  master 10923-16383 528.22MB    N/A             1.46GB    OK              OK    
+db:11099527 cape_verde-02             redis:235 node:8  slave  8192-16383  2.72GB      N/A             46.13MB   OK              OK    
+db:11099527 cape_verde-02             redis:236 node:1  master 0-8191      2.77GB      N/A             112.45MB  OK              OK    
+db:11099527 cape_verde-02             redis:437 node:9  slave  0-8191      2.78GB      N/A             107.86MB  OK              OK    
+db:11099527 cape_verde-02             redis:438 node:1  master 8192-16383  2.72GB      N/A             105.67MB  OK              OK    
+db:11100223 jordan-02                 redis:237 node:8  slave  0-8191      251.65MB    N/A             23.54MB   OK              OK    
+db:11100223 jordan-02                 redis:238 node:1  master 0-8191      252.89MB    N/A             132.22MB  OK              OK    
+db:11100223 jordan-02                 redis:239 node:8  slave  8192-16383  163.55MB    N/A             25.44MB   OK              OK    
+db:11100223 jordan-02                 redis:240 node:1  master 8192-16383  163.56MB    N/A             185.27MB  OK              OK    
+db:11100249 barbados-01               redis:241 node:4  master 0-8191      351.2MB     N/A             98.49MB   OK              OK    
+db:11100249 barbados-01               redis:242 node:2  slave  0-8191      352.27MB    N/A             114.45MB  OK              OK    
+db:11100249 barbados-01               redis:243 node:4  master 8192-16383  231.58MB    N/A             74.67MB   OK              OK    
+db:11100249 barbados-01               redis:244 node:2  slave  8192-16383  233.71MB    N/A             100.76MB  OK              OK    
+db:11100271 slovenia-03               redis:245 node:2  slave  0-5460      847.84MB    N/A             719.53MB  OK              OK    
+db:11100271 slovenia-03               redis:246 node:1  master 0-5460      849.86MB    N/A             657.91MB  OK              OK    
+db:11100271 slovenia-03               redis:247 node:8  slave  5461-10922  433MB       N/A             262.67MB  OK              OK    
+db:11100271 slovenia-03               redis:248 node:1  master 5461-10922  430.74MB    N/A             360.55MB  OK              OK    
+db:11100271 slovenia-03               redis:249 node:8  slave  10923-16383 429.05MB    N/A             306.06MB  OK              OK    
+db:11100271 slovenia-03               redis:250 node:1  master 10923-16383 426.08MB    N/A             444.21MB  OK              OK    
+db:11100361 yemen-03                  redis:251 node:4  master 0-8191      343.75MB    N/A             101.3MB   OK              OK    
+db:11100361 yemen-03                  redis:252 node:2  slave  0-8191      339.29MB    N/A             100.67MB  OK              OK    
+db:11100361 yemen-03                  redis:253 node:4  master 8192-16383  225.67MB    N/A             103.8MB   OK              OK    
+db:11100361 yemen-03                  redis:254 node:2  slave  8192-16383  225.78MB    N/A             104.8MB   OK              OK    
+db:11100397 mauritius-01              redis:255 node:8  slave  0-8191      304.46MB    N/A             53.06MB   OK              OK    
+db:11100397 mauritius-01              redis:256 node:1  master 0-8191      309.14MB    N/A             61.65MB   OK              OK    
+db:11100397 mauritius-01              redis:257 node:8  slave  8192-16383  497.75MB    N/A             58.17MB   OK              OK    
+db:11100397 mauritius-01              redis:258 node:1  master 8192-16383  498.1MB     N/A             62.3MB    OK              OK    
+db:11100427 indonesia-07              redis:259 node:7  master 0-5460      1.55GB      N/A             417.64MB  OK              OK    
+db:11100427 indonesia-07              redis:260 node:2  slave  0-5460      1.55GB      N/A             432.12MB  OK              OK    
+db:11100427 indonesia-07              redis:261 node:7  master 5461-10922  3.37GB      N/A             763.59MB  OK              OK    
+db:11100427 indonesia-07              redis:262 node:13 slave  5461-10922  3.33GB      N/A             161.66MB  OK              OK    
+db:11100427 indonesia-07              redis:263 node:7  master 10923-16383 1.56GB      N/A             533.35MB  OK              OK    
+db:11100427 indonesia-07              redis:264 node:2  slave  10923-16383 1.57GB      N/A             537.96MB  OK              OK    
+db:11101622 togo-04                   redis:265 node:8  master 8192-16383  40.92GB     N/A             2.68GB    OK              OK    
+db:11101622 togo-04                   redis:266 node:12 slave  0-8191      58.15GB     N/A             1.97GB    OK              OK    
+db:11101622 togo-04                   redis:647 node:9  master 0-8191      58.12GB     N/A             2.32GB    OK              OK    
+db:11101622 togo-04                   redis:648 node:4  slave  8192-16383  40.97GB     N/A             3.95GB    OK              OK    
+db:11104743 nepal-06                  redis:269 node:4  master 0-5460      100.77MB    N/A             13.63MB   OK              OK    
+db:11104743 nepal-06                  redis:270 node:2  slave  0-5460      102.15MB    N/A             34.66MB   OK              OK    
+db:11104743 nepal-06                  redis:271 node:4  master 5461-10922  63.37MB     N/A             20.32MB   OK              OK    
+db:11104743 nepal-06                  redis:272 node:2  slave  5461-10922  62.75MB     N/A             19.86MB   OK              OK    
+db:11104743 nepal-06                  redis:273 node:4  master 10923-16383 69.84MB     N/A             12.9MB    OK              OK    
+db:11104743 nepal-06                  redis:274 node:2  slave  10923-16383 69.22MB     N/A             25.1MB    OK              OK    
+db:11111519 mongolia-05               redis:277 node:8  slave  8192-16383  69.94MB     N/A             6.88MB    OK              OK    
+db:11111519 mongolia-05               redis:278 node:1  master 0-8191      77.43MB     N/A             7.38MB    OK              OK    
+db:11111519 mongolia-05               redis:671 node:11 slave  0-8191      77.06MB     N/A             7.32MB    OK              OK    
+db:11111519 mongolia-05               redis:672 node:1  master 8192-16383  71.01MB     N/A             8.46MB    OK              OK    
+db:11149753 botswana-07               redis:283 node:5  master 0-8191      96.91MB     N/A             10.51MB   OK              OK    
+db:11149753 botswana-07               redis:284 node:7  slave  8192-16383  82.8MB      N/A             9.68MB    OK              OK    
+db:11149753 botswana-07               redis:693 node:3  slave  0-8191      96.88MB     N/A             9.34MB    OK              OK    
+db:11149753 botswana-07               redis:694 node:5  master 8192-16383  82.96MB     N/A             11.72MB   OK              OK    
+db:11205254 sierra_leone-07           redis:295 node:9  slave  0-8191      98.01MB     N/A             2.67GB    OK              OK    
+db:11205254 sierra_leone-07           redis:296 node:7  slave  8192-16383  83.42MB     N/A             448.38MB  OK              OK    
+db:11205254 sierra_leone-07           redis:653 node:10 master 0-8191      98.83MB     N/A             371.42MB  OK              OK    
+db:11205254 sierra_leone-07           redis:654 node:5  master 8192-16383  82.71MB     N/A             459.81MB  OK              OK    
+db:11205308 guatemala-09              redis:297 node:5  master 0-8191      213.93MB    N/A             89.47MB   OK              OK    
+db:11205308 guatemala-09              redis:298 node:7  slave  8192-16383  138.32MB    N/A             62.09MB   OK              OK    
+db:11205308 guatemala-09              redis:655 node:4  slave  0-8191      212.08MB    N/A             19.86MB   OK              OK    
+db:11205308 guatemala-09              redis:656 node:5  master 8192-16383  137.13MB    N/A             63.2MB    OK              OK    
+db:11205360 lebanon-04                redis:299 node:5  master 0-8191      515.05MB    N/A             83.52MB   OK              OK    
+db:11205360 lebanon-04                redis:300 node:7  slave  8192-16383  251.24MB    N/A             57.67MB   OK              OK    
+db:11205360 lebanon-04                redis:651 node:4  slave  0-8191      512.13MB    N/A             31.2MB    OK              OK    
+db:11205360 lebanon-04                redis:652 node:5  master 8192-16383  250.07MB    N/A             61.03MB   OK              OK    
+db:11228850 cuba-05                   redis:303 node:5  master 0-8191      69.54MB     N/A             6.69MB    OK              OK    
+db:11228850 cuba-05                   redis:304 node:7  slave  8192-16383  63MB        N/A             5.97MB    OK              OK    
+db:11228850 cuba-05                   redis:691 node:10 slave  0-8191      68.83MB     N/A             5.98MB    OK              OK    
+db:11228850 cuba-05                   redis:692 node:5  master 8192-16383  63.24MB     N/A             7.7MB     OK              OK    
+db:11270101 vatican_city-00           redis:309 node:5  master 0-8191      546.46MB    N/A             1.26GB    OK              OK    
+db:11270101 vatican_city-00           redis:310 node:7  slave  8192-16383  435.32MB    N/A             1.16GB    OK              OK    
+db:11270101 vatican_city-00           redis:741 node:3  slave  0-8191      548.31MB    N/A             1.21GB    OK              OK    
+db:11270101 vatican_city-00           redis:742 node:5  master 8192-16383  434.98MB    N/A             1.18GB    OK              OK    
+db:11348592 bhutan-00                 redis:315 node:4  master 0-8191      58.1MB      N/A             26.94MB   OK              OK    
+db:11348592 bhutan-00                 redis:316 node:8  slave  8192-16383  46.67MB     N/A             30.38MB   OK              OK    
+db:11348592 bhutan-00                 redis:685 node:11 slave  0-8191      56.8MB      N/A             26.58MB   OK              OK    
+db:11348592 bhutan-00                 redis:686 node:4  master 8192-16383  47.25MB     N/A             31.86MB   OK              OK    
+db:11348659 poland-04                 redis:317 node:4  master 0-8191      54.84MB     N/A             12.37MB   OK              OK    
+db:11348659 poland-04                 redis:318 node:5  slave  8192-16383  44.59MB     N/A             14.96MB   OK              OK    
+db:11348659 poland-04                 redis:683 node:11 slave  0-8191      54.31MB     N/A             11.84MB   OK              OK    
+db:11348659 poland-04                 redis:684 node:4  master 8192-16383  45.7MB      N/A             16.14MB   OK              OK    
+db:11360360 uzbekistan-08             redis:323 node:4  master 0-8191      102.65MB    N/A             42.15MB   OK              OK    
+db:11360360 uzbekistan-08             redis:324 node:5  slave  8192-16383  83.28MB     N/A             31.53MB   OK              OK    
+db:11360360 uzbekistan-08             redis:665 node:11 slave  0-8191      102.59MB    N/A             39.14MB   OK              OK    
+db:11360360 uzbekistan-08             redis:666 node:4  master 8192-16383  82.36MB     N/A             34.88MB   OK              OK    
+db:11370003 the_gambia-04             redis:327 node:4  master 0-8191      108.86MB    N/A             30.33MB   OK              OK    
+db:11370003 the_gambia-04             redis:328 node:5  slave  8192-16383  85.52MB     N/A             21.56MB   OK              OK    
+db:11370003 the_gambia-04             redis:667 node:11 slave  0-8191      108.16MB    N/A             29.58MB   OK              OK    
+db:11370003 the_gambia-04             redis:668 node:4  master 8192-16383  84.53MB     N/A             23.24MB   OK              OK    
+db:11370097 kuwait-09                 redis:329 node:4  master 0-8191      66.45MB     N/A             6.37MB    OK              OK    
+db:11370097 kuwait-09                 redis:330 node:5  slave  8192-16383  59.85MB     N/A             6.11MB    OK              OK    
+db:11370097 kuwait-09                 redis:669 node:11 slave  0-8191      65.61MB     N/A             5.84MB    OK              OK    
+db:11370097 kuwait-09                 redis:670 node:4  master 8192-16383  60.69MB     N/A             7.18MB    OK              OK    
+db:11382569 suriname-05               redis:333 node:4  master 0-8191      115.76MB    N/A             52.6MB    OK              OK    
+db:11382569 suriname-05               redis:334 node:5  slave  8192-16383  89.97MB     N/A             38.27MB   OK              OK    
+db:11382569 suriname-05               redis:679 node:11 slave  0-8191      115.56MB    N/A             52.12MB   OK              OK    
+db:11382569 suriname-05               redis:680 node:4  master 8192-16383  90.88MB     N/A             39.73MB   OK              OK    
+db:11382573 myanmar_burma-03          redis:335 node:4  master 0-8191      93.44MB     N/A             42.74MB   OK              OK    
+db:11382573 myanmar_burma-03          redis:336 node:5  slave  8192-16383  77.19MB     N/A             32.31MB   OK              OK    
+db:11382573 myanmar_burma-03          redis:681 node:11 slave  0-8191      92.76MB     N/A             40.6MB    OK              OK    
+db:11382573 myanmar_burma-03          redis:682 node:4  master 8192-16383  77.22MB     N/A             14.5MB    OK              OK    
+db:11386914 luxembourg-05             redis:337 node:4  master 0-8191      84.28MB     N/A             13.61MB   OK              OK    
+db:11386914 luxembourg-05             redis:338 node:5  slave  8192-16383  72.18MB     N/A             18.58MB   OK              OK    
+db:11386914 luxembourg-05             redis:687 node:9  slave  0-8191      83.78MB     N/A             16.75MB   OK              OK    
+db:11386914 luxembourg-05             redis:688 node:4  master 8192-16383  73.13MB     N/A             19.49MB   OK              OK    
+db:11386994 armenia-06                redis:339 node:4  master 0-8191      80.33MB     N/A             7.39MB    OK              OK    
+db:11386994 armenia-06                redis:340 node:5  slave  8192-16383  66.62MB     N/A             6.37MB    OK              OK    
+db:11386994 armenia-06                redis:689 node:11 slave  0-8191      79.58MB     N/A             7.3MB     OK              OK    
+db:11386994 armenia-06                redis:690 node:4  master 8192-16383  66.88MB     N/A             7.99MB    OK              OK    
+db:11392720 estonia-01                redis:341 node:4  master 0-8191      71.22MB     N/A             6.21MB    OK              OK    
+db:11392720 estonia-01                redis:342 node:5  slave  8192-16383  64.2MB      N/A             5.94MB    OK              OK    
+db:11392720 estonia-01                redis:637 node:11 slave  0-8191      70.18MB     N/A             6.32MB    OK              OK    
+db:11392720 estonia-01                redis:638 node:4  master 8192-16383  65.16MB     N/A             7.62MB    OK              OK    
+db:11395562 finland-01                redis:345 node:4  master 0-8191      72.61MB     N/A             10.38MB   OK              OK    
+db:11395562 finland-01                redis:346 node:5  slave  8192-16383  64.52MB     N/A             9.46MB    OK              OK    
+db:11395562 finland-01                redis:743 node:11 slave  0-8191      72.42MB     N/A             9.94MB    OK              OK    
+db:11395562 finland-01                redis:744 node:4  master 8192-16383  65.17MB     N/A             10.41MB   OK              OK    
+db:11404149 trinidad_and_tobago-04    redis:351 node:4  master 0-8191      93.28MB     N/A             17.65MB   OK              OK    
+db:11404149 trinidad_and_tobago-04    redis:352 node:5  slave  8192-16383  78.42MB     N/A             18.73MB   OK              OK    
+db:11404149 trinidad_and_tobago-04    redis:745 node:9  slave  0-8191      92.7MB      N/A             16.87MB   OK              OK    
+db:11404149 trinidad_and_tobago-04    redis:746 node:4  master 8192-16383  78.88MB     N/A             21.5MB    OK              OK    
+db:11404210 colombia-05               redis:353 node:4  master 0-8191      68.12MB     N/A             6.28MB    OK              OK    
+db:11404210 colombia-05               redis:354 node:5  slave  8192-16383  62.12MB     N/A             5.69MB    OK              OK    
+db:11404210 colombia-05               redis:747 node:11 slave  0-8191      67.3MB      N/A             6.08MB    OK              OK    
+db:11404210 colombia-05               redis:748 node:4  master 8192-16383  62.59MB     N/A             7.31MB    OK              OK    
+db:11449503 congo-07                  redis:359 node:4  master 0-8191      69.04MB     N/A             6.37MB    OK              OK    
+db:11449503 congo-07                  redis:360 node:5  slave  0-8191      68.35MB     N/A             6.85MB    OK              OK    
+db:11449503 congo-07                  redis:361 node:4  master 8192-16383  63.1MB      N/A             9.19MB    OK              OK    
+db:11449503 congo-07                  redis:362 node:5  slave  8192-16383  62.09MB     N/A             19.98MB   OK              OK    
+db:11480858 america-01                redis:377 node:3  slave  8192-16383  575.72MB    N/A             612.75MB  OK              OK    
+db:11480858 america-01                redis:378 node:8  slave  0-8191      810.62MB    N/A             618.6MB   OK              OK    
+db:11480858 america-01                redis:761 node:7  master 0-8191      813.95MB    N/A             632.08MB  OK              OK    
+db:11480858 america-01                redis:762 node:9  master 8192-16383  575.85MB    N/A             612.56MB  OK              OK    
+db:11480860 djibouti-07               redis:379 node:10 slave  0-8191      34.49GB     N/A             6.11GB    OK              OK    
+db:11480860 djibouti-07               redis:380 node:5  master 8192-16383  19.93GB     N/A             15.28GB   OK              OK    
+db:11480860 djibouti-07               redis:775 node:13 master 0-8191      34.53GB     N/A             8.01GB    OK              OK    
+db:11480860 djibouti-07               redis:776 node:7  slave  8192-16383  20.02GB     N/A             15.2GB    OK              OK    
+db:11480956 cyprus-05                 redis:381 node:7  slave  0-8191      3.02GB      N/A             691.5MB   OK              OK    
+db:11480956 cyprus-05                 redis:382 node:9  slave  8192-16383  1.78GB      N/A             1.13GB    OK              OK    
+db:11480956 cyprus-05                 redis:763 node:8  master 0-8191      3.01GB      N/A             712.42MB  OK              OK    
+db:11480956 cyprus-05                 redis:764 node:7  master 8192-16383  1.78GB      N/A             1.14GB    OK              OK    
+db:11505944 burundi-03                redis:397 node:4  master 0-8191      69.87MB     N/A             9.66MB    OK              OK    
+db:11505944 burundi-03                redis:398 node:8  slave  0-8191      69.04MB     N/A             9.31MB    OK              OK    
+db:11505944 burundi-03                redis:399 node:4  master 8192-16383  62.59MB     N/A             11.17MB   OK              OK    
+db:11505944 burundi-03                redis:400 node:8  slave  8192-16383  64.52MB     N/A             8.25MB    OK              OK    
+db:11505986 guinea-bissau-09          redis:401 node:4  master 0-8191      98.23MB     N/A             14.54MB   OK              OK    
+db:11505986 guinea-bissau-09          redis:402 node:8  slave  0-8191      97.92MB     N/A             13.73MB   OK              OK    
+db:11505986 guinea-bissau-09          redis:403 node:4  master 8192-16383  80.47MB     N/A             17.57MB   OK              OK    
+db:11505986 guinea-bissau-09          redis:404 node:8  slave  8192-16383  79.72MB     N/A             14.18MB   OK              OK    
+db:11506064 belize-07                 redis:405 node:4  master 0-8191      65.03MB     N/A             7.21MB    OK              OK    
+db:11506064 belize-07                 redis:406 node:8  slave  0-8191      64.25MB     N/A             6.95MB    OK              OK    
+db:11506064 belize-07                 redis:407 node:4  master 8192-16383  58.9MB      N/A             8.55MB    OK              OK    
+db:11506064 belize-07                 redis:408 node:8  slave  8192-16383  58.25MB     N/A             6.63MB    OK              OK    
+db:11506068 bolivia-02                redis:409 node:4  master 0-8191      66.52MB     N/A             7.05MB    OK              OK    
+db:11506068 bolivia-02                redis:410 node:8  slave  0-8191      65.77MB     N/A             6.88MB    OK              OK    
+db:11506068 bolivia-02                redis:411 node:4  master 8192-16383  60.12MB     N/A             8.79MB    OK              OK    
+db:11506068 bolivia-02                redis:412 node:8  slave  8192-16383  59.76MB     N/A             6.37MB    OK              OK    
+db:11526090 el_salvador-01            redis:421 node:7  master 0-8191      69.63MB     N/A             7.59MB    OK              OK    
+db:11526090 el_salvador-01            redis:422 node:8  slave  0-8191      68.53MB     N/A             6.31MB    OK              OK    
+db:11526090 el_salvador-01            redis:423 node:7  master 8192-16383  62.99MB     N/A             22.29MB   OK              OK    
+db:11526090 el_salvador-01            redis:424 node:8  slave  8192-16383  62.73MB     N/A             18.81MB   OK              OK    
+db:11526276 greece-00                 redis:425 node:7  master 0-8191      78.09MB     N/A             24.71MB   OK              OK    
+db:11526276 greece-00                 redis:426 node:8  slave  0-8191      77.57MB     N/A             24.05MB   OK              OK    
+db:11526276 greece-00                 redis:427 node:7  master 8192-16383  69.24MB     N/A             30.6MB    OK              OK    
+db:11526276 greece-00                 redis:428 node:8  slave  8192-16383  70.35MB     N/A             28.67MB   OK              OK    
+db:11546928 malta-08                  redis:429 node:3  master 0-16383     220.26MB    N/A             5.28MB    OK              OK    
+db:11546928 malta-08                  redis:430 node:9  slave  0-16383     222.56MB    N/A             2.53MB    OK              OK    
+db:11579096 tonga-00                  redis:457 node:7  master 0-8191      68.87MB     N/A             7.92MB    OK              OK    
+db:11579096 tonga-00                  redis:458 node:9  slave  0-8191      67.91MB     N/A             6.89MB    OK              OK    
+db:11579096 tonga-00                  redis:459 node:7  master 8192-16383  63.34MB     N/A             24.22MB   OK              OK    
+db:11579096 tonga-00                  redis:460 node:9  slave  8192-16383  63.61MB     N/A             21MB      OK              OK    
+db:11579174 montenegro-02             redis:461 node:3  master 0-8191      67.31MB     N/A             7.69MB    OK              OK    
+db:11579174 montenegro-02             redis:462 node:9  slave  0-8191      66.44MB     N/A             6.34MB    OK              OK    
+db:11579174 montenegro-02             redis:463 node:3  master 8192-16383  61.25MB     N/A             23.38MB   OK              OK    
+db:11579174 montenegro-02             redis:464 node:9  slave  8192-16383  62.48MB     N/A             20.07MB   OK              OK    
+db:11592128 lesotho-05                redis:469 node:3  master 0-8191      70.63MB     N/A             12.38MB   OK              OK    
+db:11592128 lesotho-05                redis:470 node:9  slave  0-8191      68.62MB     N/A             10.51MB   OK              OK    
+db:11592128 lesotho-05                redis:471 node:3  master 8192-16383  62.68MB     N/A             24.54MB   OK              OK    
+db:11592128 lesotho-05                redis:472 node:9  slave  8192-16383  64.49MB     N/A             20.58MB   OK              OK    
+db:11623190 taiwan-08                 redis:489 node:3  master 0-8191      64.85MB     N/A             7.55MB    OK              OK    
+db:11623190 taiwan-08                 redis:490 node:8  slave  0-8191      63.79MB     N/A             6.42MB    OK              OK    
+db:11623190 taiwan-08                 redis:491 node:3  master 8192-16383  58.71MB     N/A             23.7MB    OK              OK    
+db:11623190 taiwan-08                 redis:492 node:8  slave  8192-16383  57.88MB     N/A             21.43MB   OK              OK    
+db:11623207 comoros-05                redis:493 node:7  master 0-8191      64.64MB     N/A             7.81MB    OK              OK    
+db:11623207 comoros-05                redis:494 node:8  slave  0-8191      63.61MB     N/A             6.42MB    OK              OK    
+db:11623207 comoros-05                redis:495 node:7  master 8192-16383  58.43MB     N/A             24.03MB   OK              OK    
+db:11623207 comoros-05                redis:496 node:8  slave  8192-16383  57.99MB     N/A             21.79MB   OK              OK    
+db:11644326 serbia-09                 redis:505 node:7  master 0-8191      205.03MB    N/A             44.6MB    OK              OK    
+db:11644326 serbia-09                 redis:506 node:9  slave  0-8191      205.67MB    N/A             42.4MB    OK              OK    
+db:11644326 serbia-09                 redis:507 node:7  master 8192-16383  130.84MB    N/A             42.67MB   OK              OK    
+db:11644326 serbia-09                 redis:508 node:9  slave  8192-16383  130.74MB    N/A             37.98MB   OK              OK    
+db:11660545 georgia-00                redis:513 node:7  master 0-8191      89.43MB     N/A             7.4MB     OK              OK    
+db:11660545 georgia-00                redis:514 node:9  slave  0-8191      87.68MB     N/A             6.68MB    OK              OK    
+db:11660545 georgia-00                redis:515 node:7  master 8192-16383  81.46MB     N/A             22.55MB   OK              OK    
+db:11660545 georgia-00                redis:516 node:9  slave  8192-16383  80.77MB     N/A             19.8MB    OK              OK    
+db:11669400 austria-05                redis:531 node:13 master 0-3276      8.03GB      N/A             931.14MB  OK              OK    
+db:11669400 austria-05                redis:532 node:12 slave  0-3276      8.03GB      N/A             922.88MB  OK              OK    
+db:11669400 austria-05                redis:533 node:13 master 3277-6553   2.19GB      N/A             580.01MB  OK              OK    
+db:11669400 austria-05                redis:534 node:12 slave  3277-6553   2.19GB      N/A             577.63MB  OK              OK    
+db:11669400 austria-05                redis:535 node:13 master 6554-9829   2.27GB      N/A             587.77MB  OK              OK    
+db:11669400 austria-05                redis:536 node:12 slave  6554-9829   2.27GB      N/A             580.28MB  OK              OK    
+db:11669400 austria-05                redis:537 node:13 master 9830-13106  2.28GB      N/A             763.07MB  OK              OK    
+db:11669400 austria-05                redis:538 node:12 slave  9830-13106  2.32GB      N/A             755.4MB   OK              OK    
+db:11669400 austria-05                redis:539 node:13 master 13107-16383 2.21GB      N/A             588.02MB  OK              OK    
+db:11669400 austria-05                redis:540 node:12 slave  13107-16383 2.22GB      N/A             577.43MB  OK              OK    
+db:11674049 slovakia-09               redis:551 node:3  master 0-3276      8.68GB      N/A             802.01MB  OK              OK    
+db:11674049 slovakia-09               redis:552 node:9  slave  0-3276      8.69GB      N/A             753.81MB  OK              OK    
+db:11674049 slovakia-09               redis:553 node:3  master 3277-6553   2.6GB       N/A             386.98MB  OK              OK    
+db:11674049 slovakia-09               redis:554 node:13 slave  3277-6553   2.59GB      N/A             113.94MB  OK              OK    
+db:11674049 slovakia-09               redis:555 node:3  master 6554-9829   2.69GB      N/A             386.36MB  OK              OK    
+db:11674049 slovakia-09               redis:556 node:9  slave  6554-9829   2.7GB       N/A             344.11MB  OK              OK    
+db:11674049 slovakia-09               redis:557 node:3  master 9830-13106  2.63GB      N/A             1.03GB    OK              OK    
+db:11674049 slovakia-09               redis:558 node:9  slave  9830-13106  2.64GB      N/A             1000.96MB OK              OK    
+db:11674049 slovakia-09               redis:559 node:3  master 13107-16383 2.6GB       N/A             393.29MB  OK              OK    
+db:11674049 slovakia-09               redis:560 node:9  slave  13107-16383 2.61GB      N/A             352.83MB  OK              OK    
+db:11683594 belgium-04                redis:567 node:7  master 0-8191      72.02MB     N/A             7.55MB    OK              OK    
+db:11683594 belgium-04                redis:568 node:8  slave  0-8191      70.29MB     N/A             6.15MB    OK              OK    
+db:11683594 belgium-04                redis:569 node:7  master 8192-16383  66.55MB     N/A             8.37MB    OK              OK    
+db:11683594 belgium-04                redis:570 node:8  slave  8192-16383  66.4MB      N/A             5.65MB    OK              OK    
+db:11688867 denmark-04                redis:571 node:3  master 0-8191      62.92MB     N/A             8.05MB    OK              OK    
+db:11688867 denmark-04                redis:572 node:9  slave  0-8191      61.48MB     N/A             6.98MB    OK              OK    
+db:11688867 denmark-04                redis:573 node:3  master 8192-16383  56.7MB      N/A             24.03MB   OK              OK    
+db:11688867 denmark-04                redis:574 node:9  slave  8192-16383  56.93MB     N/A             21.36MB   OK              OK    
+db:11691237 zimbabwe-08               redis:575 node:3  master 0-8191      65.17MB     N/A             17.07MB   OK              OK    
+db:11691237 zimbabwe-08               redis:576 node:8  slave  0-8191      64.61MB     N/A             15.79MB   OK              OK    
+db:11691237 zimbabwe-08               redis:577 node:3  master 8192-16383  57.28MB     N/A             26.21MB   OK              OK    
+db:11691237 zimbabwe-08               redis:578 node:8  slave  8192-16383  56.96MB     N/A             23.49MB   OK              OK    
+db:11698888 norway-01                 redis:585 node:7  master 0-5460      248.51MB    N/A             547.32MB  OK              OK    
+db:11698888 norway-01                 redis:586 node:8  slave  0-5460      249.29MB    N/A             541.45MB  OK              OK    
+db:11698888 norway-01                 redis:587 node:7  master 5461-10922  128.36MB    N/A             363.19MB  OK              OK    
+db:11698888 norway-01                 redis:588 node:8  slave  5461-10922  126.73MB    N/A             357.1MB   OK              OK    
+db:11698888 norway-01                 redis:589 node:7  master 10923-16383 140.49MB    N/A             560.83MB  OK              OK    
+db:11698888 norway-01                 redis:590 node:8  slave  10923-16383 140.24MB    N/A             557.28MB  OK              OK    
+db:11704829 liechtenstein-00          redis:591 node:3  slave  0-3276      34.22GB     N/A             3.06GB    OK              OK    
+db:11704829 liechtenstein-00          redis:592 node:11 master 0-3276      34.21GB     N/A             3.06GB    OK              OK    
+db:11704829 liechtenstein-00          redis:593 node:3  master 3277-6553   10.35GB     N/A             1.64GB    OK              OK    
+db:11704829 liechtenstein-00          redis:594 node:13 slave  3277-6553   10.37GB     N/A             1.53GB    OK              OK    
+db:11704829 liechtenstein-00          redis:595 node:3  master 6554-9829   10.39GB     N/A             1.65GB    OK              OK    
+db:11704829 liechtenstein-00          redis:596 node:13 slave  6554-9829   10.4GB      N/A             1.56GB    OK              OK    
+db:11704829 liechtenstein-00          redis:597 node:3  master 9830-13106  10.4GB      N/A             2.77GB    OK              OK    
+db:11704829 liechtenstein-00          redis:598 node:8  slave  9830-13106  10.43GB     N/A             2.72GB    OK              OK    
+db:11704829 liechtenstein-00          redis:599 node:3  master 13107-16383 10.37GB     N/A             1.64GB    OK              OK    
+db:11704829 liechtenstein-00          redis:600 node:13 slave  13107-16383 10.37GB     N/A             1.54GB    OK              OK    
+db:11723681 korea_north-08            redis:601 node:11 master 0-3276      10.99GB     N/A             2.74GB    OK              OK    
+db:11723681 korea_north-08            redis:602 node:12 slave  0-3276      11.01GB     N/A             2.29GB    OK              OK    
+db:11723681 korea_north-08            redis:603 node:11 master 3277-6553   3.75GB      N/A             219.94MB  OK              OK    
+db:11723681 korea_north-08            redis:604 node:12 slave  3277-6553   3.76GB      N/A             149.48MB  OK              OK    
+db:11723681 korea_north-08            redis:605 node:11 master 6554-9829   3.76GB      N/A             221.82MB  OK              OK    
+db:11723681 korea_north-08            redis:606 node:12 slave  6554-9829   3.78GB      N/A             156.69MB  OK              OK    
+db:11723681 korea_north-08            redis:607 node:11 master 9830-13106  4.68GB      N/A             338.22MB  OK              OK    
+db:11723681 korea_north-08            redis:608 node:12 slave  9830-13106  4.69GB      N/A             228.32MB  OK              OK    
+db:11723681 korea_north-08            redis:609 node:11 master 13107-16383 3.76GB      N/A             225.62MB  OK              OK    
+db:11723681 korea_north-08            redis:610 node:12 slave  13107-16383 3.76GB      N/A             150.31MB  OK              OK    
+db:11723931 algeria-04                redis:611 node:11 slave  0-3276      32.1GB      N/A             20.66GB   OK              OK    
+db:11723931 algeria-04                redis:612 node:10 master 0-3276      32.04GB     N/A             20.62GB   OK              OK    
+db:11723931 algeria-04                redis:613 node:11 master 3277-6553   6.5GB       N/A             7.35GB    OK              OK    
+db:11723931 algeria-04                redis:614 node:12 slave  3277-6553   6.36GB      N/A             1.17GB    OK              OK    
+db:11723931 algeria-04                redis:615 node:11 master 6554-9829   6.57GB      N/A             7.35GB    OK              OK    
+db:11723931 algeria-04                redis:616 node:12 slave  6554-9829   6.42GB      N/A             1.16GB    OK              OK    
+db:11723931 algeria-04                redis:617 node:11 master 9830-13106  6.51GB      N/A             7.4GB     OK              OK    
+db:11723931 algeria-04                redis:618 node:12 slave  9830-13106  6.37GB      N/A             1.2GB     OK              OK    
+db:11723931 algeria-04                redis:619 node:11 master 13107-16383 6.5GB       N/A             7.36GB    OK              OK    
+db:11723931 algeria-04                redis:620 node:12 slave  13107-16383 6.4GB       N/A             1.2GB     OK              OK    
+db:11731532 tajikistan-00             redis:621 node:11 master 0-8191      57.9MB      N/A             7.18MB    OK              OK    
+db:11731532 tajikistan-00             redis:622 node:10 slave  0-8191      56.79MB     N/A             5.92MB    OK              OK    
+db:11731532 tajikistan-00             redis:623 node:11 master 8192-16383  52.78MB     N/A             19MB      OK              OK    
+db:11731532 tajikistan-00             redis:624 node:10 slave  8192-16383  52.42MB     N/A             16.22MB   OK              OK    
+db:11731533 niger-01                  redis:625 node:11 master 0-8191      103.57MB    N/A             112.12MB  OK              OK    
+db:11731533 niger-01                  redis:626 node:10 slave  0-8191      103.4MB     N/A             109.76MB  OK              OK    
+db:11731533 niger-01                  redis:627 node:11 master 8192-16383  79.86MB     N/A             79.96MB   OK              OK    
+db:11731533 niger-01                  redis:628 node:10 slave  8192-16383  79.66MB     N/A             75.08MB   OK              OK    
+db:11745396 kyrgyzstan-07             redis:659 node:10 master 0-8191      256.66MB    N/A             417.04MB  OK              OK    
+db:11745396 kyrgyzstan-07             redis:660 node:11 slave  0-8191      257.25MB    N/A             412.83MB  OK              OK    
+db:11745396 kyrgyzstan-07             redis:661 node:10 master 8192-16383  158.61MB    N/A             261.01MB  OK              OK    
+db:11745396 kyrgyzstan-07             redis:662 node:11 slave  8192-16383  158.67MB    N/A             259.05MB  OK              OK    
+db:11750694 china-06                  redis:703 node:10 master 0-8191      62.03MB     N/A             8.94MB    OK              OK    
+db:11750694 china-06                  redis:704 node:9  slave  0-8191      61.07MB     N/A             7.73MB    OK              OK    
+db:11750694 china-06                  redis:705 node:10 master 8192-16383  56.82MB     N/A             24.85MB   OK              OK    
+db:11750694 china-06                  redis:706 node:9  slave  8192-16383  58.54MB     N/A             20.73MB   OK              OK    
+db:11750695 saint_vincent-09          redis:707 node:10 master 0-8191      73.15MB     N/A             14.27MB   OK              OK    
+db:11750695 saint_vincent-09          redis:708 node:11 slave  0-8191      72.21MB     N/A             12.88MB   OK              OK    
+db:11750695 saint_vincent-09          redis:709 node:10 master 8192-16383  65.61MB     N/A             21.23MB   OK              OK    
+db:11750695 saint_vincent-09          redis:710 node:11 slave  8192-16383  65.83MB     N/A             18.06MB   OK              OK    
+db:11752495 united_arab_emirates-07   redis:719 node:10 master 0-8191      62.29MB     N/A             8.01MB    OK              OK    
+db:11752495 united_arab_emirates-07   redis:720 node:9  slave  0-8191      61.31MB     N/A             6.98MB    OK              OK    
+db:11752495 united_arab_emirates-07   redis:721 node:10 master 8192-16383  57.14MB     N/A             24MB      OK              OK    
+db:11752495 united_arab_emirates-07   redis:722 node:9  slave  8192-16383  57.32MB     N/A             21.36MB   OK              OK    
+db:11752710 costa_rica-00             redis:723 node:10 master 0-8191      840.57MB    N/A             224.26MB  OK              OK    
+db:11752710 costa_rica-00             redis:724 node:8  slave  0-8191      841.26MB    N/A             211.7MB   OK              OK    
+db:11752710 costa_rica-00             redis:725 node:10 master 8192-16383  719.52MB    N/A             330.93MB  OK              OK    
+db:11752710 costa_rica-00             redis:726 node:8  slave  8192-16383  719.88MB    N/A             323.74MB  OK              OK    
+db:11754134 gabon-01                  redis:729 node:3  master 0-8191      5.73GB      N/A             116.2MB   OK              OK    
+db:11754134 gabon-01                  redis:730 node:8  slave  8192-16383  2.63GB      N/A             45.75MB   OK              OK    
+db:11754134 gabon-01                  redis:945 node:9  slave  0-8191      5.72GB      N/A             114.14MB  OK              OK    
+db:11754134 gabon-01                  redis:946 node:3  master 8192-16383  2.62GB      N/A             49.14MB   OK              OK    
+db:11781476 libya-05                  redis:757 node:3  master 0-8191      66.76MB     N/A             18.58MB   OK              OK    
+db:11781476 libya-05                  redis:758 node:9  slave  0-8191      65.79MB     N/A             17.39MB   OK              OK    
+db:11781476 libya-05                  redis:759 node:3  master 8192-16383  58.07MB     N/A             27.56MB   OK              OK    
+db:11781476 libya-05                  redis:760 node:9  slave  8192-16383  57.28MB     N/A             25.35MB   OK              OK    
+db:11791108 bulgaria-06               redis:779 node:10 master 0-16383     62.24MB     N/A             42.28MB   OK              OK    
+db:11791108 bulgaria-06               redis:780 node:8  slave  0-16383     62.94MB     N/A             39.65MB   OK              OK    
+db:11817625 san_marino-05             redis:783 node:10 master 0-16383     21.57MB     N/A             2.28MB    OK              OK    
+db:11817625 san_marino-05             redis:784 node:11 slave  0-16383     18.26MB     N/A             2.64MB    OK              OK    
+db:11817643 ireland-06                redis:785 node:10 master 0-16383     16.44MB     N/A             3.56MB    OK              OK    
+db:11817643 ireland-06                redis:786 node:9  slave  0-16383     15.4MB      N/A             2.85MB    OK              OK    
+db:11901746 iraq-01                   redis:823 node:12 master 0-8191      64.17MB     N/A             5.16MB    OK              OK    
+db:11901746 iraq-01                   redis:824 node:13 slave  0-8191      63.21MB     N/A             4.37MB    OK              OK    
+db:11901746 iraq-01                   redis:825 node:12 master 8192-16383  68.55MB     N/A             7.56MB    OK              OK    
+db:11901746 iraq-01                   redis:826 node:13 slave  8192-16383  67.57MB     N/A             4.99MB    OK              OK    
+db:11928255 iceland-05                redis:829 node:13 master 0-8191      58.89MB     N/A             5.85MB    OK              OK    
+db:11928255 iceland-05                redis:830 node:12 slave  0-8191      57.95MB     N/A             4.52MB    OK              OK    
+db:11928255 iceland-05                redis:831 node:13 master 8192-16383  53.08MB     N/A             8.03MB    OK              OK    
+db:11928255 iceland-05                redis:832 node:12 slave  8192-16383  52.64MB     N/A             5.32MB    OK              OK    
+db:11932976 kazakhstan-06             redis:833 node:13 master 0-8191      63.19MB     N/A             37.5MB    OK              OK    
+db:11932976 kazakhstan-06             redis:834 node:12 slave  0-8191      63.19MB     N/A             34.27MB   OK              OK    
+db:11932976 kazakhstan-06             redis:835 node:13 master 8192-16383  43.92MB     N/A             8.37MB    OK              OK    
+db:11932976 kazakhstan-06             redis:836 node:12 slave  8192-16383  42.87MB     N/A             6.37MB    OK              OK    
+db:11936302 saudi_arabia-06           redis:841 node:13 master 0-8191      53.3MB      N/A             10.12MB   OK              OK    
+db:11936302 saudi_arabia-06           redis:842 node:12 slave  0-8191      52.34MB     N/A             8.5MB     OK              OK    
+db:11936302 saudi_arabia-06           redis:843 node:13 master 8192-16383  48.13MB     N/A             27.34MB   OK              OK    
+db:11936302 saudi_arabia-06           redis:844 node:12 slave  8192-16383  47.04MB     N/A             24.64MB   OK              OK    
+db:11936304 israel-05                 redis:845 node:13 master 0-8191      53.55MB     N/A             9.03MB    OK              OK    
+db:11936304 israel-05                 redis:846 node:12 slave  0-8191      52.54MB     N/A             7.73MB    OK              OK    
+db:11936304 israel-05                 redis:847 node:13 master 8192-16383  47.46MB     N/A             26.54MB   OK              OK    
+db:11936304 israel-05                 redis:848 node:12 slave  8192-16383  47.02MB     N/A             23.91MB   OK              OK    
+db:11938340 rwanda-08                 redis:849 node:13 master 0-8191      68.35MB     N/A             25.8MB    OK              OK    
+db:11938340 rwanda-08                 redis:850 node:12 slave  0-8191      67.28MB     N/A             21.7MB    OK              OK    
+db:11938340 rwanda-08                 redis:851 node:13 master 8192-16383  57.95MB     N/A             35.49MB   OK              OK    
+db:11938340 rwanda-08                 redis:852 node:12 slave  8192-16383  58.14MB     N/A             31.15MB   OK              OK    
+db:11940842 ukraine-03                redis:869 node:13 master 0-8191      53.46MB     N/A             10.57MB   OK              OK    
+db:11940842 ukraine-03                redis:870 node:10 slave  0-8191      52.49MB     N/A             9.17MB    OK              OK    
+db:11940842 ukraine-03                redis:871 node:13 master 8192-16383  47.49MB     N/A             27.91MB   OK              OK    
+db:11940842 ukraine-03                redis:872 node:10 slave  8192-16383  46.8MB      N/A             25.58MB   OK              OK    
+db:11946090 netherlands-01            redis:873 node:13 master 0-8191      52.99MB     N/A             9.79MB    OK              OK    
+db:11946090 netherlands-01            redis:874 node:12 slave  0-8191      51.77MB     N/A             8.44MB    OK              OK    
+db:11946090 netherlands-01            redis:875 node:13 master 8192-16383  46.75MB     N/A             26.82MB   OK              OK    
+db:11946090 netherlands-01            redis:876 node:12 slave  8192-16383  46.27MB     N/A             24.72MB   OK              OK    
+db:11960040 south_sudan-01            redis:883 node:13 master 0-8191      43.2MB      N/A             10.65MB   OK              OK    
+db:11960040 south_sudan-01            redis:884 node:12 slave  0-8191      42.73MB     N/A             9.91MB    OK              OK    
+db:11960040 south_sudan-01            redis:885 node:13 master 8192-16383  33.69MB     N/A             30.3MB    OK              OK    
+db:11960040 south_sudan-01            redis:886 node:12 slave  8192-16383  34.45MB     N/A             27.47MB   OK              OK    
+db:11987868 portugal-05               redis:915 node:13 master 0-8191      19.93MB     N/A             17.88MB   OK              OK    
+db:11987868 portugal-05               redis:916 node:10 slave  0-8191      20.44MB     N/A             12.5MB    OK              OK    
+db:11987868 portugal-05               redis:917 node:13 master 8192-16383  19.91MB     N/A             14.41MB   OK              OK    
+db:11987868 portugal-05               redis:918 node:10 slave  8192-16383  20.99MB     N/A             11.03MB   OK              OK    
+db:11990828 east_timor-03             redis:919 node:13 master 0-8191      108.28MB    N/A             13.82MB   OK              OK    
+db:11990828 east_timor-03             redis:920 node:10 slave  0-8191      108.51MB    N/A             11.92MB   OK              OK    
+db:11990828 east_timor-03             redis:921 node:13 master 8192-16383  83.32MB     N/A             14.53MB   OK              OK    
+db:11990828 east_timor-03             redis:922 node:10 slave  8192-16383  82.92MB     N/A             10.84MB   OK              OK    
+db:11990855 kiribati-05               redis:923 node:5  master 0-8191      51MB        N/A             10.13MB   OK              OK    
+db:11990855 kiribati-05               redis:924 node:12 slave  0-8191      50.43MB     N/A             9MB       OK              OK    
+db:11990855 kiribati-05               redis:925 node:5  master 8192-16383  45.01MB     N/A             26.4MB    OK              OK    
+db:11990855 kiribati-05               redis:926 node:12 slave  8192-16383  45.34MB     N/A             24.57MB   OK              OK    
+db:12063896 liberia-08                redis:927 node:3  master 0-16383     214.35MB    N/A             3.02MB    OK              OK    
+db:12063896 liberia-08                redis:928 node:13 slave  0-16383     213.83MB    N/A             5.44MB    OK              OK    
+db:12131670 hungary-04                redis:943 node:3  master 0-16383     17.96MB     N/A             1.61MB    OK              OK    
+db:12131670 hungary-04                redis:944 node:5  slave  0-16383     17.42MB     N/A             1.62MB    OK              OK    
+db:12195007 moldova-06                redis:947 node:3  master 0-16383     11.88MB     N/A             -483.84KB OK              OK    
+db:12195007 moldova-06                redis:948 node:5  slave  0-16383     11.3MB      N/A             -283.38KB OK              OK    
+
