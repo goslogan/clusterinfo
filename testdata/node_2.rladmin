@@ -9,107 +9,107 @@ Cluster health: OK, [88, 84.4, 85.06666666666666]
 failures/minute - avg1 88.00, avg15 84.40, avg60 85.07.
 
 CLUSTER NODES:
-NODE:ID ROLE    ADDRESS        EXTERNAL_ADDRESS HOSTNAME     MASTERS SLAVES OVERBOOKING_DEPTH SHARDS CORES FREE_RAM        PROVISIONAL_RAM VERSION  SHA    RACK-ID STATUS
-node:1  master 10.166.204.139                  hlmups3red07 0       0      0KB               0/0    8     59.56GB/62.78GB 0KB/0KB         6.4.2-43 1e9e8c quorum  OK    
-*node:2 slave  10.155.121.114                  hlmups3red0f 2       0      -1.11GB           2/100  8     52.56GB/62.78GB 0KB/51.48GB     6.4.2-43 1e9e8c SALLE2  OK    
-node:3  slave  10.154.74.182                   hlmups3red08 0       2      2.85GB            2/100  8     56.66GB/62.78GB 2.85GB/51.48GB  6.4.2-43 1e9e8c SALLE1  OK    
-node:4  slave  10.155.112.251                  hlmups3red0h 2       0      2.65GB            2/100  8     56.31GB/62.78GB 2.65GB/51.48GB  6.4.2-43 1e9e8c SALLE2  OK    
-node:5  slave  10.154.67.55                    hlmups3red09 0       2      2.76GB            2/100  8     53.85GB/62.78GB 2.76GB/51.48GB  6.4.2-43 1e9e8c SALLE1  OK    
-node:6  slave  10.155.121.115                  hlmups3red0j 2       0      2.44GB            2/100  8     56.15GB/62.78GB 2.44GB/51.48GB  6.4.2-43 1e9e8c SALLE2  OK    
-node:7  slave  10.155.242.21                   hlmups3red0a 0       2      2.68GB            2/100  8     56.39GB/62.78GB 2.77GB/51.48GB  6.4.2-43 1e9e8c SALLE1  OK    
-node:8  slave  10.155.45.176                   hlmups3red0b 0       2      2.81GB            2/100  8     56.56GB/62.78GB 2.81GB/51.48GB  6.4.2-43 1e9e8c SALLE1  OK    
-node:9  slave  10.155.208.118                  hlmups3red0k 2       0      2.55GB            2/100  8     56.33GB/62.78GB 2.55GB/51.48GB  6.4.2-43 1e9e8c SALLE2  OK    
-node:10 slave  10.155.121.116                  hlmups3red0l 2       0      2.57GB            2/100  8     56.36GB/62.78GB 2.56GB/51.48GB  6.4.2-43 1e9e8c SALLE2  OK    
-node:11 slave  10.155.242.180                  hlmups3red0c 0       2      2.83GB            2/100  8     56.61GB/62.78GB 2.83GB/51.48GB  6.4.2-43 1e9e8c SALLE1  OK    
-node:12 slave  10.155.242.23                   hlmups3red0d 0       2      2.81GB            2/100  8     56.55GB/62.78GB 2.81GB/51.48GB  6.4.2-43 1e9e8c SALLE1  OK    
-node:13 slave  10.154.29.47                    hlmups3red0m 2       0      2.51GB            2/100  8     55.52GB/62.78GB 2.5GB/51.48GB   6.4.2-43 1e9e8c SALLE2  OK    
-node:14 slave  10.155.208.143                  hlmups3red0n 2       0      2.49GB            2/100  8     56.34GB/62.78GB 2.49GB/51.48GB  6.4.2-43 1e9e8c SALLE2  OK    
-node:15 slave  10.154.72.51                    hlmups3red0e 0       2      2.81GB            2/100  8     56.59GB/62.78GB 2.81GB/51.48GB  6.4.2-43 1e9e8c SALLE1  OK    
-node:16 slave  10.154.73.44                    hlmups3red0g 0       2      2.78GB            2/100  8     56.6GB/62.78GB  2.81GB/51.48GB  6.4.2-43 1e9e8c SALLE1  OK    
-node:17 slave  10.154.31.43                    hlmups3red0o 2       0      2.52GB            2/100  8     54.84GB/62.78GB 2.53GB/51.48GB  6.4.2-43 1e9e8c SALLE2  OK    
-node:18 slave  10.155.2.143                    hlmups3red0i 0       2      2.81GB            2/100  8     56.57GB/62.78GB 2.81GB/51.48GB  6.4.2-43 1e9e8c SALLE1  OK    
-node:19 slave  10.155.207.54                   hlmups3red0p 2       0      2.54GB            2/100  8     56.24GB/62.78GB 2.54GB/51.48GB  6.4.2-43 1e9e8c SALLE2  OK    
-node:20 slave  10.155.27.80                    hlmups3red0z 2       0      2.53GB            2/100  8     56.27GB/62.78GB 2.53GB/51.48GB  6.4.2-43 1e9e8c SALLE2  OK    
-node:21 slave  10.154.117.157                  hlmups3red10 0       2      2.84GB            2/100  8     55.18GB/62.78GB 2.84GB/51.48GB  6.4.2-43 1e9e8c SALLE1  OK    
-node:22 slave  10.155.27.145                   hlmups3red0v 2       0      2.53GB            2/100  8     56.27GB/62.78GB 2.53GB/51.48GB  6.4.2-43 1e9e8c SALLE2  OK    
-node:23 slave  10.154.74.80                    hlmups3red0x 0       2      2.74GB            2/100  8     55.68GB/62.78GB 2.83GB/51.48GB  6.4.2-43 1e9e8c SALLE1  OK    
-node:24 slave  10.154.64.46                    hlmups3red0w 2       0      2.51GB            2/100  8     56.29GB/62.78GB 2.51GB/51.48GB  6.4.2-43 1e9e8c SALLE2  OK    
-node:25 slave  10.154.67.193                   hlmups3red0y 0       2      2.83GB            2/100  8     56.5GB/62.78GB  2.84GB/51.48GB  6.4.2-43 1e9e8c SALLE1  OK    
-node:26 slave  10.155.244.21                   hlmups3red1e 0       2      2.9GB             2/100  8     56.6GB/62.79GB  2.9GB/51.49GB   6.4.2-43 1e9e8c SALLE1  OK    
-node:27 slave  10.155.208.26                   hlmups3red1h 2       0      2.68GB            2/100  8     56.46GB/62.79GB 2.62GB/51.49GB  6.4.2-43 1e9e8c SALLE2  OK    
-node:28 slave  10.155.240.142                  hlmups3red1f 0       2      2.9GB             2/100  8     56.71GB/62.79GB 2.9GB/51.49GB   6.4.2-43 1e9e8c SALLE1  OK    
-node:29 slave  10.154.65.197                   hlmups3red1i 2       0      2.69GB            2/100  8     56.44GB/62.79GB 2.61GB/51.49GB  6.4.2-43 1e9e8c SALLE2  OK    
-node:30 slave  10.154.31.73                    hlmups3red1j 2       0      2.56GB            2/100  8     53.59GB/62.79GB 2.56GB/51.49GB  6.4.2-43 1e9e8c SALLE2  OK    
-node:31 slave  10.155.4.86                     hlmups3red1g 0       2      2.91GB            2/100  8     56.58GB/62.79GB 2.91GB/51.49GB  6.4.2-43 1e9e8c SALLE1  OK    
+NODE:ID ROLE   ADDRESS        EXTERNAL_ADDRESS HOSTNAME     MASTERS SLAVES OVERBOOKING_DEPTH SHARDS CORES FREE_RAM        PROVISIONAL_RAM VERSION  SHA    RACK-ID STATUS
+node:1  master 10.166.204.139                  node07       0       0      0KB               0/0    8     59.56GB/62.78GB 0KB/0KB         6.4.2-43 1e9e8c Quorum  OK    
+*node:2 slave  10.155.121.114                  node0f       2       0      -1.11GB           2/100  8     52.56GB/62.78GB 0KB/51.48GB     6.4.2-43 1e9e8c Rack2   OK    
+node:3  slave  10.154.74.182                   node08       0       2      2.85GB            2/100  8     56.66GB/62.78GB 2.85GB/51.48GB  6.4.2-43 1e9e8c Rack1   OK    
+node:4  slave  10.155.112.251                  node0h       2       0      2.65GB            2/100  8     56.31GB/62.78GB 2.65GB/51.48GB  6.4.2-43 1e9e8c Rack2   OK    
+node:5  slave  10.154.67.55                    node09       0       2      2.76GB            2/100  8     53.85GB/62.78GB 2.76GB/51.48GB  6.4.2-43 1e9e8c Rack1   OK    
+node:6  slave  10.155.121.115                  node0j       2       0      2.44GB            2/100  8     56.15GB/62.78GB 2.44GB/51.48GB  6.4.2-43 1e9e8c Rack2   OK    
+node:7  slave  10.155.242.21                   node0a       0       2      2.68GB            2/100  8     56.39GB/62.78GB 2.77GB/51.48GB  6.4.2-43 1e9e8c Rack1   OK    
+node:8  slave  10.155.45.176                   node0b       0       2      2.81GB            2/100  8     56.56GB/62.78GB 2.81GB/51.48GB  6.4.2-43 1e9e8c Rack1   OK    
+node:9  slave  10.155.208.118                  node0k       2       0      2.55GB            2/100  8     56.33GB/62.78GB 2.55GB/51.48GB  6.4.2-43 1e9e8c Rack2   OK    
+node:10 slave  10.155.121.116                  node0l       2       0      2.57GB            2/100  8     56.36GB/62.78GB 2.56GB/51.48GB  6.4.2-43 1e9e8c Rack2   OK    
+node:11 slave  10.155.242.180                  node0c       0       2      2.83GB            2/100  8     56.61GB/62.78GB 2.83GB/51.48GB  6.4.2-43 1e9e8c Rack1   OK    
+node:12 slave  10.155.242.23                   node0d       0       2      2.81GB            2/100  8     56.55GB/62.78GB 2.81GB/51.48GB  6.4.2-43 1e9e8c Rack1   OK    
+node:13 slave  10.154.29.47                    node0m       2       0      2.51GB            2/100  8     55.52GB/62.78GB 2.5GB/51.48GB   6.4.2-43 1e9e8c Rack2   OK    
+node:14 slave  10.155.208.143                  node0n       2       0      2.49GB            2/100  8     56.34GB/62.78GB 2.49GB/51.48GB  6.4.2-43 1e9e8c Rack2   OK    
+node:15 slave  10.154.72.51                    node0e       0       2      2.81GB            2/100  8     56.59GB/62.78GB 2.81GB/51.48GB  6.4.2-43 1e9e8c Rack1   OK    
+node:16 slave  10.154.73.44                    node0g       0       2      2.78GB            2/100  8     56.6GB/62.78GB  2.81GB/51.48GB  6.4.2-43 1e9e8c Rack1   OK    
+node:17 slave  10.154.31.43                    node0o       2       0      2.52GB            2/100  8     54.84GB/62.78GB 2.53GB/51.48GB  6.4.2-43 1e9e8c Rack2   OK    
+node:18 slave  10.155.2.143                    node0i       0       2      2.81GB            2/100  8     56.57GB/62.78GB 2.81GB/51.48GB  6.4.2-43 1e9e8c Rack1   OK    
+node:19 slave  10.155.207.54                   node0p       2       0      2.54GB            2/100  8     56.24GB/62.78GB 2.54GB/51.48GB  6.4.2-43 1e9e8c Rack2   OK    
+node:20 slave  10.155.27.80                    node0z       2       0      2.53GB            2/100  8     56.27GB/62.78GB 2.53GB/51.48GB  6.4.2-43 1e9e8c Rack2   OK    
+node:21 slave  10.154.117.157                  node10       0       2      2.84GB            2/100  8     55.18GB/62.78GB 2.84GB/51.48GB  6.4.2-43 1e9e8c Rack1   OK    
+node:22 slave  10.155.27.145                   node0v       2       0      2.53GB            2/100  8     56.27GB/62.78GB 2.53GB/51.48GB  6.4.2-43 1e9e8c Rack2   OK    
+node:23 slave  10.154.74.80                    node0x       0       2      2.74GB            2/100  8     55.68GB/62.78GB 2.83GB/51.48GB  6.4.2-43 1e9e8c Rack1   OK    
+node:24 slave  10.154.64.46                    node0w       2       0      2.51GB            2/100  8     56.29GB/62.78GB 2.51GB/51.48GB  6.4.2-43 1e9e8c Rack2   OK    
+node:25 slave  10.154.67.193                   node0y       0       2      2.83GB            2/100  8     56.5GB/62.78GB  2.84GB/51.48GB  6.4.2-43 1e9e8c Rack1   OK    
+node:26 slave  10.155.244.21                   node1e       0       2      2.9GB             2/100  8     56.6GB/62.79GB  2.9GB/51.49GB   6.4.2-43 1e9e8c Rack1   OK    
+node:27 slave  10.155.208.26                   node1h       2       0      2.68GB            2/100  8     56.46GB/62.79GB 2.62GB/51.49GB  6.4.2-43 1e9e8c Rack2   OK    
+node:28 slave  10.155.240.142                  node1f       0       2      2.9GB             2/100  8     56.71GB/62.79GB 2.9GB/51.49GB   6.4.2-43 1e9e8c Rack1   OK    
+node:29 slave  10.154.65.197                   node1i       2       0      2.69GB            2/100  8     56.44GB/62.79GB 2.61GB/51.49GB  6.4.2-43 1e9e8c Rack2   OK    
+node:30 slave  10.154.31.73                    node1j       2       0      2.56GB            2/100  8     53.59GB/62.79GB 2.56GB/51.49GB  6.4.2-43 1e9e8c Rack2   OK    
+node:31 slave  10.155.4.86                     node1g       0       2      2.91GB            2/100  8     56.58GB/62.79GB 2.91GB/51.49GB  6.4.2-43 1e9e8c Rack1   OK    
 
 DATABASES:
 DB:ID NAME          TYPE  STATUS SHARDS PLACEMENT REPLICATION PERSISTENCE ENDPOINT                   EXEC_STATE EXEC_STATE_MACHINE BACKUP_PROGRESS MISSING_BACKUP_TIME REDIS_VERSION
-db:10 DMUP10AUI901J redis active 30     sparse    enabled     disabled    redis-7001.p800rdi002:7001 N/A        N/A                N/A             N/A                 6.2.10       
+db:10 REDISCACHE001 redis active 30     sparse    enabled     disabled    redis-7001.redislocal:7001 N/A        N/A                N/A             N/A                 6.2.10       
 
 ENDPOINTS:
 DB:ID  NAME            ID              NODE    ROLE    SSL     WATCHDOG_STATUS  
-db:10  DMUP10AUI901J   endpoint:10:1   node:2  single  No      OK               
+db:10  REDISCACHE001   endpoint:10:1   node:2  single  No      OK               
 
 SHARDS:
 DB:ID NAME          ID       NODE    ROLE   SLOTS       USED_MEMORY BACKUP_PROGRESS RAM_FRAG WATCHDOG_STATUS STATUS
-db:10 DMUP10AUI901J redis:1  node:12 slave  0-545       1.6GB       N/A             5.57MB   OK              OK    
-db:10 DMUP10AUI901J redis:2  node:13 master 546-1091    1.59GB      N/A             40.3MB   OK              OK    
-db:10 DMUP10AUI901J redis:3  node:3  slave  1639-2184   1.58GB      N/A             4.47MB   OK              OK    
-db:10 DMUP10AUI901J redis:4  node:12 slave  1092-1638   1.67GB      N/A             5.34MB   OK              OK    
-db:10 DMUP10AUI901J redis:5  node:5  slave  2731-3276   1.54GB      N/A             3.47MB   OK              OK    
-db:10 DMUP10AUI901J redis:6  node:10 master 2185-2730   1.62GB      N/A             39.34MB  OK              OK    
-db:10 DMUP10AUI901J redis:7  node:18 slave  3823-4368   1.63GB      N/A             5.84MB   OK              OK    
-db:10 DMUP10AUI901J redis:8  node:10 master 3277-3822   1.54GB      N/A             39.5MB   OK              OK    
-db:10 DMUP10AUI901J redis:9  node:16 slave  4915-5460   1.6GB       N/A             5.23MB   OK              OK    
-db:10 DMUP10AUI901J redis:10 node:4  master 4369-4914   1.65GB      N/A             41.75MB  OK              OK    
-db:10 DMUP10AUI901J redis:11 node:24 master 6008-6553   1.57GB      N/A             41.64MB  OK              OK    
-db:10 DMUP10AUI901J redis:12 node:14 master 5461-6007   1.6GB       N/A             41.55MB  OK              OK    
-db:10 DMUP10AUI901J redis:13 node:22 master 7100-7645   1.63GB      N/A             40.33MB  OK              OK    
-db:10 DMUP10AUI901J redis:14 node:21 slave  6554-7099   1.57GB      N/A             3.83MB   OK              OK    
-db:10 DMUP10AUI901J redis:15 node:23 slave  8192-8737   1.66GB      N/A             6.63MB   OK              OK    
-db:10 DMUP10AUI901J redis:16 node:14 master 7646-8191   1.54GB      N/A             37.66MB  OK              OK    
-db:10 DMUP10AUI901J redis:17 node:23 slave  9284-9829   2.35GB      N/A             17.04MB  OK              OK    
-db:10 DMUP10AUI901J redis:18 node:5  slave  8738-9283   4.33GB      N/A             47.76MB  OK              OK    
-db:10 DMUP10AUI901J redis:19 node:21 slave  10377-10922 3.04GB      N/A             28.33MB  OK              OK    
-db:10 DMUP10AUI901J redis:20 node:24 master 9830-10376  1.64GB      N/A             44.52MB  OK              OK    
-db:10 DMUP10AUI901J redis:21 node:22 master 11469-12014 1.59GB      N/A             41.55MB  OK              OK    
-db:10 DMUP10AUI901J redis:22 node:18 slave  10923-11468 1.56GB      N/A             3.85MB   OK              OK    
-db:10 DMUP10AUI901J redis:23 node:19 master 12561-13106 1.59GB      N/A             41.73MB  OK              OK    
-db:10 DMUP10AUI901J redis:24 node:20 master 12015-12560 1.64GB      N/A             40.74MB  OK              OK    
-db:10 DMUP10AUI901J redis:25 node:25 slave  13653-14198 1.64GB      N/A             5.36MB   OK              OK    
-db:10 DMUP10AUI901J redis:26 node:17 master 13107-13652 1.6GB       N/A             39.62MB  OK              OK    
-db:10 DMUP10AUI901J redis:27 node:25 slave  14746-15291 1.64GB      N/A             5.84MB   OK              OK    
-db:10 DMUP10AUI901J redis:28 node:6  master 14199-14745 1.66GB      N/A             43.35MB  OK              OK    
-db:10 DMUP10AUI901J redis:29 node:2  master 15838-16383 1.64GB      N/A             111.89MB OK              OK    
-db:10 DMUP10AUI901J redis:30 node:29 master 15292-15837 1.64GB      N/A             42.97MB  OK              OK    
-db:10 DMUP10AUI901J redis:31 node:7  slave  12015-12560 1.64GB      N/A             5.85MB   OK              OK    
-db:10 DMUP10AUI901J redis:32 node:11 slave  12561-13106 1.59GB      N/A             5.8MB    OK              OK    
-db:10 DMUP10AUI901J redis:33 node:11 slave  13107-13652 1.59GB      N/A             5.16MB   OK              OK    
-db:10 DMUP10AUI901J redis:34 node:2  master 13653-14198 1.64GB      N/A             109.72MB OK              OK    
-db:10 DMUP10AUI901J redis:35 node:7  slave  9830-10376  1.64GB      N/A             5.81MB   OK              OK    
-db:10 DMUP10AUI901J redis:36 node:17 master 10377-10922 3.04GB      N/A             65.52MB  OK              OK    
-db:10 DMUP10AUI901J redis:37 node:29 master 10923-11468 1.56GB      N/A             40.17MB  OK              OK    
-db:10 DMUP10AUI901J redis:38 node:8  slave  11469-12014 1.59GB      N/A             4.7MB    OK              OK    
-db:10 DMUP10AUI901J redis:39 node:8  slave  14199-14745 1.66GB      N/A             5.53MB   OK              OK    
-db:10 DMUP10AUI901J redis:40 node:4  master 14746-15291 1.64GB      N/A             41.13MB  OK              OK    
-db:10 DMUP10AUI901J redis:41 node:30 master 0-545       1.6GB       N/A             41.66MB  OK              OK    
-db:10 DMUP10AUI901J redis:42 node:28 slave  546-1091    1.59GB      N/A             4.31MB   OK              OK    
-db:10 DMUP10AUI901J redis:43 node:6  master 1092-1638   1.67GB      N/A             40.95MB  OK              OK    
-db:10 DMUP10AUI901J redis:44 node:20 master 1639-2184   1.58GB      N/A             39.79MB  OK              OK    
-db:10 DMUP10AUI901J redis:45 node:26 slave  2185-2730   1.62GB      N/A             5.03MB   OK              OK    
-db:10 DMUP10AUI901J redis:46 node:27 master 2731-3276   1.54GB      N/A             39.3MB   OK              OK    
-db:10 DMUP10AUI901J redis:47 node:16 slave  3277-3822   1.54GB      N/A             3.83MB   OK              OK    
-db:10 DMUP10AUI901J redis:48 node:27 master 3823-4368   1.64GB      N/A             41.73MB  OK              OK    
-db:10 DMUP10AUI901J redis:49 node:31 slave  4369-4914   1.65GB      N/A             4.97MB   OK              OK    
-db:10 DMUP10AUI901J redis:50 node:9  master 4915-5460   1.6GB       N/A             41.99MB  OK              OK    
-db:10 DMUP10AUI901J redis:51 node:28 slave  5461-6007   1.6GB       N/A             5.13MB   OK              OK    
-db:10 DMUP10AUI901J redis:52 node:3  slave  6008-6553   1.57GB      N/A             5.12MB   OK              OK    
-db:10 DMUP10AUI901J redis:53 node:9  master 6554-7099   1.57GB      N/A             42.15MB  OK              OK    
-db:10 DMUP10AUI901J redis:54 node:15 slave  7100-7645   1.63GB      N/A             5.29MB   OK              OK    
-db:10 DMUP10AUI901J redis:55 node:15 slave  7646-8191   1.54GB      N/A             4.47MB   OK              OK    
-db:10 DMUP10AUI901J redis:56 node:19 master 8192-8737   1.66GB      N/A             42.38MB  OK              OK    
-db:10 DMUP10AUI901J redis:57 node:30 master 8738-9283   4.33GB      N/A             85.2MB   OK              OK    
-db:10 DMUP10AUI901J redis:58 node:13 master 9284-9829   2.35GB      N/A             58.41MB  OK              OK    
-db:10 DMUP10AUI901J redis:59 node:31 slave  15292-15837 1.64GB      N/A             5.46MB   OK              OK    
-db:10 DMUP10AUI901J redis:60 node:26 slave  15838-16383 1.64GB      N/A             5.86MB   OK              OK    
+db:10 REDISCACHE001 redis:1  node:12 slave  0-545       1.6GB       N/A             5.57MB   OK              OK    
+db:10 REDISCACHE001 redis:2  node:13 master 546-1091    1.59GB      N/A             40.3MB   OK              OK    
+db:10 REDISCACHE001 redis:3  node:3  slave  1639-2184   1.58GB      N/A             4.47MB   OK              OK    
+db:10 REDISCACHE001 redis:4  node:12 slave  1092-1638   1.67GB      N/A             5.34MB   OK              OK    
+db:10 REDISCACHE001 redis:5  node:5  slave  2731-3276   1.54GB      N/A             3.47MB   OK              OK    
+db:10 REDISCACHE001 redis:6  node:10 master 2185-2730   1.62GB      N/A             39.34MB  OK              OK    
+db:10 REDISCACHE001 redis:7  node:18 slave  3823-4368   1.63GB      N/A             5.84MB   OK              OK    
+db:10 REDISCACHE001 redis:8  node:10 master 3277-3822   1.54GB      N/A             39.5MB   OK              OK    
+db:10 REDISCACHE001 redis:9  node:16 slave  4915-5460   1.6GB       N/A             5.23MB   OK              OK    
+db:10 REDISCACHE001 redis:10 node:4  master 4369-4914   1.65GB      N/A             41.75MB  OK              OK    
+db:10 REDISCACHE001 redis:11 node:24 master 6008-6553   1.57GB      N/A             41.64MB  OK              OK    
+db:10 REDISCACHE001 redis:12 node:14 master 5461-6007   1.6GB       N/A             41.55MB  OK              OK    
+db:10 REDISCACHE001 redis:13 node:22 master 7100-7645   1.63GB      N/A             40.33MB  OK              OK    
+db:10 REDISCACHE001 redis:14 node:21 slave  6554-7099   1.57GB      N/A             3.83MB   OK              OK    
+db:10 REDISCACHE001 redis:15 node:23 slave  8192-8737   1.66GB      N/A             6.63MB   OK              OK    
+db:10 REDISCACHE001 redis:16 node:14 master 7646-8191   1.54GB      N/A             37.66MB  OK              OK    
+db:10 REDISCACHE001 redis:17 node:23 slave  9284-9829   2.35GB      N/A             17.04MB  OK              OK    
+db:10 REDISCACHE001 redis:18 node:5  slave  8738-9283   4.33GB      N/A             47.76MB  OK              OK    
+db:10 REDISCACHE001 redis:19 node:21 slave  10377-10922 3.04GB      N/A             28.33MB  OK              OK    
+db:10 REDISCACHE001 redis:20 node:24 master 9830-10376  1.64GB      N/A             44.52MB  OK              OK    
+db:10 REDISCACHE001 redis:21 node:22 master 11469-12014 1.59GB      N/A             41.55MB  OK              OK    
+db:10 REDISCACHE001 redis:22 node:18 slave  10923-11468 1.56GB      N/A             3.85MB   OK              OK    
+db:10 REDISCACHE001 redis:23 node:19 master 12561-13106 1.59GB      N/A             41.73MB  OK              OK    
+db:10 REDISCACHE001 redis:24 node:20 master 12015-12560 1.64GB      N/A             40.74MB  OK              OK    
+db:10 REDISCACHE001 redis:25 node:25 slave  13653-14198 1.64GB      N/A             5.36MB   OK              OK    
+db:10 REDISCACHE001 redis:26 node:17 master 13107-13652 1.6GB       N/A             39.62MB  OK              OK    
+db:10 REDISCACHE001 redis:27 node:25 slave  14746-15291 1.64GB      N/A             5.84MB   OK              OK    
+db:10 REDISCACHE001 redis:28 node:6  master 14199-14745 1.66GB      N/A             43.35MB  OK              OK    
+db:10 REDISCACHE001 redis:29 node:2  master 15838-16383 1.64GB      N/A             111.89MB OK              OK    
+db:10 REDISCACHE001 redis:30 node:29 master 15292-15837 1.64GB      N/A             42.97MB  OK              OK    
+db:10 REDISCACHE001 redis:31 node:7  slave  12015-12560 1.64GB      N/A             5.85MB   OK              OK    
+db:10 REDISCACHE001 redis:32 node:11 slave  12561-13106 1.59GB      N/A             5.8MB    OK              OK    
+db:10 REDISCACHE001 redis:33 node:11 slave  13107-13652 1.59GB      N/A             5.16MB   OK              OK    
+db:10 REDISCACHE001 redis:34 node:2  master 13653-14198 1.64GB      N/A             109.72MB OK              OK    
+db:10 REDISCACHE001 redis:35 node:7  slave  9830-10376  1.64GB      N/A             5.81MB   OK              OK    
+db:10 REDISCACHE001 redis:36 node:17 master 10377-10922 3.04GB      N/A             65.52MB  OK              OK    
+db:10 REDISCACHE001 redis:37 node:29 master 10923-11468 1.56GB      N/A             40.17MB  OK              OK    
+db:10 REDISCACHE001 redis:38 node:8  slave  11469-12014 1.59GB      N/A             4.7MB    OK              OK    
+db:10 REDISCACHE001 redis:39 node:8  slave  14199-14745 1.66GB      N/A             5.53MB   OK              OK    
+db:10 REDISCACHE001 redis:40 node:4  master 14746-15291 1.64GB      N/A             41.13MB  OK              OK    
+db:10 REDISCACHE001 redis:41 node:30 master 0-545       1.6GB       N/A             41.66MB  OK              OK    
+db:10 REDISCACHE001 redis:42 node:28 slave  546-1091    1.59GB      N/A             4.31MB   OK              OK    
+db:10 REDISCACHE001 redis:43 node:6  master 1092-1638   1.67GB      N/A             40.95MB  OK              OK    
+db:10 REDISCACHE001 redis:44 node:20 master 1639-2184   1.58GB      N/A             39.79MB  OK              OK    
+db:10 REDISCACHE001 redis:45 node:26 slave  2185-2730   1.62GB      N/A             5.03MB   OK              OK    
+db:10 REDISCACHE001 redis:46 node:27 master 2731-3276   1.54GB      N/A             39.3MB   OK              OK    
+db:10 REDISCACHE001 redis:47 node:16 slave  3277-3822   1.54GB      N/A             3.83MB   OK              OK    
+db:10 REDISCACHE001 redis:48 node:27 master 3823-4368   1.64GB      N/A             41.73MB  OK              OK    
+db:10 REDISCACHE001 redis:49 node:31 slave  4369-4914   1.65GB      N/A             4.97MB   OK              OK    
+db:10 REDISCACHE001 redis:50 node:9  master 4915-5460   1.6GB       N/A             41.99MB  OK              OK    
+db:10 REDISCACHE001 redis:51 node:28 slave  5461-6007   1.6GB       N/A             5.13MB   OK              OK    
+db:10 REDISCACHE001 redis:52 node:3  slave  6008-6553   1.57GB      N/A             5.12MB   OK              OK    
+db:10 REDISCACHE001 redis:53 node:9  master 6554-7099   1.57GB      N/A             42.15MB  OK              OK    
+db:10 REDISCACHE001 redis:54 node:15 slave  7100-7645   1.63GB      N/A             5.29MB   OK              OK    
+db:10 REDISCACHE001 redis:55 node:15 slave  7646-8191   1.54GB      N/A             4.47MB   OK              OK    
+db:10 REDISCACHE001 redis:56 node:19 master 8192-8737   1.66GB      N/A             42.38MB  OK              OK    
+db:10 REDISCACHE001 redis:57 node:30 master 8738-9283   4.33GB      N/A             85.2MB   OK              OK    
+db:10 REDISCACHE001 redis:58 node:13 master 9284-9829   2.35GB      N/A             58.41MB  OK              OK    
+db:10 REDISCACHE001 redis:59 node:31 slave  15292-15837 1.64GB      N/A             5.46MB   OK              OK    
+db:10 REDISCACHE001 redis:60 node:26 slave  15838-16383 1.64GB      N/A             5.86MB   OK              OK    
 
