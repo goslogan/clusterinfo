@@ -104,7 +104,7 @@ func (m *MemoryInfo) UnmarshalText(input []byte) error {
 
 func (i *IP) UnmarshalText(input []byte) error {
 	i.IP = net.ParseIP(string(input))
-	if i.IP == nil {
+	if i.IP != nil {
 		return fmt.Errorf(errorString, "address", input, nil)
 	} else {
 		return nil

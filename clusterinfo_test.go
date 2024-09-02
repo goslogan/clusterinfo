@@ -14,6 +14,9 @@ import (
 //go:embed testdata/node_1.rladmin
 var rladmin []byte
 
+//go:embed testdata/node_2.rladmin
+var rsOutput []byte
+
 func TestChunking(t *testing.T) {
 	buffer := bytes.NewReader(rladmin)
 	chunks := Chunks{}
@@ -96,5 +99,27 @@ func TestEndpoints(t *testing.T) {
 			assert.Equal(t, eps[1].Name, "cambodia-00")
 			assert.Equal(t, eps[1].Role, "single")
 		}
+	}
+}
+
+func TestRSOutput(t *testing.T) {
+	var chunks *Chunks
+	var info = &ClusterInfo{}
+
+	buffer := bytes.NewReader(rladmin)
+	chunks = &Chunks{}
+	err := chunks.Parse(buffer)
+	if assert.Nil(t, err) {
+		_, err = chunks.ParseNodes(info)
+		assert.Nil(t, err)
+
+		_, err = chunks.ParseDatabases(info)
+		assert.Nil(t, err)
+
+		_, err = chunks.ParseEndpoints(info)
+		assert.Nil(t, err)
+
+		_, err = chunks.ParseShards(info)
+		assert.Nil(t, err)
 	}
 }
