@@ -5,13 +5,14 @@ Copyright © 2024 Nic Gibson <nic.gibson@redis.com>
 package clusterinfo
 
 import (
+	"bytes"
 	"encoding/json"
 	"fmt"
 	"net"
 	"strings"
 
 	"github.com/gocarina/gocsv"
-	"github.com/o1egl/fwencoder"
+	"github.com/goslogan/fw"
 )
 
 const (
@@ -59,7 +60,10 @@ func (c *Chunks) ParseNodes(parent *ClusterInfo) (Nodes, error) {
 
 	nodes := []*Node{}
 
-	err := fwencoder.Unmarshal(c.Nodes, nodes)
+	decoder := fw.NewDecoder(bytes.NewReader(c.Nodes))
+	decoder.IgnoreEmptyRecords = true
+
+	err := decoder.Decode(&nodes)
 
 	if err != nil {
 		return nil, err
@@ -121,6 +125,10 @@ func (s *ShardInfo) UnmarshalCSV(input string) error {
 	}
 
 	return nil
+}
+
+func (s *ShardInfo) UnmarshalText(input []byte) error {
+	return s.UnmarshalCSV(string(input))
 }
 
 func (ns Nodes) JSON() (string, error) {

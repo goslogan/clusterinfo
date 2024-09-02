@@ -5,11 +5,12 @@ Copyright © 2024 Nic Gibson <nic.gibson@redis.com>
 package clusterinfo
 
 import (
+	"bytes"
 	"encoding/json"
 	"strings"
 
 	"github.com/gocarina/gocsv"
-	"github.com/o1egl/fwencoder"
+	"github.com/goslogan/fw"
 )
 
 type DBEndPoints []string
@@ -49,8 +50,10 @@ type DatabasesWithNodes []*DatabaseWithNodes
 func (c *Chunks) ParseDatabases(parent *ClusterInfo) (Databases, error) {
 
 	databases := []*Database{}
+	decoder := fw.NewDecoder(bytes.NewReader(c.Databases))
+	decoder.IgnoreEmptyRecords = true
 
-	err := fwencoder.Unmarshal(c.Databases, databases)
+	err := decoder.Decode(&databases)
 
 	if err != nil {
 		return nil, err
@@ -122,7 +125,6 @@ func (d *Database) ShardCount() uint16 {
 	}
 
 	return shards
-
 }
 
 func (d *Database) getNodes() DBNodes {
@@ -180,14 +182,14 @@ func (d Databases) withNodes() DatabasesWithNodes {
 	return dn
 }
 
-func (e *DBEndPoints) UnmarshalCSV(input string) error {
-	tmp := DBEndPoints(strings.Split(input, "/"))
+func (e *DBEndPoints) UnmarshalText(text []byte) error {
+	tmp := DBEndPoints(strings.Split(string(text), "/"))
 	*e = tmp
 	return nil
 }
 
 func (e *DBEndPoints) MarshalCSV() (string, error) {
-	return strings.Join(*e, "/"), nil
+	return strings.Join([]string(*e), "/"), nil
 }
 
 func (n *DBNodes) MarshalCSV() (string, error) {

@@ -5,20 +5,21 @@ Copyright © 2024 Nic Gibson <nic.gibson@redis.com>
 package clusterinfo
 
 import (
+	"bytes"
 	"encoding/json"
 
 	"github.com/gocarina/gocsv"
-	"github.com/o1egl/fwencoder"
+	"github.com/goslogan/fw"
 )
 
 type Endpoint struct {
-	Id             string       `json:"id" csv:"ID"`
-	DBId           string       `json:"dbId" csv:"DB:ID"`
-	Name           string       `json:"name" csv:"NAME"`
-	Node           string       `json:"node" csv:"NODE"`
-	Role           string       `json:"role" csv:"ROLE"`
-	SSL            bool         `json:"ssl" csv:"SSL"`
-	WatchdogStatus string       `json:"watchdogStatus" csv:"WATCHDOG_STATUS"`
+	Id             string       `column:"ID" json:"id" csv:"ID"`
+	DBId           string       `column:"DB:ID" json:"dbId" csv:"DB:ID"`
+	Name           string       `column:"NAME" json:"name" csv:"NAME"`
+	Node           string       `column:"NODE" json:"node" csv:"NODE"`
+	Role           string       `column:"ROLE" json:"role" csv:"ROLE"`
+	SSL            bool         `column:"SSL" json:"ssl" csv:"SSL"`
+	WatchdogStatus string       `column:"WATCHDOG_STATUS" json:"watchdogStatus" csv:"WATCHDOG_STATUS"`
 	parent         *ClusterInfo `csv:"-" json:"-"`
 }
 
@@ -26,8 +27,10 @@ type Endpoints []*Endpoint
 
 func (c *Chunks) ParseEndpoints(parent *ClusterInfo) (Endpoints, error) {
 	endpoints := []*Endpoint{}
+	decoder := fw.NewDecoder(bytes.NewReader(c.Endpoints))
+	decoder.IgnoreEmptyRecords = true
 
-	err := fwencoder.Unmarshal(c.Endpoints, endpoints)
+	err := decoder.Decode(&endpoints)
 
 	if err != nil {
 		for _, e := range endpoints {

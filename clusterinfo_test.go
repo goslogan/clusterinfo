@@ -1,95 +1,100 @@
 /*
 Copyright © 2024 Nic Gibson <nic.gibson@redis.com>
 */
-package main_test
+package clusterinfo
 
 import (
 	"bytes"
 	_ "embed"
+	"testing"
 
-	"github.com/goslogan/rlatool/clusterinfo"
-	. "github.com/onsi/ginkgo/v2"
-	. "github.com/onsi/gomega"
+	"github.com/stretchr/testify/assert"
 )
 
 //go:embed testdata/node_1.rladmin
 var rladmin []byte
 
-var _ = Describe("Chunks", func() {
-	It("can parse into chunk", func() {
-		buffer := bytes.NewReader(rladmin)
-		chunks := &clusterinfo.Chunks{}
-		err := chunks.Parse(buffer)
-		Expect(err).NotTo(HaveOccurred())
-	})
-})
+func TestChunking(t *testing.T) {
+	buffer := bytes.NewReader(rladmin)
+	chunks := Chunks{}
+	err := chunks.Parse(buffer)
+	if assert.Nil(t, err) {
+		assert.NotEmpty(t, chunks.Nodes)
+		assert.NotEmpty(t, chunks.Databases)
+		assert.NotEmpty(t, chunks.Endpoints)
+		assert.NotEmpty(t, chunks.Shards)
+	}
+}
 
-var _ = Describe("Nodes", func() {
-	var chunks *clusterinfo.Chunks
-	var info = &clusterinfo.ClusterInfo{}
-	BeforeEach(func() {
-		buffer := bytes.NewReader(rladmin)
-		chunks = &clusterinfo.Chunks{}
-		err := chunks.Parse(buffer)
-		Expect(err).NotTo(HaveOccurred())
-	})
-	It("can parse lines into  nodes", func() {
+func TestNodes(t *testing.T) {
+	var chunks *Chunks
+	var info = &ClusterInfo{}
+
+	buffer := bytes.NewReader(rladmin)
+	chunks = &Chunks{}
+	err := chunks.Parse(buffer)
+	if assert.Nil(t, err) {
 		nodes, err := chunks.ParseNodes(info)
-		Expect(err).NotTo(HaveOccurred())
-		Expect(nodes).To(HaveLen(13))
-		Expect(nodes[0].Id).To(Equal("node:1"))
-		Expect(nodes[0].Masters + nodes[0].Replicas).To(Equal(nodes[0].ShardUsage.InUse))
-		Expect(nodes[0].ShardUsage.InUse).To(Equal(uint16(94)))
-		Expect(float64(nodes[0].RedisRAM.Free)).To(BeNumerically("~", 53.29, 0.1))
-	})
-})
+		if assert.Nil(t, err) {
+			assert.Len(t, nodes, 13)
+			assert.Equal(t, nodes[0].Id, "node:1")
+			assert.Equal(t, nodes[0].Masters+nodes[0].Replicas, nodes[0].ShardUsage.InUse)
+			assert.Equal(t, nodes[0].ShardUsage.InUse, uint16(94))
+			assert.LessOrEqual(t, nodes[0].RedisRAM.Free, 53.24)
+			assert.GreaterOrEqual(t, nodes[0].RedisRAM.Free, 53.23)
+		}
+	}
+}
 
-var _ = Describe("Databases", func() {
-	var chunks *clusterinfo.Chunks
-	var info = &clusterinfo.ClusterInfo{}
+func TestDatabases(t *testing.T) {
+	var chunks *Chunks
+	var info = &ClusterInfo{}
 
-	BeforeEach(func() {
-		buffer := bytes.NewReader(rladmin)
-		chunks = &clusterinfo.Chunks{}
-		err := chunks.Parse(buffer)
-		Expect(err).NotTo(HaveOccurred())
-	})
-	It("can parse lines into databaes", func() {
+	buffer := bytes.NewReader(rladmin)
+	chunks = &Chunks{}
+	err := chunks.Parse(buffer)
+	if assert.Nil(t, err) {
 		dbs, err := chunks.ParseDatabases(info)
-		Expect(err).NotTo(HaveOccurred())
-		Expect(dbs).To(HaveLen(143))
-	})
-})
+		if assert.Nil(t, err) {
+			assert.Len(t, dbs, 143)
+			assert.Equal(t, dbs[0].Id, "db:10567021")
+			assert.Equal(t, dbs[0].Endpoint, DBEndPoints([]string{
+				"redis-17798.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17798",
+				"redis-17798.c99999.us-central1-mz.gcp.redns.redis-cloud.com:17798",
+				"redis-17798.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17798"}))
+		}
+	}
+}
 
-var _ = Describe("Shards", func() {
-	var chunks *clusterinfo.Chunks
-	var info = &clusterinfo.ClusterInfo{}
+func TestShards(t *testing.T) {
+	var chunks *Chunks
+	var info = &ClusterInfo{}
 
-	BeforeEach(func() {
-		buffer := bytes.NewReader(rladmin)
-		chunks = &clusterinfo.Chunks{}
-		err := chunks.Parse(buffer)
-		Expect(err).NotTo(HaveOccurred())
-	})
-	It("can parse lines into shards", func() {
-		result, err := chunks.ParseShards(info)
-		Expect(err).NotTo(HaveOccurred())
-		Expect(result).To(HaveLen(574))
-	})
-})
+	buffer := bytes.NewReader(rladmin)
+	chunks = &Chunks{}
+	err := chunks.Parse(buffer)
+	if assert.Nil(t, err) {
+		shards, err := chunks.ParseShards(info)
+		if assert.Nil(t, err) {
+			assert.Len(t, shards, 574)
+			assert.Equal(t, "sudan-02", shards[0].Name)
+		}
+	}
+}
 
-var _ = Describe("Endpoints", func() {
-	var chunks *clusterinfo.Chunks
-	var info = &clusterinfo.ClusterInfo{}
-	BeforeEach(func() {
-		buffer := bytes.NewReader(rladmin)
-		chunks = &clusterinfo.Chunks{}
-		err := chunks.Parse(buffer)
-		Expect(err).NotTo(HaveOccurred())
-	})
-	It("can parse lines into endpoints", func() {
-		result, err := chunks.ParseEndpoints(info)
-		Expect(err).NotTo(HaveOccurred())
-		Expect(result).To(HaveLen(144))
-	})
-})
+func TestEndpoints(t *testing.T) {
+	var chunks *Chunks
+	var info = &ClusterInfo{}
+
+	buffer := bytes.NewReader(rladmin)
+	chunks = &Chunks{}
+	err := chunks.Parse(buffer)
+	if assert.Nil(t, err) {
+		eps, err := chunks.ParseEndpoints(info)
+		if assert.Nil(t, err) {
+			assert.Len(t, eps, 144)
+			assert.Equal(t, eps[1].Name, "cambodia-00")
+			assert.Equal(t, eps[1].Role, "single")
+		}
+	}
+}

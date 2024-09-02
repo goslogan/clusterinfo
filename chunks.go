@@ -6,7 +6,6 @@ package clusterinfo
 
 import (
 	"bufio"
-	"bytes"
 	"fmt"
 	"io"
 	"regexp"
@@ -56,7 +55,7 @@ func (c *Chunks) Parse(input io.Reader) error {
 			where = newChunk
 			current = make([]byte, 0)
 		} else {
-			line := append(bytes.TrimSpace(line), '\n')
+			line := append(line, '\n')
 			current = append(current, line...)
 		}
 	}

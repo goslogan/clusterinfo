@@ -10,22 +10,22 @@ failures/minute - avg1 0.00, avg15 0.00, avg60 0.00.
 
 CLUSTER NODES:
 NODE:ID ROLE   ADDRESS     EXTERNAL_ADDRESS HOSTNAME MASTERS SLAVES OVERBOOKING_DEPTH SHARDS CORES FREE_RAM          PROVISIONAL_RAM  VERSION   SHA    RACK-ID     STATUS
-*node:1 slave  10.10.21.4  55.136.114.84    node1    94      0      -91.29GB          94/300 16    53.24GB/125.82GB  28.07GB/100.65GB 6.2.18-49 b799d6 us-central-1 OK    
-node:2  slave  10.10.21.5  51.142.224.230   node2    7       45     -125.01GB         52/300 16    63.85GB/125.82GB  38.69GB/100.65GB 6.2.18-49 b799d6 us-central-1 OK    
-node:3  master 10.10.21.11 19.11.38.61      node3    27      6      -131.58GB         33/300 32    110.67GB/251.71GB 60.33GB/201.37GB 6.2.18-49 b799d6 us-central-1 OK    
-node:4  slave  10.10.21.6  19.60.3.13       node4    50      3      -24.51GB          53/300 16    69.53GB/125.81GB  44.37GB/100.65GB 6.2.18-49 b799d6 us-central-1 OK    
-node:5  slave  10.10.21.8  20.17.14.109     node5    15      19     -102.79GB         34/300 16    47.91GB/125.81GB  22.74GB/100.65GB 6.2.18-49 b799d6 us-central-1 OK    
-node:7  slave  10.10.21.7  20.253.48.102    node7    28      9      -167.83GB         37/300 32    106.77GB/251.71GB 56.43GB/201.37GB 6.2.18-49 b799d6 us-central-1 OK    
-node:8  slave  10.10.21.10 20.245.3.17      node8    6       62     -194.4GB          68/300 32    90.04GB/251.71GB  39.69GB/201.37GB 6.2.18-49 b799d6 us-central-2 OK    
-node:9  slave  10.10.21.12 74.34.64.23      node9    3       42     -41.02GB          45/300 32    123.66GB/251.71GB 73.32GB/201.37GB 6.2.18-49 b799d6 us-central-2 OK    
-node:10 slave  10.10.21.13 4.31.41.16       node10   15      20     -42.01GB          35/300 32    123.15GB/251.71GB 72.8GB/201.37GB  6.2.18-49 b799d6 us-central-1 OK    
-node:11 slave  10.10.21.14 188.71.21.23     node11   14      32     -105.05GB         46/300 32    62.04GB/251.71GB  11.7GB/201.37GB  6.2.18-49 b799d6 us-central-2 OK    
-node:12 slave  10.10.21.15 45.18.21.173     node12   2       33     -154.33GB         35/300 32    70.66GB/251.71GB  20.31GB/201.37GB 6.2.18-49 b799d6 us-central-1 OK    
-node:13 slave  10.10.21.16 21.17.48.175     node13   26      16     -62.31GB          42/300 32    126.89GB/251.71GB 76.55GB/201.37GB 6.2.18-49 b799d6 us-central-2 OK    
-node:14 slave  10.10.21.17 12.20.227.118    node14   0       0      0KB               0/0    2     5.47GB/7.77GB     0KB/0KB          6.2.18-49 b799d6 us-central-3 OK    
+*node:1 slave  10.10.21.4  55.136.114.84    node1    94      0      -91.29GB          94/300 16    53.24GB/125.82GB  28.07GB/100.65GB 6.2.18-49 b799d6 us-central-1 OK   
+node:2  slave  10.10.21.5  51.142.224.230   node2    7       45     -125.01GB         52/300 16    63.85GB/125.82GB  38.69GB/100.65GB 6.2.18-49 b799d6 us-central-1 OK   
+node:3  master 10.10.21.11 19.11.38.61      node3    27      6      -131.58GB         33/300 32    110.67GB/251.71GB 60.33GB/201.37GB 6.2.18-49 b799d6 us-central-1 OK   
+node:4  slave  10.10.21.6  19.60.3.13       node4    50      3      -24.51GB          53/300 16    69.53GB/125.81GB  44.37GB/100.65GB 6.2.18-49 b799d6 us-central-1 OK   
+node:5  slave  10.10.21.8  20.17.14.109     node5    15      19     -102.79GB         34/300 16    47.91GB/125.81GB  22.74GB/100.65GB 6.2.18-49 b799d6 us-central-1 OK   
+node:7  slave  10.10.21.7  20.253.48.102    node7    28      9      -167.83GB         37/300 32    106.77GB/251.71GB 56.43GB/201.37GB 6.2.18-49 b799d6 us-central-1 OK   
+node:8  slave  10.10.21.10 20.245.3.17      node8    6       62     -194.4GB          68/300 32    90.04GB/251.71GB  39.69GB/201.37GB 6.2.18-49 b799d6 us-central-2 OK   
+node:9  slave  10.10.21.12 74.34.64.23      node9    3       42     -41.02GB          45/300 32    123.66GB/251.71GB 73.32GB/201.37GB 6.2.18-49 b799d6 us-central-2 OK   
+node:10 slave  10.10.21.13 4.31.41.16       node10   15      20     -42.01GB          35/300 32    123.15GB/251.71GB 72.8GB/201.37GB  6.2.18-49 b799d6 us-central-1 OK   
+node:11 slave  10.10.21.14 188.71.21.23     node11   14      32     -105.05GB         46/300 32    62.04GB/251.71GB  11.7GB/201.37GB  6.2.18-49 b799d6 us-central-2 OK   
+node:12 slave  10.10.21.15 45.18.21.173     node12   2       33     -154.33GB         35/300 32    70.66GB/251.71GB  20.31GB/201.37GB 6.2.18-49 b799d6 us-central-1 OK   
+node:13 slave  10.10.21.16 21.17.48.175     node13   26      16     -62.31GB          42/300 32    126.89GB/251.71GB 76.55GB/201.37GB 6.2.18-49 b799d6 us-central-2 OK   
+node:14 slave  10.10.21.17 12.20.227.118    node14   0       0      0KB               0/0    2     5.47GB/7.77GB     0KB/0KB          6.2.18-49 b799d6 us-central-3 OK   
 
 DATABASES:
-DB:ID       NAME                      TYPE  STATUS SHARDS PLACEMENT REPLICATION PERSISTENCE ENDPOINT                                                                                                                                                                                       EXEC_STATE EXEC_STATE_MACHINE BACKUP_PROGRESS MISSING_BACKUP_TIME REDIS_VERSION
+DB:ID       NAME                      TYPE  STATUS SHARDS PLACEMENT REPLICATION PERSISTENCE ENDPOINT                                                                                                                                                                                           EXEC_STATE EXEC_STATE_MACHINE BACKUP_PROGRESS MISSING_BACKUP_TIME REDIS_VERSION
 db:10567021 sudan-02                  redis active 1      dense     enabled     aof         redis-17798.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17798/redis-17798.c99999.us-central1-mz.gcp.redns.redis-cloud.com:17798/redis-17798.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17798 N/A        N/A                N/A             N/A                 6.2.6        
 db:10567048 cambodia-00               redis active 2      dense     enabled     aof         redis-13352.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13352/redis-13352.c99999.us-central1-mz.gcp.redns.redis-cloud.com:13352/redis-13352.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:13352 N/A        N/A                N/A             N/A                 6.2.6        
 db:10567057 ethiopia-05               redis active 2      dense     enabled     aof         redis-16671.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16671/redis-16671.c99999.us-central1-mz.gcp.redns.redis-cloud.com:16671/redis-16671.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:16671 N/A        N/A                N/A             N/A                 6.2.6        
