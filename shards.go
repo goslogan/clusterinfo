@@ -9,23 +9,25 @@ import (
 	"cmp"
 	"encoding/json"
 	"slices"
+	"time"
 
 	"github.com/gocarina/gocsv"
 	"github.com/goslogan/fw"
 )
 
 type Shard struct {
-	Id             string       `column:"ID" json:"id" csv:"ID"`
-	DBId           string       `column:"DB:ID" json:"dbId" csv:"DB:ID"`
-	Name           string       `column:"NAME" json:"name" csv:"NAME"`
-	Node           string       `column:"NODE" json:"node" csv:"NODE"`
-	Role           string       `column:"ROLE" json:"role" csv:"ROLE"`
-	Slots          string       `column:"SLOTS" json:"slots" csv:"SLOTS"`
-	UsedMemory     RAMFloat     `column:"USED_MEMORY" json:"usedMemory" csv:"USED_MEMORY"`
-	BackupProgress string       `column:"BACKUP_PROGRESS" ßjson:"backupProgress" csv:"BACKUP_PROGRESS"`
-	RAMFrag        RAMFloat     `column:"RAM_FRAG" json:"ramFrag" csv:"RAM_FRAG"`
-	WatchdogStatus string       `column:"WATCHDOG_STATUS" json:"watchdogStatus" csv:"WATCHDOG_STATUS"`
-	Status         string       `column:"STATUS" json:"status" csv:"STATUS"`
+	Id             string       `column:"ID" json:"id" csv:"shardid"`
+	DBId           string       `column:"DB:ID" json:"dbId" csv:"dbid"`
+	Name           string       `column:"NAME" json:"name" csv:"name"`
+	Node           string       `column:"NODE" json:"node" csv:"node"`
+	Role           string       `column:"ROLE" json:"role" csv:"role"`
+	Slots          string       `column:"SLOTS" json:"slots" csv:"slots"`
+	UsedMemory     RAMFloat     `column:"USED_MEMORY" json:"usedMemory" csv:"usedMemory"`
+	BackupProgress string       `column:"BACKUP_PROGRESS" ßjson:"backupProgress" csv:"backupProgress"`
+	RAMFrag        RAMFloat     `column:"RAM_FRAG" json:"ramFrag" csv:"ramFrag"`
+	WatchdogStatus string       `column:"WATCHDOG_STATUS" json:"watchdogStatus" csv:"watchdogStatus"`
+	Status         string       `column:"STATUS" json:"status" csv:"status"`
+	TimeStamp      time.Time    `json:"timeStamp" csv:"timeStamp" column:"-"`
 	parent         *ClusterInfo `csv:"-" json:"-"`
 }
 
@@ -41,6 +43,7 @@ func (c *Chunks) ParseShards(parent *ClusterInfo) (Shards, error) {
 	if err == nil {
 		for _, s := range shards {
 			s.parent = parent
+			s.TimeStamp = parent.TimeStamp
 		}
 	}
 

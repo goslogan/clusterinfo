@@ -7,6 +7,7 @@ import (
 	"bytes"
 	_ "embed"
 	"testing"
+	"time"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -103,23 +104,12 @@ func TestEndpoints(t *testing.T) {
 }
 
 func TestRSOutput(t *testing.T) {
-	var chunks *Chunks
-	var info = &ClusterInfo{}
 
-	buffer := bytes.NewReader(rladmin)
-	chunks = &Chunks{}
-	err := chunks.Parse(buffer)
-	if assert.Nil(t, err) {
-		_, err = chunks.ParseNodes(info)
-		assert.Nil(t, err)
+	buffer := bytes.NewReader(rsOutput)
+	info, err := NewClusterInfo(buffer)
+	assert.Nil(t, err)
 
-		_, err = chunks.ParseDatabases(info)
-		assert.Nil(t, err)
+	ts, _ := time.Parse("2006-01-02 15:04:05.000000-07:00", "2024-06-20 14:29:15.909661+02:00")
+	assert.Equal(t, info.TimeStamp, ts)
 
-		_, err = chunks.ParseEndpoints(info)
-		assert.Nil(t, err)
-
-		_, err = chunks.ParseShards(info)
-		assert.Nil(t, err)
-	}
 }

@@ -8,6 +8,7 @@ import (
 	"bytes"
 	"encoding/json"
 	"strings"
+	"time"
 
 	"github.com/gocarina/gocsv"
 	"github.com/goslogan/fw"
@@ -36,6 +37,7 @@ type Database struct {
 	BackupProgress    string       `column:"BACKUP_PROGRESS" json:"backupProgress" csv:"backupProgress"`
 	MissingBackupTime string       `column:"MISSING_BACKUP_TIME" json:"missingBackupTime" csv:"missingBackupTime"`
 	RedisVersion      string       `column:"REDIS_VERSION" json:"redisVersion" csv:"redisVersion"`
+	TimeStamp         time.Time    `json:"timeStamp" csv:"timeStamp" column:"-"`
 	parent            *ClusterInfo `json:"-" csv:"-"`
 }
 
@@ -60,6 +62,7 @@ func (c *Chunks) ParseDatabases(parent *ClusterInfo) (Databases, error) {
 	}
 	for _, db := range databases {
 		db.parent = parent
+		db.TimeStamp = parent.TimeStamp
 	}
 
 	return databases, nil

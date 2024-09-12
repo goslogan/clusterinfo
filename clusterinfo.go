@@ -79,6 +79,11 @@ func NewClusterInfo(in io.Reader) (*ClusterInfo, error) {
 
 	}
 
+	ts, err := chunks.ExtractTimeStamp()
+	if err == nil {
+		info.TimeStamp = ts
+	}
+
 	info.Databases, err = chunks.ParseDatabases(info)
 	if err != nil {
 		return nil, err
@@ -97,11 +102,6 @@ func NewClusterInfo(in io.Reader) (*ClusterInfo, error) {
 	info.Nodes, err = chunks.ParseNodes(info)
 	if err != nil {
 		return nil, err
-	}
-
-	ts, err := chunks.ExtractTimeStamp()
-	if err == nil {
-		info.TimeStamp = ts
 	}
 
 	return info, nil

@@ -7,19 +7,21 @@ package clusterinfo
 import (
 	"bytes"
 	"encoding/json"
+	"time"
 
 	"github.com/gocarina/gocsv"
 	"github.com/goslogan/fw"
 )
 
 type Endpoint struct {
-	Id             string       `column:"ID" json:"id" csv:"ID"`
-	DBId           string       `column:"DB:ID" json:"dbId" csv:"DB:ID"`
-	Name           string       `column:"NAME" json:"name" csv:"NAME"`
-	Node           string       `column:"NODE" json:"node" csv:"NODE"`
-	Role           string       `column:"ROLE" json:"role" csv:"ROLE"`
-	SSL            bool         `column:"SSL" json:"ssl" csv:"SSL"`
-	WatchdogStatus string       `column:"WATCHDOG_STATUS" json:"watchdogStatus" csv:"WATCHDOG_STATUS"`
+	Id             string       `column:"ID" json:"id" csv:"endpointId"`
+	DBId           string       `column:"DB:ID" json:"dbId" csv:"dbid"`
+	Name           string       `column:"NAME" json:"name" csv:"name"`
+	Node           string       `column:"NODE" json:"node" csv:"node"`
+	Role           string       `column:"ROLE" json:"role" csv:"endpointRole"`
+	SSL            bool         `column:"SSL" json:"ssl" csv:"ssl"`
+	WatchdogStatus string       `column:"WATCHDOG_STATUS" json:"watchdogStatus" csv:"watchDogStatus"`
+	TimeStamp      time.Time    `json:"timeStamp" csv:"timeStamp" column:"-"`
 	parent         *ClusterInfo `csv:"-" json:"-"`
 }
 
@@ -35,6 +37,7 @@ func (c *Chunks) ParseEndpoints(parent *ClusterInfo) (Endpoints, error) {
 	if err != nil {
 		for _, e := range endpoints {
 			e.parent = parent
+			e.TimeStamp = parent.TimeStamp
 		}
 	}
 	return endpoints, err
