@@ -35,6 +35,7 @@ type MemoryInfo struct {
 }
 
 type Node struct {
+	Key              string       `columh:"-" json:"key" csv:"key"`
 	Id               string       `json:"nodeId" csv:"nodeId" column:"NODE:ID" `
 	Role             string       `json:"role" csv:"role" column:"ROLE"`
 	Address          IP           `json:"address" csv:"address" column:"ADDRESS"`
@@ -73,6 +74,7 @@ func (c *Chunks) ParseNodes(parent *ClusterInfo) (Nodes, error) {
 
 	for _, node := range nodes {
 		node.parent = parent
+		node.Key = parent.Key
 		node.TimeStamp = parent.TimeStamp
 		if node.ShardUsage.Max == 0 {
 			node.Quorum = true
@@ -148,6 +150,10 @@ func (ns Nodes) JSON() (string, error) {
 	}
 }
 
-func (ns Nodes) CSV() (string, error) {
-	return gocsv.MarshalString(&ns)
+func (ns Nodes) CSV(skipHeaders bool) (string, error) {
+	if skipHeaders {
+		return gocsv.MarshalStringWithoutHeaders(ns)
+	} else {
+		return gocsv.MarshalString(ns)
+	}
 }

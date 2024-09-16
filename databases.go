@@ -23,6 +23,7 @@ type DBShards struct {
 type DBNodes map[string]*DBShards
 
 type Database struct {
+	Key               string       `columh:"-" json:"key" csv:"key"`
 	Id                string       `column:"DB:ID" json:"id" csv:"id"`
 	Name              string       `column:"NAME" json:"name" csv:"name"`
 	Type              string       `column:"TYPE" json:"type" csv:"type"`
@@ -62,6 +63,7 @@ func (c *Chunks) ParseDatabases(parent *ClusterInfo) (Databases, error) {
 	}
 	for _, db := range databases {
 		db.parent = parent
+		db.Key = parent.Key
 		db.TimeStamp = parent.TimeStamp
 	}
 
@@ -160,8 +162,14 @@ func (d *Databases) JSON() (string, error) {
 	}
 }
 
-func (d Databases) CSV() (string, error) {
-	return gocsv.MarshalString(d)
+// Marshal the databases to a string and return it.
+// If the skipHeaders parameter is true, marshall without headers
+func (d Databases) CSV(skipHeaders bool) (string, error) {
+	if skipHeaders {
+		return gocsv.MarshalStringWithoutHeaders(d)
+	} else {
+		return gocsv.MarshalString(d)
+	}
 }
 
 func (d DatabasesWithNodes) JSON() (string, error) {

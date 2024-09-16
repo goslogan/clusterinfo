@@ -14,6 +14,7 @@ import (
 )
 
 type Endpoint struct {
+	Key            string       `columh:"-" json:"key" csv:"key"`
 	Id             string       `column:"ID" json:"id" csv:"endpointId"`
 	DBId           string       `column:"DB:ID" json:"dbId" csv:"dbid"`
 	Name           string       `column:"NAME" json:"name" csv:"name"`
@@ -37,6 +38,7 @@ func (c *Chunks) ParseEndpoints(parent *ClusterInfo) (Endpoints, error) {
 	if err != nil {
 		for _, e := range endpoints {
 			e.parent = parent
+			e.Key = parent.Key
 			e.TimeStamp = parent.TimeStamp
 		}
 	}
@@ -52,6 +54,10 @@ func (e Endpoints) JSON() (string, error) {
 	}
 }
 
-func (e Endpoints) CSV() (string, error) {
-	return gocsv.MarshalString(&e)
+func (e Endpoints) CSV(skipHeaders bool) (string, error) {
+	if skipHeaders {
+		return gocsv.MarshalStringWithoutHeaders(e)
+	} else {
+		return gocsv.MarshalString(e)
+	}
 }

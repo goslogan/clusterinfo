@@ -20,6 +20,7 @@ type Serializer interface {
 
 // ClusterInfo represents all the data loaded from the rladmin status output
 type ClusterInfo struct {
+	Key       string    `json:"key"`
 	Unparsed  *Chunks   `json:"-"`
 	Databases Databases `json:"databases"`
 	Endpoints Endpoints `json:"endpoints"`
@@ -65,7 +66,7 @@ func parseMemory(s string) (RAMFloat, error) {
 
 }
 
-func NewClusterInfo(in io.Reader) (*ClusterInfo, error) {
+func NewClusterInfo(key string, in io.Reader) (*ClusterInfo, error) {
 
 	info := &ClusterInfo{}
 
@@ -84,17 +85,17 @@ func NewClusterInfo(in io.Reader) (*ClusterInfo, error) {
 		info.TimeStamp = ts
 	}
 
+	info.Endpoints, err = chunks.ParseEndpoints(info)
+	if err != nil {
+		return nil, err
+	}
+
 	info.Databases, err = chunks.ParseDatabases(info)
 	if err != nil {
 		return nil, err
 	}
 
 	info.Shards, err = chunks.ParseShards(info)
-	if err != nil {
-		return nil, err
-	}
-
-	info.Endpoints, err = chunks.ParseEndpoints(info)
 	if err != nil {
 		return nil, err
 	}
@@ -118,4 +119,23 @@ func (c *ClusterInfo) JSON() (string, error) {
 	} else {
 		return string(data), nil
 	}
+}
+
+func (c *ClusterInfo) CSV(skipHeaders bool) (map[string]string, error) {
+	var err error
+	csvinfo := map[string]string{}
+
+	csvinfo["nodes"], err = c.Databases.CSV(skipHeaders)
+	if err == nil {
+		csvinfo["endpoints"], err = c.Endpoints.CSV(skipHeaders)
+		if err == nil {
+			csvinfo["nodes"], err = c.Nodes.CSV(skipHeaders)
+			if err == nil {
+				csvinfo["shards"], err = c.Shards.CSV(skipHeaders)
+			}
+		}
+	}
+
+	return csvinfo, err
+
 }

@@ -16,6 +16,7 @@ import (
 )
 
 type Shard struct {
+	Key            string       `columh:"-" json:"key" csv:"key"`
 	Id             string       `column:"ID" json:"id" csv:"shardid"`
 	DBId           string       `column:"DB:ID" json:"dbId" csv:"dbid"`
 	Name           string       `column:"NAME" json:"name" csv:"name"`
@@ -43,6 +44,7 @@ func (c *Chunks) ParseShards(parent *ClusterInfo) (Shards, error) {
 	if err == nil {
 		for _, s := range shards {
 			s.parent = parent
+			s.Key = parent.Key
 			s.TimeStamp = parent.TimeStamp
 		}
 	}
@@ -50,8 +52,12 @@ func (c *Chunks) ParseShards(parent *ClusterInfo) (Shards, error) {
 	return shards, err
 }
 
-func (s Shards) CSV() (string, error) {
-	return gocsv.MarshalString(s)
+func (s Shards) CSV(skipHeaders bool) (string, error) {
+	if skipHeaders {
+		return gocsv.MarshalStringWithoutHeaders(s)
+	} else {
+		return gocsv.MarshalString(s)
+	}
 }
 
 func (s Shards) JSON() (string, error) {
