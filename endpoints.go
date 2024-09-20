@@ -14,7 +14,8 @@ import (
 )
 
 type Endpoint struct {
-	Key            string       `columh:"-" json:"key" csv:"key"`
+	Key            string       `column:"-" json:"key" csv:"key"`
+	Source         string       `column:"-" json:"source" csv:"source"`
 	Id             string       `column:"ID" json:"id" csv:"endpointId"`
 	DBId           string       `column:"DB:ID" json:"dbId" csv:"dbid"`
 	Name           string       `column:"NAME" json:"name" csv:"name"`
@@ -35,18 +36,31 @@ func (c *Chunks) ParseEndpoints(parent *ClusterInfo) (Endpoints, error) {
 
 	err := decoder.Decode(&endpoints)
 
-	if err != nil {
-		for _, e := range endpoints {
-			e.parent = parent
-			e.Key = parent.Key
-			e.TimeStamp = parent.TimeStamp
+	if err == nil {
+		for _, endpoint := range endpoints {
+			endpoint.SetParent(parent)
 		}
 	}
 	return endpoints, err
 }
 
-func (e Endpoints) JSON() (string, error) {
-	data, err := json.Marshal(&e)
+// SetParent overrides the parent setting for each database in the
+// slice and updates the parent, key, source and timestamp files
+func (endpoint *Endpoint) SetParent(c *ClusterInfo) {
+	endpoint.parent = c
+	endpoint.Key = c.Key
+	endpoint.Source = c.Source
+	endpoint.TimeStamp = c.TimeStamp
+}
+
+// SetSource overrides the default source for each database in the
+// slice
+func (endpoint *Endpoint) SetSource(info *ClusterInfo) {
+	endpoint.Source = info.Source
+}
+
+func (endpoints Endpoints) JSON() (string, error) {
+	data, err := json.Marshal(&endpoints)
 	if err != nil {
 		return "", err
 	} else {
@@ -54,10 +68,24 @@ func (e Endpoints) JSON() (string, error) {
 	}
 }
 
-func (e Endpoints) CSV(skipHeaders bool) (string, error) {
+func (endpoints Endpoints) CSV(skipHeaders bool) (string, error) {
 	if skipHeaders {
-		return gocsv.MarshalStringWithoutHeaders(e)
+		return gocsv.MarshalStringWithoutHeaders(endpoints)
 	} else {
-		return gocsv.MarshalString(e)
+		return gocsv.MarshalString(endpoints)
+	}
+}
+
+// Set the parent (and associated fields) for all dbs
+func (endpoints Endpoints) SetParent(info *ClusterInfo) {
+	for _, endpoint := range endpoints {
+		endpoint.SetParent(info)
+	}
+}
+
+// Set the source only for all dbs {
+func (endpoints Endpoints) SetSource(info *ClusterInfo) {
+	for _, endpoint := range endpoints {
+		endpoint.SetSource(info)
 	}
 }

@@ -106,7 +106,7 @@ func TestEndpoints(t *testing.T) {
 func TestRSOutput(t *testing.T) {
 
 	buffer := bytes.NewReader(rsOutput)
-	info, err := NewClusterInfo(buffer)
+	info, err := NewClusterInfo("", "", buffer)
 	assert.Nil(t, err)
 
 	ts, _ := time.Parse("2006-01-02 15:04:05.000000-07:00", "2024-06-20 14:29:15.909661+02:00")

@@ -13,14 +13,22 @@ import (
 	"github.com/nic-gibson/go-bytesize"
 )
 
-type Serializer interface {
-	CSV() (string, error)
-	JSON() (string, error)
+type ComponentBase struct {
+	Key       string       `column:"-" json:"key" csv:"key"`
+	Source    string       `column:"-" json:"source" csv:"source"`
+	TimeStamp time.Time    `json:"timeStamp" csv:"timeStamp" column:"-"`
+	parent    *ClusterInfo `json:"-" csv:"-"`
+}
+
+type ClusterInfoComponent interface {
+	SetSource(*ClusterInfo)
+	SetParent(*ClusterInfo)
 }
 
 // ClusterInfo represents all the data loaded from the rladmin status output
 type ClusterInfo struct {
 	Key       string    `json:"key"`
+	Source    string    `json:"source"`
 	Unparsed  *Chunks   `json:"-"`
 	Databases Databases `json:"databases"`
 	Endpoints Endpoints `json:"endpoints"`
@@ -66,9 +74,9 @@ func parseMemory(s string) (RAMFloat, error) {
 
 }
 
-func NewClusterInfo(key string, in io.Reader) (*ClusterInfo, error) {
+func NewClusterInfo(key, source string, in io.Reader) (*ClusterInfo, error) {
 
-	info := &ClusterInfo{}
+	info := &ClusterInfo{Key: key, Source: source}
 
 	chunks := &Chunks{}
 	err := chunks.Parse(in)
@@ -108,10 +116,6 @@ func NewClusterInfo(key string, in io.Reader) (*ClusterInfo, error) {
 	return info, nil
 }
 
-func (c *ClusterInfo) DatabasesWithNodes() DatabasesWithNodes {
-	return c.Databases.withNodes()
-}
-
 func (c *ClusterInfo) JSON() (string, error) {
 	data, err := json.Marshal(c)
 	if err != nil {
@@ -138,4 +142,11 @@ func (c *ClusterInfo) CSV(skipHeaders bool) (map[string]string, error) {
 
 	return csvinfo, err
 
+}
+
+func (base *ComponentBase) SetParent(info *ClusterInfo) {
+	base.parent = info
+	base.Source = info.Source
+	base.TimeStamp = info.TimeStamp
+	base.Key = info.Key
 }

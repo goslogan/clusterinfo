@@ -35,7 +35,8 @@ type MemoryInfo struct {
 }
 
 type Node struct {
-	Key              string       `columh:"-" json:"key" csv:"key"`
+	Key              string       `column:"-" json:"key" csv:"key"`
+	Source           string       `column:"-" json:"source" csv:"source"`
 	Id               string       `json:"nodeId" csv:"nodeId" column:"NODE:ID" `
 	Role             string       `json:"role" csv:"role" column:"ROLE"`
 	Address          IP           `json:"address" csv:"address" column:"ADDRESS"`
@@ -75,6 +76,7 @@ func (c *Chunks) ParseNodes(parent *ClusterInfo) (Nodes, error) {
 	for _, node := range nodes {
 		node.parent = parent
 		node.Key = parent.Key
+		node.Source = parent.Source
 		node.TimeStamp = parent.TimeStamp
 		if node.ShardUsage.Max == 0 {
 			node.Quorum = true

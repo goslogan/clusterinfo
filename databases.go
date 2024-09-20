@@ -23,7 +23,8 @@ type DBShards struct {
 type DBNodes map[string]*DBShards
 
 type Database struct {
-	Key               string       `columh:"-" json:"key" csv:"key"`
+	Key               string       `column:"-" json:"key" csv:"key"`
+	Source            string       `column:"-" json:"source" csv:"source"`
 	Id                string       `column:"DB:ID" json:"id" csv:"id"`
 	Name              string       `column:"NAME" json:"name" csv:"name"`
 	Type              string       `column:"TYPE" json:"type" csv:"type"`
@@ -42,13 +43,7 @@ type Database struct {
 	parent            *ClusterInfo `json:"-" csv:"-"`
 }
 
-type DatabaseWithNodes struct {
-	Database
-	Nodes DBNodes `json:"nodes" csv:"nodes" column:"NODES"`
-}
-
 type Databases []*Database
-type DatabasesWithNodes []*DatabaseWithNodes
 
 func (c *Chunks) ParseDatabases(parent *ClusterInfo) (Databases, error) {
 
@@ -62,12 +57,25 @@ func (c *Chunks) ParseDatabases(parent *ClusterInfo) (Databases, error) {
 		return nil, err
 	}
 	for _, db := range databases {
-		db.parent = parent
-		db.Key = parent.Key
-		db.TimeStamp = parent.TimeStamp
+		db.SetParent(parent)
 	}
 
 	return databases, nil
+}
+
+// SetParent overrides the parent setting for each database in the
+// slice and updates the parent, key, source and timestamp files
+func (db *Database) SetParent(c *ClusterInfo) {
+	db.parent = c
+	db.Key = c.Key
+	db.Source = c.Source
+	db.TimeStamp = c.TimeStamp
+}
+
+// SetSource overrides the default source for each database in the
+// slice
+func (db *Database) SetSource(info *ClusterInfo) {
+	db.Source = info.Source
 }
 
 // JSON returns the database struct marsalled to JSON
@@ -79,82 +87,7 @@ func (db *Database) JSON() (string, error) {
 	}
 }
 
-// OnNode returns the number of shards on the given node for a database.
-func (db *Database) OnNode(id string) DBShards {
-	var masters, replicas uint16
-	for _, shard := range db.parent.Shards.ForDB(db.Id) {
-		if shard.Node == id {
-			if shard.Role == "master" {
-				masters++
-			} else {
-				replicas++
-			}
-		}
-	}
-
-	return DBShards{Masters: masters, Replicas: replicas}
-}
-
-func (d *Database) withNodes() *DatabaseWithNodes {
-	nodes := DBNodes{}
-
-	for _, node := range d.parent.Nodes {
-		nodes[node.Id] = &DBShards{}
-	}
-
-	for _, shard := range d.parent.Shards {
-		if shard.DBId == d.Id {
-			shardCount := nodes[shard.Node]
-
-			if shard.Role == "master" {
-				shardCount.Masters++
-			} else {
-				shardCount.Replicas++
-			}
-		}
-	}
-
-	return &DatabaseWithNodes{
-		Database: *d,
-		Nodes:    d.getNodes(),
-	}
-}
-
-// ShardCount returns the total number of shards by
-// counting them.
-func (d *Database) ShardCount() uint16 {
-	shards := uint16(0)
-	for _, v := range d.getNodes() {
-		shards += v.Masters
-		shards += v.Replicas
-	}
-
-	return shards
-}
-
-func (d *Database) getNodes() DBNodes {
-	nodes := DBNodes{}
-
-	for _, node := range d.parent.Nodes {
-		nodes[node.Id] = &DBShards{}
-	}
-
-	for _, shard := range d.parent.Shards {
-		if shard.DBId == d.Id {
-			shardCount := nodes[shard.Node]
-
-			if shard.Role == "master" {
-				shardCount.Masters++
-			} else {
-				shardCount.Replicas++
-			}
-		}
-	}
-
-	return nodes
-}
-
-func (d *Databases) JSON() (string, error) {
+func (d Databases) JSON() (string, error) {
 	if out, err := json.Marshal(d); err != nil {
 		return "", err
 	} else {
@@ -172,35 +105,18 @@ func (d Databases) CSV(skipHeaders bool) (string, error) {
 	}
 }
 
-func (d DatabasesWithNodes) JSON() (string, error) {
-	if out, err := json.Marshal(d); err != nil {
-		return "", err
-	} else {
-		return string(out), nil
-	}
-}
-
-func (d DatabasesWithNodes) CSV() (string, error) {
-	return gocsv.MarshalString(d)
-}
-
-func (d Databases) withNodes() DatabasesWithNodes {
-	dn := DatabasesWithNodes{}
+// Set the parent (and associated fields) for all dbs
+func (d Databases) SetParent(info *ClusterInfo) {
 	for _, db := range d {
-		dn = append(dn, db.withNodes())
+		db.SetParent(info)
 	}
-
-	return dn
 }
 
-func (e *DBEndPoints) UnmarshalText(text []byte) error {
-	tmp := DBEndPoints(strings.Split(string(text), "/"))
-	*e = tmp
-	return nil
-}
-
-func (e *DBEndPoints) MarshalCSV() (string, error) {
-	return strings.Join([]string(*e), "/"), nil
+// Set the source only for all dbs {
+func (d Databases) SetSource(info *ClusterInfo) {
+	for _, db := range d {
+		db.SetSource(info)
+	}
 }
 
 func (n *DBNodes) MarshalCSV() (string, error) {
