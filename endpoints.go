@@ -7,24 +7,20 @@ package clusterinfo
 import (
 	"bytes"
 	"encoding/json"
-	"time"
 
 	"github.com/gocarina/gocsv"
 	"github.com/goslogan/fw"
 )
 
 type Endpoint struct {
-	Key            string       `column:"-" json:"key" csv:"key"`
-	Source         string       `column:"-" json:"source" csv:"source"`
-	Id             string       `column:"ID" json:"id" csv:"endpointId"`
-	DBId           string       `column:"DB:ID" json:"dbId" csv:"dbid"`
-	Name           string       `column:"NAME" json:"name" csv:"name"`
-	Node           string       `column:"NODE" json:"node" csv:"node"`
-	Role           string       `column:"ROLE" json:"role" csv:"endpointRole"`
-	SSL            bool         `column:"SSL" json:"ssl" csv:"ssl"`
-	WatchdogStatus string       `column:"WATCHDOG_STATUS" json:"watchdogStatus" csv:"watchDogStatus"`
-	TimeStamp      time.Time    `json:"timeStamp" csv:"timeStamp" column:"-"`
-	parent         *ClusterInfo `csv:"-" json:"-"`
+	ComponentBase
+	Id             string `column:"ID" json:"id" csv:"endpointId"`
+	DBId           string `column:"DB:ID" json:"dbId" csv:"dbid"`
+	Name           string `column:"NAME" json:"name" csv:"name"`
+	Node           string `column:"NODE" json:"node" csv:"node"`
+	Role           string `column:"ROLE" json:"role" csv:"endpointRole"`
+	SSL            bool   `column:"SSL" json:"ssl" csv:"ssl"`
+	WatchdogStatus string `column:"WATCHDOG_STATUS" json:"watchdogStatus" csv:"watchDogStatus"`
 }
 
 type Endpoints []*Endpoint
@@ -44,21 +40,6 @@ func (c *Chunks) ParseEndpoints(parent *ClusterInfo) (Endpoints, error) {
 	return endpoints, err
 }
 
-// SetParent overrides the parent setting for each database in the
-// slice and updates the parent, key, source and timestamp files
-func (endpoint *Endpoint) SetParent(c *ClusterInfo) {
-	endpoint.parent = c
-	endpoint.Key = c.Key
-	endpoint.Source = c.Source
-	endpoint.TimeStamp = c.TimeStamp
-}
-
-// SetSource overrides the default source for each database in the
-// slice
-func (endpoint *Endpoint) SetSource(info *ClusterInfo) {
-	endpoint.Source = info.Source
-}
-
 func (endpoints Endpoints) JSON() (string, error) {
 	data, err := json.Marshal(&endpoints)
 	if err != nil {
@@ -76,7 +57,7 @@ func (endpoints Endpoints) CSV(skipHeaders bool) (string, error) {
 	}
 }
 
-// Set the parent (and associated fields) for all dbs
+// Set the parent (and associated fields) for all endpoints
 func (endpoints Endpoints) SetParent(info *ClusterInfo) {
 	for _, endpoint := range endpoints {
 		endpoint.SetParent(info)
@@ -84,8 +65,8 @@ func (endpoints Endpoints) SetParent(info *ClusterInfo) {
 }
 
 // Set the source only for all dbs {
-func (endpoints Endpoints) SetSource(info *ClusterInfo) {
+func (endpoints Endpoints) SetSource(source string) {
 	for _, endpoint := range endpoints {
-		endpoint.SetSource(info)
+		endpoint.Source = source
 	}
 }

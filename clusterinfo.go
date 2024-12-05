@@ -20,9 +20,11 @@ type ComponentBase struct {
 	parent    *ClusterInfo `json:"-" csv:"-"`
 }
 
-type ClusterInfoComponent interface {
-	SetSource(*ClusterInfo)
-	SetParent(*ClusterInfo)
+func (cb *ComponentBase) SetParent(info *ClusterInfo) {
+	cb.parent = info
+	cb.Key = info.Key
+	cb.Source = info.Source
+	cb.TimeStamp = info.TimeStamp
 }
 
 // ClusterInfo represents all the data loaded from the rladmin status output
@@ -93,12 +95,13 @@ func NewClusterInfo(key, source string, in io.Reader) (*ClusterInfo, error) {
 		info.TimeStamp = ts
 	}
 
-	info.Endpoints, err = chunks.ParseEndpoints(info)
+	info.Databases, err = chunks.ParseDatabases(info)
 	if err != nil {
 		return nil, err
 	}
+	info.Source = info.Databases.ClusterName()
 
-	info.Databases, err = chunks.ParseDatabases(info)
+	info.Endpoints, err = chunks.ParseEndpoints(info)
 	if err != nil {
 		return nil, err
 	}
@@ -142,11 +145,4 @@ func (c *ClusterInfo) CSV(skipHeaders bool) (map[string]string, error) {
 
 	return csvinfo, err
 
-}
-
-func (base *ComponentBase) SetParent(info *ClusterInfo) {
-	base.parent = info
-	base.Source = info.Source
-	base.TimeStamp = info.TimeStamp
-	base.Key = info.Key
 }

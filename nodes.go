@@ -10,7 +10,6 @@ import (
 	"fmt"
 	"net"
 	"strings"
-	"time"
 
 	"github.com/gocarina/gocsv"
 	"github.com/goslogan/fw"
@@ -35,27 +34,24 @@ type MemoryInfo struct {
 }
 
 type Node struct {
-	Key              string       `column:"-" json:"key" csv:"key"`
-	Source           string       `column:"-" json:"source" csv:"source"`
-	Id               string       `json:"nodeId" csv:"nodeId" column:"NODE:ID" `
-	Role             string       `json:"role" csv:"role" column:"ROLE"`
-	Address          IP           `json:"address" csv:"address" column:"ADDRESS"`
-	ExternalAddress  IP           `json:"externalAddress" csv:"externalAddress" column:"EXTERNAL_ADDRESS"`
-	HostName         string       `json:"hostName" csv:"hostName" column:"HOSTNAME"`
-	OverbookingDepth RAMFloat     `json:"overbookingDepth" csv:"overbookingDepth" column:"OVERBOOKING_DEPTH"`
-	Masters          uint16       `json:"masters" csv:"masters" column:"MASTERS"`
-	Replicas         uint16       `json:"replicas" csv:"replicas" column:"SLAVES"`
-	ShardUsage       ShardInfo    `json:"shards" csv:"shards" column:"SHARDS"`
-	Cores            uint16       `json:"cores" csv:"cores" column:"CORES"`
-	RedisRAM         MemoryInfo   `json:"redisRAM" csv:"redisRAM" column:"FREE_RAM"`
-	ProvisionalRAM   MemoryInfo   `json:"provisionalRAM" csv:"provisionalRAM" column:"PROVISIONAL_RAM"`
-	Version          string       `json:"version" csv:"version" column:"VERSION"`
-	SHA              string       `json:"sha" csv:"sha" column:"SHA"`
-	RackId           string       `json:"rackId" csv:"rackId" column:"RACK-ID"`
-	Status           string       `json:"status" csv:"status" column:"STATUS"`
-	Quorum           bool         `json:"quorum" csv:"quorum" column:"-"`
-	TimeStamp        time.Time    `json:"timeStamp" csv:"timeStamp" column:"-"`
-	parent           *ClusterInfo `csv:"-" column:"-"`
+	ComponentBase
+	Id               string     `json:"nodeId" csv:"nodeId" column:"NODE:ID" `
+	Role             string     `json:"role" csv:"role" column:"ROLE"`
+	Address          IP         `json:"address" csv:"address" column:"ADDRESS"`
+	ExternalAddress  IP         `json:"externalAddress" csv:"externalAddress" column:"EXTERNAL_ADDRESS"`
+	HostName         string     `json:"hostName" csv:"hostName" column:"HOSTNAME"`
+	OverbookingDepth RAMFloat   `json:"overbookingDepth" csv:"overbookingDepth" column:"OVERBOOKING_DEPTH"`
+	Masters          uint16     `json:"masters" csv:"masters" column:"MASTERS"`
+	Replicas         uint16     `json:"replicas" csv:"replicas" column:"SLAVES"`
+	ShardUsage       ShardInfo  `json:"shards" csv:"shards" column:"SHARDS"`
+	Cores            uint16     `json:"cores" csv:"cores" column:"CORES"`
+	RedisRAM         MemoryInfo `json:"redisRAM" csv:"redisRAM" column:"FREE_RAM"`
+	ProvisionalRAM   MemoryInfo `json:"provisionalRAM" csv:"provisionalRAM" column:"PROVISIONAL_RAM"`
+	Version          string     `json:"version" csv:"version" column:"VERSION"`
+	SHA              string     `json:"sha" csv:"sha" column:"SHA"`
+	RackId           string     `json:"rackId" csv:"rackId" column:"RACK-ID"`
+	Status           string     `json:"status" csv:"status" column:"STATUS"`
+	Quorum           bool       `json:"quorum" csv:"quorum" column:"-"`
 }
 
 type Nodes []*Node
@@ -74,10 +70,7 @@ func (c *Chunks) ParseNodes(parent *ClusterInfo) (Nodes, error) {
 	}
 
 	for _, node := range nodes {
-		node.parent = parent
-		node.Key = parent.Key
-		node.Source = parent.Source
-		node.TimeStamp = parent.TimeStamp
+		node.SetParent(parent)
 		if node.ShardUsage.Max == 0 {
 			node.Quorum = true
 		}

@@ -8,7 +8,6 @@ import (
 	"bytes"
 	"encoding/json"
 	"strings"
-	"time"
 
 	"github.com/gocarina/gocsv"
 	"github.com/goslogan/fw"
@@ -23,31 +22,28 @@ type DBShards struct {
 type DBNodes map[string]*DBShards
 
 type Database struct {
-	Key               string       `column:"-" json:"key" csv:"key"`
-	Source            string       `column:"-" json:"source" csv:"source"`
-	Id                string       `column:"DB:ID" json:"id" csv:"id"`
-	Name              string       `column:"NAME" json:"name" csv:"name"`
-	Type              string       `column:"TYPE" json:"type" csv:"type"`
-	Status            string       `column:"STATUS" json:"status" csv:"status"`
-	MasterShards      uint16       `column:"SHARDS" json:"shards" csv:"shards"`
-	Placement         string       `column:"PLACEMENT" json:"placement" csv:"placement"`
-	Replication       string       `column:"REPLICATION" json:"replication" csv:"replication"`
-	Persistence       string       `column:"PERSISTENCE" json:"persistence" csv:"persistence"`
-	Endpoint          DBEndPoints  `column:"ENDPOINT" json:"endpoints" csv:"endpoints"`
-	ExecState         string       `column:"EXEC_STATE" json:"execState" csv:"execState"`
-	ExecStateMachine  string       `column:"EXEC_STATE_MACHINE" json:"execStateMachine" csv:"execStateMachine"`
-	BackupProgress    string       `column:"BACKUP_PROGRESS" json:"backupProgress" csv:"backupProgress"`
-	MissingBackupTime string       `column:"MISSING_BACKUP_TIME" json:"missingBackupTime" csv:"missingBackupTime"`
-	RedisVersion      string       `column:"REDIS_VERSION" json:"redisVersion" csv:"redisVersion"`
-	TimeStamp         time.Time    `json:"timeStamp" csv:"timeStamp" column:"-"`
-	parent            *ClusterInfo `json:"-" csv:"-"`
+	ComponentBase
+	Id                string      `column:"DB:ID" json:"id" csv:"id"`
+	Name              string      `column:"NAME" json:"name" csv:"name"`
+	Type              string      `column:"TYPE" json:"type" csv:"type"`
+	Status            string      `column:"STATUS" json:"status" csv:"status"`
+	MasterShards      uint16      `column:"SHARDS" json:"shards" csv:"shards"`
+	Placement         string      `column:"PLACEMENT" json:"placement" csv:"placement"`
+	Replication       string      `column:"REPLICATION" json:"replication" csv:"replication"`
+	Persistence       string      `column:"PERSISTENCE" json:"persistence" csv:"persistence"`
+	Endpoint          DBEndPoints `column:"ENDPOINT" json:"endpoints" csv:"endpoints"`
+	ExecState         string      `column:"EXEC_STATE" json:"execState" csv:"execState"`
+	ExecStateMachine  string      `column:"EXEC_STATE_MACHINE" json:"execStateMachine" csv:"execStateMachine"`
+	BackupProgress    string      `column:"BACKUP_PROGRESS" json:"backupProgress" csv:"backupProgress"`
+	MissingBackupTime string      `column:"MISSING_BACKUP_TIME" json:"missingBackupTime" csv:"missingBackupTime"`
+	RedisVersion      string      `column:"REDIS_VERSION" json:"redisVersion" csv:"redisVersion"`
 }
 
 type Databases []*Database
 
 func (c *Chunks) ParseDatabases(parent *ClusterInfo) (Databases, error) {
 
-	databases := []*Database{}
+	databases := Databases{}
 	decoder := fw.NewDecoder(bytes.NewReader(c.Databases))
 	decoder.IgnoreEmptyRecords = true
 
@@ -56,26 +52,39 @@ func (c *Chunks) ParseDatabases(parent *ClusterInfo) (Databases, error) {
 	if err != nil {
 		return nil, err
 	}
+
+	clusterName := databases.ClusterName()
+
 	for _, db := range databases {
+		db.Source = clusterName
 		db.SetParent(parent)
 	}
 
 	return databases, nil
 }
 
-// SetParent overrides the parent setting for each database in the
-// slice and updates the parent, key, source and timestamp files
-func (db *Database) SetParent(c *ClusterInfo) {
-	db.parent = c
-	db.Key = c.Key
-	db.Source = c.Source
-	db.TimeStamp = c.TimeStamp
+// ClusterName builds a cluster name from the database endpoints and returns it
+func (db *Database) ClusterName() string {
+	if len(db.Endpoint) == 0 { // no endpoints
+		return ""
+	} else {
+		components := strings.Split(db.Endpoint[0], ":")
+		if len(components) == 0 { // no addr:host
+			return ""
+		} else {
+			names := strings.Split(components[0], ".")
+			return strings.Join(names[1:], ".")
+		}
+	}
 }
 
-// SetSource overrides the default source for each database in the
-// slice
-func (db *Database) SetSource(info *ClusterInfo) {
-	db.Source = info.Source
+// ClusterName gets the cluster name from the first database in the list
+func (dbs Databases) ClusterName() string {
+	if len(dbs) == 0 {
+		return ""
+	} else {
+		return dbs[0].ClusterName()
+	}
 }
 
 // JSON returns the database struct marsalled to JSON
@@ -113,9 +122,9 @@ func (d Databases) SetParent(info *ClusterInfo) {
 }
 
 // Set the source only for all dbs {
-func (d Databases) SetSource(info *ClusterInfo) {
+func (d Databases) SetSource(source string) {
 	for _, db := range d {
-		db.SetSource(info)
+		db.Source = source
 	}
 }
 
