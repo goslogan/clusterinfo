@@ -140,3 +140,9 @@ func (n *DBNodes) MarshalCSV() (string, error) {
 
 	return strings.Join(keys, "/"), nil
 }
+
+func (db *DBEndPoints) UnmarshalText(text []byte) error {
+	dbs := DBEndPoints(strings.Split(string(text), "/"))
+	*db = dbs
+	return nil
+}

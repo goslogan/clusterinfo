@@ -76,9 +76,9 @@ func parseMemory(s string) (RAMFloat, error) {
 
 }
 
-func NewClusterInfo(key, source string, in io.Reader) (*ClusterInfo, error) {
+func NewClusterInfo(key string, in io.Reader) (*ClusterInfo, error) {
 
-	info := &ClusterInfo{Key: key, Source: source}
+	info := &ClusterInfo{Key: key}
 
 	chunks := &Chunks{}
 	err := chunks.Parse(in)

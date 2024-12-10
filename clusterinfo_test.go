@@ -66,6 +66,7 @@ func TestDatabases(t *testing.T) {
 				"redis-17798.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17798",
 				"redis-17798.c99999.us-central1-mz.gcp.redns.redis-cloud.com:17798",
 				"redis-17798.internal.c99999.us-central1-mz.gcp.cloud.rlrcp.com:17798"}))
+			assert.Equal(t, dbs.ClusterName(), "c99999.us-central1-mz.gcp.cloud.rlrcp.com")
 		}
 	}
 }
@@ -106,10 +107,10 @@ func TestEndpoints(t *testing.T) {
 func TestRSOutput(t *testing.T) {
 
 	buffer := bytes.NewReader(rsOutput)
-	info, err := NewClusterInfo("", "", buffer)
+	info, err := NewClusterInfo("", buffer)
 	assert.Nil(t, err)
 
 	ts, _ := time.Parse("2006-01-02 15:04:05.000000-07:00", "2024-06-20 14:29:15.909661+02:00")
-	assert.Equal(t, info.TimeStamp, ts)
+	assert.Equal(t, ts, info.TimeStamp)
 
 }

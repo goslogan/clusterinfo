@@ -90,12 +90,14 @@ func (c *Chunks) putData(data []byte, stage int) {
 func (c *Chunks) ExtractTimeStamp() (time.Time, error) {
 
 	lines := strings.Split(c.Intro, "\n")
-	if len(lines) < 2 {
-		return time.Now(), fmt.Errorf("rlatool - timestamp not found in input")
-	} else {
-		return time.Parse("2006-01-02 03:04:05.000000-07:00", lines[1])
+
+	for _, line := range lines {
+		if ts, err := time.Parse("2006-01-02 15:04:05.000000-07:00", line); err == nil {
+			return ts, err
+		}
 	}
 
+	return time.Now(), fmt.Errorf("rlatool - timestamp not found in input")
 }
 
 // Get the id of the chunk we've encountered
